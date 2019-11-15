@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gentex.Redis</name>
+    </assembly>
+    <members>
+        <member name="T:Gentex.Redis.ConnectionManager">
+            <summary>
+            Manages a connection to Redis for pubsub or database access.
+            </summary>
+        </member>
+        <member name="T:Gentex.Redis.IConnectionManager">
+            <summary>
+            Manages a connection to Redis for pubsub or database access.
+            </summary>
+        </member>
+        <member name="M:Gentex.Redis.IConnectionManager.Close">
+            <summary>
+            Closes the connection if not closed.
+            </summary>
+        </member>
+        <member name="M:Gentex.Redis.IConnectionManager.CloseAsync">
+            <summary>
+            Closes the connectoin if not closed asyncronously. Use TPL async/await.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gentex.Redis.IConnectionManager.Connect">
+            <summary>
+            Connects to the redis endpoints specified at instantiation.  Returns when connected or throws an exception containing detail of the failure.
+            </summary>
+        </member>
+        <member name="M:Gentex.Redis.IConnectionManager.ConnectAsync">
+            <summary>
+            Connects asyncronously.  Use TPL async/await.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gentex.Redis.IConnectionManager.GetDatabase">
+            <summary>
+            Gets a database proxy instance for getting and setting values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gentex.Redis.IConnectionManager.GetSubscriber">
+            <summary>
+            Gets a subscriber instance for managing topic-based subscriptions.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gentex.Redis.ConnectionManager.#ctor(System.String,System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gentex.Redis.ConnectionManager"/> class.
+            </summary>
+            <param name="serviceName">Name of the service.  Use a value from StandardServiceNames.</param>
+            <param name="endPoints">The end points. Use a value from StandardEndpoints</param>
+        </member>
+        <member name="M:Gentex.Redis.ConnectionManager.Connect">
+            <summary>
+            Connects this instance.  Returns when connected or else throws an error containing detail of the connection failure.
+            </summary>
+        </member>
+        <member name="M:Gentex.Redis.ConnectionManager.ConnectAsync">
+            <summary>
+            Connects asyncronously.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.ApplicationException">Failed to establish connection with specified sentinel endpoint.</exception>
+        </member>
+        <member name="M:Gentex.Redis.ConnectionManager.Close">
+            <summary>
+            Closes this instance.
+            </summary>
+        </member>
+        <member name="M:Gentex.Redis.ConnectionManager.CloseAsync">
+            <summary>
+            Closes asyncronously. Use TPL async/await.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gentex.Redis.ConnectionManager.GetSubscriber">
+            <summary>
+            Gets a subscriber instance for managing topic-based subscriptions.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gentex.Redis.ConnectionManager.GetDatabase">
+            <summary>
+            Gets a database proxy instance for getting and setting values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Gentex.Redis.ConnectionManager.MasterSyncTimeout">
+            <summary>
+            Gets or sets the master synchronization timeout (used by Subscriber.Subscribe(), etc)
+            </summary>
+            <value>
+            The master synchronization timeout.
+            </value>
+        </member>
+        <member name="T:Gentex.Redis.StandardEndpoints">
+            <summary>
+            Standard Endpoints
+            </summary>
+        </member>
+        <member name="F:Gentex.Redis.StandardEndpoints.TestEndpoint">
+            <summary>
+            The test endpoint = zvm-redisdev1.gentex.com:26379
+            </summary>
+        </member>
+        <member name="F:Gentex.Redis.StandardEndpoints.ProductionEndpoint">
+            <summary>
+            The production endpoint = zvm-redisprod.gentex.com:26379
+            </summary>
+        </member>
+        <member name="T:Gentex.Redis.StandardServiceNames">
+            <summary>
+            Standard service names.
+            </summary>
+        </member>
+        <member name="F:Gentex.Redis.StandardServiceNames.PubSub">
+            <summary>
+            Pub Sub service name = PubSub
+            </summary>
+        </member>
+        <member name="F:Gentex.Redis.StandardServiceNames.Unknown">
+            <summary>
+            Unknown = Unknown
+            </summary>
+        </member>
+        <member name="T:Gentex.Redis.TaskExtensions">
+            <summary>
+            Extensions for the Task type.
+            </summary>
+        </member>
+        <member name="M:Gentex.Redis.TaskExtensions.ForAwait(System.Threading.Tasks.Task)">
+            <summary>
+            Helper for configuring an awaiter.
+            </summary>
+            <param name="task">The task.</param>
+            <returns>A task configured with an awaiter.</returns>
+        </member>
+        <member name="M:Gentex.Redis.TaskExtensions.ForAwait``1(System.Threading.Tasks.Task{``0})">
+            <summary>
+            Helper for configuring an awaiter.
+            </summary>
+            <typeparam name="T">The task's return type.</typeparam>
+            <param name="task">The task to configure an awaiter for.</param>
+            <returns>A task configured with an awaiter.</returns>
+        </member>
+    </members>
+</doc>

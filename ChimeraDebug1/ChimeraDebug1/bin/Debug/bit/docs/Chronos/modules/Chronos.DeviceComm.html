@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Chronos.html">Chronos</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Action.html">Chronos.Action</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.html">Chronos.Actions</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Checks.html">Chronos.Actions.Checks</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Interactive.html">Chronos.Actions.Interactive</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.MakeCheck.html">Chronos.Actions.MakeCheck</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Traceability.html">Chronos.Actions.Traceability</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Utilities.html">Chronos.Actions.Utilities</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Auto.html">Chronos.Auto</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Config.html">Chronos.Config</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Csv.html">Chronos.Csv</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DSL.html">Chronos.DSL</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DebugInfoPrinter.html">Chronos.DebugInfoPrinter</a>
+	</li>
+
+	<li><strong>Chronos.DeviceComm</strong></li>
+	
+	<li>
+		<a href="../modules/Chronos.Failure.html">Chronos.Failure</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Hex.html">Chronos.Hex</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Html.html">Chronos.Html</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.InfoPrinter.html">Chronos.InfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Runner.html">Chronos.Runner</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TeamCityInfoPrinter.html">Chronos.TeamCityInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestAccumulator.html">Chronos.TestAccumulator</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCase.html">Chronos.TestCase</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseRecorder.html">Chronos.TestCaseRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseResults.html">Chronos.TestCaseResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunRecorder.html">Chronos.TestRunRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunResults.html">Chronos.TestRunResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuite.html">Chronos.TestSuite</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteRecorder.html">Chronos.TestSuiteRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteResults.html">Chronos.TestSuiteResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Time.html">Chronos.Time</a>
+	</li>
+
+	<li>
+		<a href="../modules/LuaPP.html">LuaPP</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>Chronos.DeviceComm</code></h1>
+
+<p>DeviceComm Modifications. Chronos hooks into certain DeviceComm facilities to provide more information in reports and to control error handling.<br/> <b>This module is not activated until you require "gScripted".</b></p>
+
+
+
+
+
+
+
+
+<h2>Tables</h2>
+<table class="table_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm">DeviceComm</a></td>
+	<td class="summary">DeviceComm modifications </td>
+	</tr>
+
+</table>
+
+
+
+
+<br/>
+<br/>
+
+
+<h2><a name="tables"></a>Tables</h2>
+<dl class="table">
+
+<dt><a name="DeviceComm"></a><strong>DeviceComm</strong></dt>
+<dd>DeviceComm modifications<br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>Do</em></code>: A wrapper around DeviceComm:Do(); if the command fails, the current test case fails.
+	</li>
+	
+	<li>
+	  <code><em>Write</em></code>: A wrapper around DeviceComm:Write(); if the command fails, the current test case fails.
+	</li>
+	
+	<li>
+	  <code><em>Read</em></code>: A wrapper around DeviceComm:Read(); if the command fails, the current test case fails.
+	</li>
+	
+	<li>
+	  <code><em>FailDo</em></code>: A wrapper around DeviceComm:Do() that expects the command to fail; if the command succeeds, the current test case fails.
+	</li>
+	
+	<li>
+	  <code><em>FailWrite</em></code>: A wrapper around DeviceComm:Write() that expects the command to fail; if the command succeeds, the current test case fails.
+	</li>
+	
+	<li>
+	  <code><em>FailRead</em></code>: A wrapper around DeviceComm:Read() that expects the command to fail; if the command succeeds, the current test case fails.
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

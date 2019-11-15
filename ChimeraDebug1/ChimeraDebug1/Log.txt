@@ -1,0 +1,290 @@
+17:20:37       Reading Dallas ID...
+17:20:37       Dallas ID: 0xE000001724ADB82D
+17:20:37       **********Starting Singlewire 1 Test**********
+17:20:38       10K pulldown resistor connected to DUT 1Wire1
+17:20:38       Cycling through Pulldown Resistors 1k, 10k for 1 wire1 and 1 wire 2
+17:20:38       Current resistor picked Open
+17:20:38       Pullup Selected: Open
+17:20:38       SingleWire value: 0
+17:20:38       SingleWire1 Voltage: 0v
+17:20:38       Current resistor picked 1.5k
+17:20:38       Pullup Selected: 1.5k
+17:20:38       SingleWire value: 2.29131
+17:20:38        SingleWire1 Voltage: 12.4189002v
+17:20:38       Calculated Resistance: 1.46665697430385k
+17:20:38       Current resistor picked 2.2k
+17:20:38       Pullup Selected: 2.2k
+17:20:38       SingleWire value: 2.13984
+17:20:38        SingleWire1 Voltage: 11.5979328v
+17:20:38       Calculated Resistance: 2.16076137136531k
+17:20:38       Current resistor picked 6.8k
+17:20:38       Pullup Selected: 6.8k
+17:20:38       SingleWire value: 1.49209
+17:20:38        SingleWire1 Voltage: 8.0871278v
+17:20:38       Calculated Resistance: 6.71897234812736k
+17:20:38       Current resistor picked 10k
+17:20:38       Pullup Selected: 10k
+17:20:38       SingleWire value: 1.23428
+17:20:38        SingleWire1 Voltage: 6.6897976v
+17:20:38       Calculated Resistance: 9.86421654348442k
+17:20:38       Resetting Open Collectors and GPIO
+17:20:38        
+17:20:38       Checking Singlewire 1 Transmission...
+17:20:38       Sending Data: 170 187 204 238
+17:20:39       Reading Data: 170 187 204 238
+17:20:39       Singlewire 1 Transmission Test Passed!!!
+17:20:39       Checking Singlewire 1 Reception...
+17:20:39       Sending Data: 238 204 187 170
+17:20:40       Reading Data: 238 204 187 170
+17:20:40       Singlewire 1 Reception Tests Passed!!!
+17:20:40       **********Singlewire 1 Tests Passed **********
+17:20:40        
+17:20:40        
+17:20:40       **********Starting Singlewire 2 Test**********
+17:20:40       Checking Singlewire 2 Transmission...
+17:20:40       Sending Data: 170 187 204 238
+17:20:41       Reading Data: 170 187 204 238
+17:20:41       Singlewire 2 Transmission Test Passed!!!
+17:20:41        
+17:20:41       Checking Singlewire 2 Reception...
+17:20:41       Sending Data: 238 204 187 170
+17:20:42       Reading Data: 238 204 187 170
+17:20:42       Singlewire 2 Reception Tests Passed!!!
+17:20:42       **********Singlewire 2 Tests Passed**********
+17:20:42       **********Starting UART Tests**********
+17:20:42        
+17:20:42       Running RS232 Reception Tests...
+17:20:42       Sending Data: 170 187 204
+17:20:42       Reading Data: 170 187 204
+17:20:42       RS232 Reception Passed
+17:20:42        
+17:20:42       Running RS232 Transmission Tests...
+17:20:42       Sending Data: 204 170 187
+17:20:42       Reading Data: 204 170187
+17:20:42       RS232 Transmission Passed
+17:20:42        
+17:20:42       Running RS485 Reception Test... 
+17:20:42       Sending Data: 170 187 204
+17:20:42       Reading Data: 170 187 204
+17:20:42       RS485 Reception Passed
+17:20:42        
+17:20:42       Running RS485 Transmission Test... 
+17:20:42       Sending Data: 204 170 187 
+17:20:42       Reading Data: 204 170 187
+17:20:42       RS485 Transmission Passed
+17:20:42        
+17:20:42       Running RS422 Transmission Test...
+17:20:42       Sending Data: 204 170 187
+17:20:42       Reading Data: 204 170 187
+17:20:42       RS422 Transmission Passed
+17:20:42       **********All UART Tests Passed**********
+17:20:42       **********Starting High Speed CAN Tests**********
+17:20:42        
+17:20:42       Running Can High speed Transmission Tests...
+17:20:42       Sending Data: 170 187 204
+17:20:43       Receiving Data: 170 187 204
+17:20:43       High Speed Can Transmission Tests Passed
+17:20:43        
+17:20:43       Running Can High Speed Reception Tests...
+17:20:43       Sending Data: 204 170 187
+17:20:43       Reading Data: 204 170 187
+17:20:43       High Speed Can Reception Test Passed
+17:20:43       **********All High Speed CAN Tests Passed**********
+17:20:43        
+17:20:43       Starting Muxed High Speed CAN Reception Tests...
+17:20:43       Sending Data: 187 204 170
+17:20:44       Reading Data: 187 204 170
+17:20:44       Muxed High Speed CAN Reception Test Passed
+17:20:44        
+17:20:44       Running Muxed High Speed CAN Transmission Tests...
+17:20:44       Sending Data: 204 170 187
+17:20:45       Reading Data: 204 170 187
+17:20:45       Muxed High Speed CAN Transmission Test Passed
+17:20:45       Muxed High Speed Can Test Passed
+17:20:45       **********Starting Multiplexed CAN Tests**********
+17:20:45        
+17:20:45       Running CAN Low Speed Transmission Tests...
+17:20:45       Sending Data: 170 187 204
+17:20:45       Recieving Data: 170 187 204
+17:20:45       Low Speed Can Transmission Test Passed
+17:20:45        
+17:20:45       Running CAN Low Speed Reception Tests...
+17:20:45       Sending Data: 204 170 187
+17:20:45       Receiving Data: 204 170 187
+17:20:45       Low Speed Can Reception Test Passed
+17:20:45        
+17:20:45       Running SingleWire CAN Reception Tests...
+17:20:45       Sending Data: 170 187 204
+17:20:45       Error: Retrying Attempt 1 of 3
+17:20:45        
+17:20:45       Running SingleWire CAN Reception Tests...
+17:20:45       Sending Data: 170 187 204
+17:20:45       Error: Retrying Attempt 2 of 3
+17:20:45        
+17:20:45       Running SingleWire CAN Reception Tests...
+17:20:45       Sending Data: 170 187 204
+17:20:45       Error: Retrying Attempt 3 of 3
+17:20:45        
+17:20:45       Running SingleWire CAN Reception Tests...
+17:20:45       Sending Data: 170 187 204
+17:20:45       Error: Time out after too many retrys
+17:20:45        
+17:20:45       System.ArgumentException: Item has already been added. Key in dictionary: 'Data'  Key being added: 'Data'
+   at System.Collections.Hashtable.Insert(Object key, Object nvalue, Boolean add)
+   at System.Collections.Hashtable.Add(Object key, Object value)
+   at System.Collections.Specialized.OrderedDictionary.Add(Object key, Object value)
+   at ChimeraDebug1.BasicTests.singleCanTest() in C:\Users\josh.holovka\source\repos\ChimeraDebug1\ChimeraDebug1\BasicTests.cs:line 1869
+17:20:46        
+17:20:46       Running Singlewire CAN Transmission Tests...
+17:20:46       Error: Retrying Attempt 1 of 3
+17:20:46        
+17:20:46       Running Singlewire CAN Transmission Tests...
+17:20:46       Sending Data: 204 170 187
+17:20:47       Reading Data: 204 170 187
+17:20:47       SingleWire CAN Transmission Test Passed
+17:20:47       **********Starting AUX IO Tests**********
+17:20:47        
+17:20:47       Testing Switches after exposing functionality (feat. 1601) 
+17:20:50       LED Tests Failed
+17:20:50        
+17:20:50       Running Collector Tests...
+17:20:50       OC1 On Test...
+17:20:50       RE0 ON Reading: 0
+17:20:50       OC1 ON Test Passed
+17:20:50       OC1 OFF Test....
+17:20:50       RE0 OFF Reading: 1
+17:20:50       OC1 OFF Test Passed
+17:20:50       OC2 ON Test...
+17:20:50       RE2 Reading: 0
+17:20:50       OC2 ON Tests Passed
+17:20:50       OC2 OFF Test...
+17:20:50       RE2 Reading: 1
+17:20:50       OC2 Off Test Passed
+17:20:50       OC3 ON Test...
+17:20:50       RE4 Reading: 0
+17:20:50       OC3 On Test Passed
+17:20:50       OC3 OFF Test Passed
+17:20:50       OC4 ON Test...
+17:20:50       RE6 Reading: 0
+17:20:50       OC4 On Test Passed
+17:20:50       OC4 OFF Test...
+17:20:50       RE6 Reading: 1
+17:20:50       OC4 Off Test Passed
+17:20:50       All Collector Tests Passed
+17:20:50        
+17:20:50       Running GPIO Test...
+17:20:50       Setting Lines High...
+17:20:50       RE0 Read: 1
+17:20:50       RE1 Read: 1
+17:20:50       RE2 Read: 1
+17:20:50       RE3 Read: 1
+17:20:50       RE4 Read: 1
+17:20:50       RE5 Read: 1
+17:20:50       RE6 Read: 1
+17:20:50       RE7 Read: 1
+17:20:50       Lines Getting Pulled Low
+17:20:50       RE 0 Read:0
+17:20:50       RE 1 Read:0
+17:20:50       RE 2 Read:0
+17:20:50       RE 3 Read:0
+17:20:50       RE 4 Read:0
+17:20:50       RE 5 Read:0
+17:20:50       RE 6 Read:0
+17:20:50       RE 7 Read:0
+17:20:50       ALL GPIO Tests Passed!!
+17:20:50       
+17:20:50       Running DACA Upper Voltage Test...
+17:20:50       Open collector off, DUT 1wire1 connected to tester 1wire1
+17:20:50       Connecting 10K pulldown resistor to 1wire1
+17:20:50       Sending Data: 170 187 204
+17:20:51       Reading Data: 170 187 204
+17:20:51       Dac A upper voltage test passed
+17:20:51       
+17:20:51       Running DACA Lower Voltage Test...
+17:20:51       Ensuring Tester Collector OC1 is OFF To Connect DUT_1Wire1 To Tester 1wire1
+17:20:51       Open Collector OFF, DUT 1wire1 Connected To Tester 1wire1
+17:20:51       Connecting 1k pulldown resistor to 1wire1
+17:20:51       Sending Data: 187 204 170
+17:20:52       Reading Data: 187 204 170
+17:20:52       Dac A lower voltage test passed
+17:20:52       
+17:20:52       Running DACB Upper Voltage Test...
+17:20:52       Open Collector OC1 On, DUT 1wire2 Connected To Tester 1wire1
+17:20:52       Connecting 10k pulldown resistor to 1wire2
+17:20:52       Sending Data: 170 187 204 221
+17:20:52       Reading Data: 170 187 204 221
+17:20:52       Upper Voltage DACB Successfully Passed Test
+17:20:53       
+17:20:53       Running DACB Lower Voltage Test...
+17:20:53       Ensuring Tester Collector OC1 is On To Connect DUT_1Wire2 To Tester 1wire1
+17:20:53       Open Collector OC1 ON, DUT 1wire2 Connected To Tester 1wire1 
+17:20:53       Connecting 1k Pulldown Resistor To 1wire1
+17:20:53       Sending Data: 187 204 170 221
+17:20:53       Reading Data: 187 204 170 221
+17:20:53       Dac B lower voltage test passed
+17:20:53        
+17:20:53       Running Ignition Test...
+17:20:53       V_IGN and V_BAT are switched off, V_REV set to Open/Comm
+17:20:53       Line Voltage is: 0 v. Expected is 0 v
+17:20:53       Ignition Line Voltage Range Must Be Within 13.14 and 16.06
+17:20:53       Line Voltage is: 15.1188752 v. Expected is 14.6 v
+17:20:53       Ignition Test Passed
+17:20:54        
+17:20:54       Running Battery Test...
+17:20:54       Line Voltage is: 0 v. Expected is 0 v
+17:20:54       Battery Line Voltage Range Must Be Within 13.14 and 16.06
+17:20:54       Line Voltage is: 15.1188752 v. Expected is 14.6 v
+17:20:54        
+17:20:54       Running Reverse Line Test...
+17:20:54       Reverse Line Voltage is: 0 v. Expected is 0 v
+17:20:54       Reverse Line Voltage Range Must Be Within 13.14 and 16.06
+17:20:54       Reverse Line Voltage On Is: 15.1188752
+17:20:54       Reverse Line Voltage Passed
+17:20:54       **********Starting Signal Conversion Tests**********
+17:20:54        
+17:20:54       Running Signal Conversion Test...
+17:20:54       Ain 1 & 2 Values Expected to be between1.45 and 1.55
+17:20:54       AIN 1 Value: 1.48242
+17:20:54       AIN 2 Value: 1.48242
+17:20:54       Ain1 Reading: 1.48242
+17:20:54       Ain1 Test Passed
+17:20:54       Ain2 Reading: 1.48242
+17:20:54       Ain2 Test Passed
+17:20:54       
+17:20:54       Running DACA Upper Voltage Test...
+17:20:54       Open collector off, DUT 1wire1 connected to tester 1wire1
+17:20:54       Connecting 10K pulldown resistor to 1wire1
+17:20:54       Sending Data: 170 187 204
+17:20:55       Reading Data: 170 187 204
+17:20:55       Dac A upper voltage test passed
+17:20:55       
+17:20:55       Running DACA Lower Voltage Test...
+17:20:55       Ensuring Tester Collector OC1 is OFF To Connect DUT_1Wire1 To Tester 1wire1
+17:20:55       Open Collector OFF, DUT 1wire1 Connected To Tester 1wire1
+17:20:55       Connecting 1k pulldown resistor to 1wire1
+17:20:55       Sending Data: 187 204 170
+17:20:55       Reading Data: 187 204 170
+17:20:55       Dac A lower voltage test passed
+17:20:55       
+17:20:55       Running DACB Upper Voltage Test...
+17:20:55       Open Collector OC1 On, DUT 1wire2 Connected To Tester 1wire1
+17:20:55       Connecting 10k pulldown resistor to 1wire2
+17:20:55       Sending Data: 170 187 204 221
+17:20:56       Reading Data: 170 187 204 221
+17:20:56       Upper Voltage DACB Successfully Passed Test
+17:20:56       
+17:20:56       Running DACB Lower Voltage Test...
+17:20:56       Ensuring Tester Collector OC1 is On To Connect DUT_1Wire2 To Tester 1wire1
+17:20:56       Open Collector OC1 ON, DUT 1wire2 Connected To Tester 1wire1 
+17:20:56       Connecting 1k Pulldown Resistor To 1wire1
+17:20:56       Sending Data: 187 204 170 221
+17:20:57       Reading Data: 187 204 170 221
+17:20:57       Dac B lower voltage test passed
+17:20:57       **********All Signal Conversion Tests Passed**********
+17:20:57        
+17:20:57       Starting I2C Test...
+17:20:57       Writting data to address 0xAA BB CC
+17:20:57       Data being Written 187 170 221 238 
+17:20:57       Reading From Address 0xAA BB CC
+17:20:57       Data Read Back at Address is: 187 170 221 238
+17:20:57       I2C test passed

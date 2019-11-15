@@ -1,0 +1,14 @@
+GlobalLevel=0
+EnableAutoDelete=0
+MaxAgeInDays=-1
+SweepInterval=300
+LogToStdOut=0
+LogToFile=1
+
+[FILES]
+chimeraDebug.cpp=TRACE
+Event.cpp=WARNING
+ExceptionBase.cpp=WARNING
+FileUtils.cpp=WARNING
+INIFileUtils.cpp=WARNING
+StringUtils.cpp=WARNING

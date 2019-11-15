@@ -1,0 +1,35 @@
+---	A collection of utility functions more or less related to strings. 
+--	@author		<a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a>
+--	@release	1.00 <01/29/2008>
+module "StringUtils"
+
+---	Check if a string ends with a specified suffix.
+--	The check can be case sensitive or insensitive.
+--	@param s {string} String to be tested
+--	@param suffix {string} String to be checked as a possible suffix.
+--	@param caseSensitive [OPT] {bool} A flag indicating if the check should be
+--		performed in a case-sensitive way. This defaults to false.
+--	@return {bool} true if the string specified by <i>s</i> ends with the string specified
+--		by <i>suffix</i>. 
+function StringUtils.EndsWith( s, suffix, caseSensitive )
+
+---	Check if a passed-in string begins with a specified prefix.
+--	The check can be case sensitive or insensitive.
+--	@param s {string} String to be tested.
+--	@param prefix {string} String to be checked as a possible prefix.
+--	@param caseSensitive [OPT] {bool} A flag indicating if the check should be
+--		performed in a case-sensitive way. This defaults to false.
+function StringUtils.StartsWith( s, prefix, caseSensitive )
+
+---	Given a string of bytes, I return the CRC16 of the data.
+--	The algorithm used was adapted from an website claiming that this algorithm is
+--	the official CCITT CRC-16 algorithm. However, it seems that the claim to be
+--	the one true and correct CRC16 algorithm is controversial, as there are items
+--	the the specification that are ambiguous and open to multiple interpretations.
+--
+--	@param data {string} The input data 
+--	@param len [OPT] {int} The number of bytes of input data. If -1 is supplied for
+--		this parameter, the function determines the length. This defaults to -1.
+--	@return {int} A 16-bit CRC value.
+function StringUtils.GetCRC16( data, len )
+

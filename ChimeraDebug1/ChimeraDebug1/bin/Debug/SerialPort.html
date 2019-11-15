@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Debugging.html">Debugging</a>
+	</li>
+
+	<li>
+		<a href="../modules/DeviceComm.html">DeviceComm</a>
+	</li>
+
+	<li>
+		<a href="../modules/FileUtils.html">FileUtils</a>
+	</li>
+
+	<li>
+		<a href="../modules/Logging.html">Logging</a>
+	</li>
+
+	<li><strong>SerialPort</strong></li>
+	
+	<li>
+		<a href="../modules/SimpleLogging.html">SimpleLogging</a>
+	</li>
+
+	<li>
+		<a href="../modules/String.html">String</a>
+	</li>
+
+	<li>
+		<a href="../modules/StringUtils.html">StringUtils</a>
+	</li>
+
+	<li>
+		<a href="../modules/Utils.html">Utils</a>
+	</li>
+
+	<li>
+		<a href="../modules/gScripted.html">gScripted</a>
+	</li>
+
+	<li>
+		<a href="../modules/gtx.html">gtx</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>SerialPort</code></h1>
+
+<p>Interface for direct communications with a serial port. This class has more functionality and most of the functions are documented, but some are missing. This documentation is a work in progress. If you want to see more about the SerialPort class, just visit the <a href="http://eeweb/programming/gtxdocs/classgtx_1_1_serial_port.html">gtx SerialPort documentation</a>. All the methods are available in the Lua binding, just some of them are not documented <em>yet</em>.</p>
+
+
+<p><b>Author:</b>
+<table class="authors_list">
+
+	<tr><td class="name"><a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a></td></tr>
+
+</table>
+</p>
+
+
+
+<p><b>Release:</b> 1.00 <09/04/2008>  <h2>Warnings:</h2> This is a beta binding so all the bugs have not been worked out yet. Use at your own risk. (RJP-02/04/2008)  <h2>Types:</h2> There are a few types that can be used throughout this library. Here are the descriptions.  <h4>RtsControl</h4> Define the RTS control available. <ul> <pre class="example"> RTS_DISABLE,<br /> RTS_ENABLE,<br /> RTS_HANDSHAKE,<br /> RTS_TOGGLE </pre> </ul>  <h4>Parity</h4> Defines the types of parity available. <ul> <pre class="example"> EVEN_PARITY,<br /> ODD_PARITY,<br /> MARK_PARITY,<br /> SPACE_PARITY,<br /> NO_PARITY </pre> </ul>  <h4>StopBits</h4> Defines the stop bits available. <ul> <pre class="example"> ONE_STOP_BIT,<br /> ONE5_STOP_BITS,<br /> TWO_STOP_BITS </pre> </ul>
+</p>
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:GetRTS">SerialPort:GetRTS</a>&nbsp;()</td>
+	<td class="summary">Gets the state of the RTS line.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:GetReadLoopback">SerialPort:GetReadLoopback</a>&nbsp;()</td>
+	<td class="summary">Gets the read loopback status.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:Init">SerialPort:Init</a>&nbsp;(portName, baudRate, dataBits, stopBits, parity, writeTimeoutInMilliseconds, rts, enableHardwareFlowControl, enableSoftwareFlowControl, readMinimumTotalTimeoutMs, readInterByteTimeoutMs)</td>
+	<td class="summary">Configure serial port.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:IsOpen">SerialPort:IsOpen</a>&nbsp;()</td>
+	<td class="summary">Determine if the port is open.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:PurgeReadBuffer">SerialPort:PurgeReadBuffer</a>&nbsp;()</td>
+	<td class="summary">Terminate all pending read operations, and empty the read buffer.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:Read">SerialPort:Read</a>&nbsp;(bufLen)</td>
+	<td class="summary">You can check for buffered incoming data synchronously using this function.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:Reset">SerialPort:Reset</a>&nbsp;()</td>
+	<td class="summary">Releases the internal serial port handle.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:SetBaud">SerialPort:SetBaud</a>&nbsp;(rate)</td>
+	<td class="summary">Change baud rate on the fly.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:SetRTS">SerialPort:SetRTS</a>&nbsp;(high)</td>
+	<td class="summary">Set the state of the RTS line.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:SetReadLoopback">SerialPort:SetReadLoopback</a>&nbsp;(readLoopBack)</td>
+	<td class="summary">Sets whether the Transmit() method automatically reads the echo of the message sent.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:Transmit">SerialPort:Transmit</a>&nbsp;(command, commandLength, waitForResponse, expectedResponseSize, timeOutSeconds)</td>
+	<td class="summary">Higher level communication function, uses Read and Write internally.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:TransmitUntilCharacter">SerialPort:TransmitUntilCharacter</a>&nbsp;(data, dataLength, eolChar, timeOutSeconds)</td>
+	<td class="summary">It reads the serial port until <em>eolChar</em> is received.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#SerialPort:Write">SerialPort:Write</a>&nbsp;(data, len)</td>
+	<td class="summary">Synchronously write data out the opened COM port.</td>
+	</tr>
+
+</table>
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="SerialPort:GetRTS"></a><strong>SerialPort:GetRTS</strong>&nbsp;()</dt>
+<dd>
+Gets the state of the RTS line. A Lua error can occur when the current serial port is not open and [WINDOWS ONLY] if there is an error getting the current state of the serial port.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{bool} True if the RTS line state is set, else false.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:GetReadLoopback"></a><strong>SerialPort:GetReadLoopback</strong>&nbsp;()</dt>
+<dd>
+Gets the read loopback status. You can use this to determine if the Transmit() method will automatically read the echo of the message sent to the DUT.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{bool} status of the Read Loopback Messages flag.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:Init"></a><strong>SerialPort:Init</strong>&nbsp;(portName, baudRate, dataBits, stopBits, parity, writeTimeoutInMilliseconds, rts, enableHardwareFlowControl, enableSoftwareFlowControl, readMinimumTotalTimeoutMs, readInterByteTimeoutMs)</dt>
+<dd>
+Configure serial port. If this call fails a Lua error will occur.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>portName</em></code>: {string} String representation of the COM port to open. Typically this is "COMx", where x is the COM port number.
+	</li>
+	
+	<li>
+	  <code><em>baudRate</em></code>: {number} Baud rate to open the COM port with.
+	</li>
+	
+	<li>
+	  <code><em>dataBits</em></code>: {number} Number of data bits that occur between the start bit and the stop bit. A typical value is 8.
+	</li>
+	
+	<li>
+	  <code><em>stopBits</em></code>: {StopBits} Initial stop bits setting.
+	</li>
+	
+	<li>
+	  <code><em>parity</em></code>: {Parity} Initial parity setting.
+	</li>
+	
+	<li>
+	  <code><em>writeTimeoutInMilliseconds</em></code>: {number} Timeout for write operations.
+	</li>
+	
+	<li>
+	  <code><em>rts</em></code>: [DEF] {RtsControl} Initial RTS control. Defaults to RTS_ENABLE.
+	</li>
+	
+	<li>
+	  <code><em>enableHardwareFlowControl</em></code>: [DEF] {bool} If true, enables hardware flow control, else false. Defaults to false.
+	</li>
+	
+	<li>
+	  <code><em>enableSoftwareFlowControl</em></code>: [DEF] {bool} If true, enables software flow control, else false. Defaults to false.
+	</li>
+	
+	<li>
+	  <code><em>readMinimumTotalTimeoutMs</em></code>: [DEF] {number} Sets the minimum total time to wait for requested bytes before timing out.  In Windows a per-requested-byte timeout is added to this. Defaults to 100.
+	</li>
+	
+	<li>
+	  <code><em>readInterByteTimeoutMs</em></code>: [DEF] {number} Sets the time to wait between receiving bytes before timing out. Defaults to 100.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:IsOpen"></a><strong>SerialPort:IsOpen</strong>&nbsp;()</dt>
+<dd>
+Determine if the port is open.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{bool} true if the port is open, else false.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:PurgeReadBuffer"></a><strong>SerialPort:PurgeReadBuffer</strong>&nbsp;()</dt>
+<dd>
+Terminate all pending read operations, and empty the read buffer. If this call fails a Lua error will occur.
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:Read"></a><strong>SerialPort:Read</strong>&nbsp;(bufLen)</dt>
+<dd>
+You can check for buffered incoming data synchronously using this function. This call will block while reading data. The maximum time it can block is basically the amount of time needed to completely fill the supplied buffer. If the port is not open and if the read encountered an error a Lua error can occur.  <h4>Warning:</h4> <ul> Calling this function from multiple threads is inadvisable. The incomming data will be arbitrally split between threads, resulting in fragmented data. </ul> 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>bufLen</em></code>: {number} Number of bytes to read.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} The bytes read from the port.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:Reset"></a><strong>SerialPort:Reset</strong>&nbsp;()</dt>
+<dd>
+Releases the internal serial port handle.
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:SetBaud"></a><strong>SerialPort:SetBaud</strong>&nbsp;(rate)</dt>
+<dd>
+Change baud rate on the fly. A Lua error can occur when the port is not open, if an error occurs getting the port state, and an error occurs setting the port state.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>rate</em></code>: {number} Baud rate to set.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:SetRTS"></a><strong>SerialPort:SetRTS</strong>&nbsp;(high)</dt>
+<dd>
+Set the state of the RTS line. If this call fails a Lua error will occur.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>high</em></code>: {bool} If true, sets the RTS line high. If false, sets the RTS line low.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:SetReadLoopback"></a><strong>SerialPort:SetReadLoopback</strong>&nbsp;(readLoopBack)</dt>
+<dd>
+Sets whether the Transmit() method automatically reads the echo of the message sent. This is required for the RS485 adapters that echo, for example.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>readLoopBack</em></code>: [DEF] {bool} If true, in the Transmit() method it will automatically read the echo message from the serial port. If false, it will not read the echo message automatically. Defaults to true.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:Transmit"></a><strong>SerialPort:Transmit</strong>&nbsp;(command, commandLength, waitForResponse, expectedResponseSize, timeOutSeconds)</dt>
+<dd>
+Higher level communication function, uses Read and Write internally. A Lua error can occur when there is any issue writing to the serial port.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>command</em></code>: {string} Data to send.
+	</li>
+	
+	<li>
+	  <code><em>commandLength</em></code>: {number} Length of the data to send.
+	</li>
+	
+	<li>
+	  <code><em>waitForResponse</em></code>: {bool} If true, it will wait for a response, specified by timeOutSeconds, else it will return immediately without waiting for a response.
+	</li>
+	
+	<li>
+	  <code><em>expectedResponseSize</em></code>: [DEF] {number} The length of the response data sent back from the DUT. Defaults to 1.
+	</li>
+	
+	<li>
+	  <code><em>timeOutSeconds</em></code>: [DEF] {double} Time to wait for a response before considering it a timeout. Give the time in seconds. Defaults to 5.0.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>{string} The response received from the <em>command</em> sent.</li>
+	
+	<li>{bool} True if the response timed out, else false.</li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:TransmitUntilCharacter"></a><strong>SerialPort:TransmitUntilCharacter</strong>&nbsp;(data, dataLength, eolChar, timeOutSeconds)</dt>
+<dd>
+It reads the serial port until <em>eolChar</em> is received. A Lua error can occur when there is any issue writing to the serial port. <h3>Note:</h3> <ul> The <em>eolChar</em> must be a number, so "\n" is not correct syntax. Use <code>string.byte( "\n" )</code> to convert the character to a number. </ul> 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>data</em></code>: {string} Data to send.
+	</li>
+	
+	<li>
+	  <code><em>dataLength</em></code>: {number} Length of the data to send.
+	</li>
+	
+	<li>
+	  <code><em>eolChar</em></code>: [DEF] {number} Reads until it receives this character, or times out. Default is '\r' (13).
+	</li>
+	
+	<li>
+	  <code><em>timeOutSeconds</em></code>: [DEF] {double} Time to wait for a response before considering it a timeout. Give the time in seconds. Defaults to 5.0.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local messageToSend = "Testing\rEOL\rTransmit\r"<br /> -- Transmit until the '\r' character is found using the default timeout of 5 seconds.<br /> local response, isTimedOut = mySerialPort:TransmitUntilCharacter( messageToSend, #messageToSend ) messageToSend = "Testing\nEOL\nTransmit\n"<br /> -- Transmit until the '\n' character is found using a 0.5 second timeout.<br /> local response, isTimedOut = mySerialPort:TransmitUntilCharacter( messageToSend, #messageToSend, string.byte( "\n" ), 0.5 )<br /></pre></ul>
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>{string} The response received from the <em>command</em> sent.</li>
+	
+	<li>{bool} True if the response timed out, else false.</li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="SerialPort:Write"></a><strong>SerialPort:Write</strong>&nbsp;(data, len)</dt>
+<dd>
+Synchronously write data out the opened COM port. If this call fails a Lua error will occur.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>data</em></code>: {string} Data to be written.
+	</li>
+	
+	<li>
+	  <code><em>len</em></code>: [DEF] {number} Length of <em>data</em>. If <em>len</em> is -1 then it will call ::strlen() on <em>data</em>. Defaults to -1.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

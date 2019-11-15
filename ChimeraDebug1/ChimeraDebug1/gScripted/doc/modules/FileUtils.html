@@ -1,0 +1,816 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Debugging.html">Debugging</a>
+	</li>
+
+	<li>
+		<a href="../modules/DeviceComm.html">DeviceComm</a>
+	</li>
+
+	<li><strong>FileUtils</strong></li>
+	
+	<li>
+		<a href="../modules/Logging.html">Logging</a>
+	</li>
+
+	<li>
+		<a href="../modules/SerialPort.html">SerialPort</a>
+	</li>
+
+	<li>
+		<a href="../modules/SimpleLogging.html">SimpleLogging</a>
+	</li>
+
+	<li>
+		<a href="../modules/String.html">String</a>
+	</li>
+
+	<li>
+		<a href="../modules/StringUtils.html">StringUtils</a>
+	</li>
+
+	<li>
+		<a href="../modules/Utils.html">Utils</a>
+	</li>
+
+	<li>
+		<a href="../modules/gScripted.html">gScripted</a>
+	</li>
+
+	<li>
+		<a href="../modules/gtx.html">gtx</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>FileUtils</code></h1>
+
+<p>A collection of utility functions more or less related to file operations.</p>
+
+
+<p><b>Author:</b>
+<table class="authors_list">
+
+	<tr><td class="name"><a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a></td></tr>
+
+</table>
+</p>
+
+
+
+<p><b>Release:</b> 1.00 <07/18/2008>
+</p>
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.CopyFileTo">FileUtils.CopyFileTo</a>&nbsp;(src, dest, overwriteIfExists)</td>
+	<td class="summary">Copy a file to another location.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.CreateDirs">FileUtils.CreateDirs</a>&nbsp;(path, skipLast)</td>
+	<td class="summary">Create all of the directories in the specified path.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.Delete">FileUtils.Delete</a>&nbsp;(path)</td>
+	<td class="summary">Delete a file or directory.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.DoesDirExist">FileUtils.DoesDirExist</a>&nbsp;(dir)</td>
+	<td class="summary">Checks to see if a directory exists.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.DoesFileExist">FileUtils.DoesFileExist</a>&nbsp;(file)</td>
+	<td class="summary">Checks to see if a file exists.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetBaseFileName">FileUtils.GetBaseFileName</a>&nbsp;(path)</td>
+	<td class="summary">Given a string which contains a filename or a path to a file, I return a string containing the same data passed in, with the file type suffix excluded.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetCurrentProgram">FileUtils.GetCurrentProgram</a>&nbsp;()</td>
+	<td class="summary">Get the name of the currently running executable.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetDir">FileUtils.GetDir</a>&nbsp;(path)</td>
+	<td class="summary">Get the directory from a path that includes a file name.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetFileExtension">FileUtils.GetFileExtension</a>&nbsp;(path)</td>
+	<td class="summary">Given a string which contains a path to file, I return a string containing the file extension.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetFileFromPath">FileUtils.GetFileFromPath</a>&nbsp;(path)</td>
+	<td class="summary">Get the file name from a path that includes a directory.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetFileName">FileUtils.GetFileName</a>&nbsp;(path)</td>
+	<td class="summary">Given a string which contains a path to file, I return a string containing just the filename.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetParentDirectory">FileUtils.GetParentDirectory</a>&nbsp;(path, result)</td>
+	<td class="summary">Get the directory one level up from a file path.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetProcessID">FileUtils.GetProcessID</a>&nbsp;()</td>
+	<td class="summary">Get the process ID the currently running process.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetSize">FileUtils.GetSize</a>&nbsp;(name)</td>
+	<td class="summary">Returns the size of a file.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetThreadID">FileUtils.GetThreadID</a>&nbsp;()</td>
+	<td class="summary">Get the thread ID the currently active thread.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.GetWorkingDir">FileUtils.GetWorkingDir</a>&nbsp;()</td>
+	<td class="summary">Get the current working directory of the running process.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.IsReadOnly">FileUtils.IsReadOnly</a>&nbsp;(file)</td>
+	<td class="summary">Check to see if a file has the read-only attribute set.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.MoveFileTo">FileUtils.MoveFileTo</a>&nbsp;(src, dest)</td>
+	<td class="summary">Move a file to another location.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.ReadFileIntoString">FileUtils.ReadFileIntoString</a>&nbsp;(file)</td>
+	<td class="summary">Read a file into a string.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#FileUtils.SetReadOnly">FileUtils.SetReadOnly</a>&nbsp;(file, readOnly)</td>
+	<td class="summary">Make a file writable or read-only.</td>
+	</tr>
+
+</table>
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="FileUtils.CopyFileTo"></a><strong>FileUtils.CopyFileTo</strong>&nbsp;(src, dest, overwriteIfExists)</dt>
+<dd>
+Copy a file to another location. This function will fail if the destination path does not exist. Use CreateDirs() to implement this behavior.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>src</em></code>: {string} The source path and file name.
+	</li>
+	
+	<li>
+	  <code><em>dest</em></code>: {string} The destination path and file name.
+	</li>
+	
+	<li>
+	  <code><em>overwriteIfExists</em></code>: {bool} If true, the existing file will be overwritten.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{bool} false if copy failed, else true.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.CreateDirs"></a><strong>FileUtils.CreateDirs</strong>&nbsp;(path, skipLast)</dt>
+<dd>
+Create all of the directories in the specified path. Optionally ignores the last element in the path if skipLast == true (do this for a file path).
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>path</em></code>: {string} The complete path and file name of a file.
+	</li>
+	
+	<li>
+	  <code><em>skipLast</em></code>: [OPT] {bool} If true, ignores the last element in the path. Usefull for file paths only. This defaults to false.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.Delete"></a><strong>FileUtils.Delete</strong>&nbsp;(path)</dt>
+<dd>
+Delete a file or directory.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>path</em></code>: {string} The directory name or file path.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{bool} true if <i>path</i> was deleted, else false.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.DoesDirExist"></a><strong>FileUtils.DoesDirExist</strong>&nbsp;(dir)</dt>
+<dd>
+Checks to see if a directory exists.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>dir</em></code>: {string} The name of the directory. return {bool} true if directory exists, else false.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.DoesFileExist"></a><strong>FileUtils.DoesFileExist</strong>&nbsp;(file)</dt>
+<dd>
+Checks to see if a file exists.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>file</em></code>: {string} The name of the file .
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{bool} true if file exists, else false.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetBaseFileName"></a><strong>FileUtils.GetBaseFileName</strong>&nbsp;(path)</dt>
+<dd>
+Given a string which contains a filename or a path to a file, I return a string containing the same data passed in, with the file type suffix excluded. For example, if "c:\temp\foo.txt" is passed in, the result would be "c:\temp\foo".
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>path</em></code>: {string} A string containing the input path to be parsed.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} The resulting base filename extracted from the path.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetCurrentProgram"></a><strong>FileUtils.GetCurrentProgram</strong>&nbsp;()</dt>
+<dd>
+Get the name of the currently running executable.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} A string containing the name of the currently running executable.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetDir"></a><strong>FileUtils.GetDir</strong>&nbsp;(path)</dt>
+<dd>
+Get the directory from a path that includes a file name.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>path</em></code>: {string} The complete path and file name of a file.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} The directory portion of a file name path.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetFileExtension"></a><strong>FileUtils.GetFileExtension</strong>&nbsp;(path)</dt>
+<dd>
+Given a string which contains a path to file, I return a string containing the file extension. For example, if "c:\temp\foo.txt" is passed in, the result would be "txt".
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>path</em></code>: {string} A string containing the input path to be parsed.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} The resulting file extension extracted from the path.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetFileFromPath"></a><strong>FileUtils.GetFileFromPath</strong>&nbsp;(path)</dt>
+<dd>
+Get the file name from a path that includes a directory.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>path</em></code>: {string} The complete path and file name of a file.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} The file name portion of a file path.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetFileName"></a><strong>FileUtils.GetFileName</strong>&nbsp;(path)</dt>
+<dd>
+Given a string which contains a path to file, I return a string containing just the filename. For example, if "c:\temp\foo.txt" is passed in, the result would be "foo.txt".
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>path</em></code>: {string} A string containing the input path to be parsed.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} The resulting filename extracted from the path.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetParentDirectory"></a><strong>FileUtils.GetParentDirectory</strong>&nbsp;(path, result)</dt>
+<dd>
+Get the directory one level up from a file path.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>path</em></code>: {string}
+	</li>
+	
+	<li>
+	  <code><em>result</em></code>: {string} Must be an empty string.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>{bool} true is successful, else false.</li>
+	
+	<li>{string} The parent directory.</li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetProcessID"></a><strong>FileUtils.GetProcessID</strong>&nbsp;()</dt>
+<dd>
+Get the process ID the currently running process.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{int} The process ID.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetSize"></a><strong>FileUtils.GetSize</strong>&nbsp;(name)</dt>
+<dd>
+Returns the size of a file.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>name</em></code>: {string} The name of the file.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{int} -1 if file size not found or if size is > 0x7fffffff</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetThreadID"></a><strong>FileUtils.GetThreadID</strong>&nbsp;()</dt>
+<dd>
+Get the thread ID the currently active thread.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The thread ID.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.GetWorkingDir"></a><strong>FileUtils.GetWorkingDir</strong>&nbsp;()</dt>
+<dd>
+Get the current working directory of the running process.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} A string containing the directory of the currently running process.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.IsReadOnly"></a><strong>FileUtils.IsReadOnly</strong>&nbsp;(file)</dt>
+<dd>
+Check to see if a file has the read-only attribute set.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>file</em></code>: {string} The complete path of the file.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{bool} true if the file is read only, else false.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.MoveFileTo"></a><strong>FileUtils.MoveFileTo</strong>&nbsp;(src, dest)</dt>
+<dd>
+Move a file to another location. This function will fail if the destination path does not exist. Use CreateDirs() to implement this behavior.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>src</em></code>: {string} The source path and file name.
+	</li>
+	
+	<li>
+	  <code><em>dest</em></code>: {string} The destination path and file name.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{bool} false if move failed, else true.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.ReadFileIntoString"></a><strong>FileUtils.ReadFileIntoString</strong>&nbsp;(file)</dt>
+<dd>
+Read a file into a string.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>file</em></code>: {string} The complete path and file name of a file.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} A string containing the contents of the file.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="FileUtils.SetReadOnly"></a><strong>FileUtils.SetReadOnly</strong>&nbsp;(file, readOnly)</dt>
+<dd>
+Make a file writable or read-only.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>file</em></code>: {string} The complete path and file name of a file.
+	</li>
+	
+	<li>
+	  <code><em>readOnly</em></code>: {bool} If true, makes the file read only. If false, make the file writeable.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{bool} true if setting the file to read only was successful, else false.</ul>
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

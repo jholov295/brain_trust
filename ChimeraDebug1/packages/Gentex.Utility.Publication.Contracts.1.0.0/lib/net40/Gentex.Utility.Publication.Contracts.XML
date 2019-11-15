@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gentex.Utility.Publication.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Gentex.Utility.Publication.Client">
+            <summary>
+            Client for sending messages to the service for publishing.
+            </summary>
+        </member>
+        <member name="T:Gentex.Utility.Publication.IPublishClient">
+            <summary>
+            Client contract for IPublishHandler service contact.
+            </summary>
+        </member>
+        <member name="T:Gentex.Utility.Publication.IPublishHandler">
+            <summary>
+            Service contrac for handling messages to publish.
+            </summary>
+        </member>
+        <member name="M:Gentex.Utility.Publication.IPublishHandler.Publish(Gentex.Utility.Publication.Messages)">
+            <summary>
+            Publishes the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Gentex.Utility.Publication.IPublishClient.Publish(Gentex.Utility.Publication.Message)">
+            <summary>
+            Publishes the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Gentex.Utility.Publication.Client.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gentex.Utility.Publication.Client"/> class.
+            </summary>
+        </member>
+        <member name="M:Gentex.Utility.Publication.Client.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gentex.Utility.Publication.Client"/> class.
+            </summary>
+            <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+        </member>
+        <member name="M:Gentex.Utility.Publication.Client.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gentex.Utility.Publication.Client"/> class.
+            </summary>
+            <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+            <param name="configurationFilePath">The configuration file path.</param>
+        </member>
+        <member name="M:Gentex.Utility.Publication.Client.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gentex.Utility.Publication.Client"/> class.
+            </summary>
+            <param name="binding">The binding.</param>
+            <param name="remoteAddress">The remote address.</param>
+        </member>
+        <member name="M:Gentex.Utility.Publication.Client.Publish(Gentex.Utility.Publication.Messages)">
+            <summary>
+            Sends the specified messages to the service to be published.
+            </summary>
+            <param name="messages">The messages.</param>
+        </member>
+        <member name="M:Gentex.Utility.Publication.Client.Publish(Gentex.Utility.Publication.Message)">
+            <summary>
+            Publishes the specified message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:Gentex.Utility.Publication.ContractConstants">
+            <summary>
+            Contract constants.
+            </summary>
+        </member>
+        <member name="F:Gentex.Utility.Publication.ContractConstants.PublicationNamespace">
+            <summary>
+            Publication namespace.
+            </summary>
+        </member>
+        <member name="T:Gentex.Utility.Publication.Message">
+            <summary>
+            Represents a message to publish.
+            </summary>
+        </member>
+        <member name="P:Gentex.Utility.Publication.Message.Topics">
+            <summary>
+            Gets or sets the message topics.
+            </summary>
+            <value>
+            The topics or channels this message should be published to.
+            </value>
+        </member>
+        <member name="P:Gentex.Utility.Publication.Message.Value">
+            <summary>
+            Gets or sets the value representing the published message.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:Gentex.Utility.Publication.Message.ExtensionData">
+            <summary>
+            Gets or sets the structure that contains extra data.
+            </summary>
+            <returns>An <see cref="T:System.Runtime.Serialization.ExtensionDataObject" /> that contains data that is not recognized as belonging to the data contract.</returns>
+        </member>
+        <member name="T:Gentex.Utility.Publication.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Gentex.Utility.Publication.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Gentex.Utility.Publication.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Gentex.Utility.Publication.Properties.Resources.EndpointAddress">
+            <summary>
+              Looks up a localized string similar to http://zvm-msgprod/Utility/Publication.
+            </summary>
+        </member>
+    </members>
+</doc>

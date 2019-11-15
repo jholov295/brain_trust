@@ -1,0 +1,2 @@
+2017-08-01T10:21:11.152	ERR	chimeraDebug.exe	FileUtils.cpp:66      	7724 	12136:??                 	"Exception of type ReadFailedEx. Failed to read a line"
+2017-08-01T10:21:11.184	TRC	chimeraDebug.exe	chimeraDebug.cpp:138  	7724 	12136:??                 	"\x00\x00\x99\xb59\x96\x00\x00\x18\x00 Debugging Initialized! \x00\x00`\xcd'\x01\x00,\x00 At boot, this chimera had 0x00 soft resets."

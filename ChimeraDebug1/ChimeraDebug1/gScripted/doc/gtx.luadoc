@@ -1,0 +1,21 @@
+---	This module is where you can find information that is gtx library wide. Like the build number.
+--	
+--	@author		<a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a>
+--	@release	1.00 <02/04/2008>
+module "gtx"
+
+---	This is the build number of the gtx library. This can be used to make your
+--	script usable with many versions of the gtx library. This is available all
+--	the time so you don't have to have a gtx object to use it.
+--
+--	<h4>Example:</h4>
+--	<pre class="example">
+--	if gtx.buildNumber < 2580 then<br />
+--	&nbsp; &nbsp; -- Do something for any version lower than 2580<br />
+--  &nbsp; &nbsp; error( "This script does not support version "..gtx.buildNumber.." of the gtx library." )<br />
+--	end
+--	</pre>
+--	@class table
+--	@name gtx.buildNumber
+gtx.buildNumber
+

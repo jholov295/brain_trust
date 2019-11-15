@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Debugging.html">Debugging</a>
+	</li>
+
+	<li>
+		<a href="../modules/DeviceComm.html">DeviceComm</a>
+	</li>
+
+	<li>
+		<a href="../modules/FileUtils.html">FileUtils</a>
+	</li>
+
+	<li><strong>Logging</strong></li>
+	
+	<li>
+		<a href="../modules/SerialPort.html">SerialPort</a>
+	</li>
+
+	<li>
+		<a href="../modules/SimpleLogging.html">SimpleLogging</a>
+	</li>
+
+	<li>
+		<a href="../modules/String.html">String</a>
+	</li>
+
+	<li>
+		<a href="../modules/StringUtils.html">StringUtils</a>
+	</li>
+
+	<li>
+		<a href="../modules/Utils.html">Utils</a>
+	</li>
+
+	<li>
+		<a href="../modules/gScripted.html">gScripted</a>
+	</li>
+
+	<li>
+		<a href="../modules/gtx.html">gtx</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>Logging</code></h1>
+
+<p>Support for a common logging subsystem to enhance debugging.  </p>
+
+
+<p><b>Author:</b>
+<table class="authors_list">
+
+	<tr><td class="name"><a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a></td></tr>
+
+</table>
+</p>
+
+
+
+<p><b>Release:</b> 1.10 <11/04/2008> <h3>Usage:</h3> <ul> <pre class=example> PrintLog( TRACE, "This is a trace message that is displayed to the user <br /> and logged to a file." )<br /> Log( ERROR, "This is an error message that is only loged to a file." ) </pre> </ul>  <h3>Log Storage:</h3> <ul> Log message automatically will be stored into one file per day. This happens in the background. Multiple processes can be writing log messages into the same directory -- a lock file is employed to coordinate the actions of more than one simultaneously running logging subsystems.<br /><br />  The message string for each log message gets written to the log file enclosed in double quotes and escaped using escaping rules similar to the rules for escaping characters in C/C++ string literals:  <pre> \n	newline (ASCII 10) <br /> \r	carriage return (ASCII 13) <br /> \t	tab (ASCII 9) <br /> \\	backslash <br /> \"	double quote <br /> \xNN	ASCII characeter NN (NN is a hexadecimal number) </pre>  The <code>\xNN</code> escape sequence is used for any characters whose ASCII code is < 32 or > 127 except for the characters that already have special escape sequences list above (such as <code>\\n</code>).<br /><br />  (This escaping is to ensure that there is never ambiguity in how line in a log file should be parsed/interpreted.) </ul>  <h3>Run-Time Configuration:</h3> <ul> Logging can be configured per source file (actually per "area", which normally is equivalent to a source file). The logging subsystem looks for a file named <code>[appname]-LogConfig.txt</code> ([appname] is your running applications name). If it is found, this file is read and used to configure the logging level for each source file. If you edit this file, the logging subsystem will detect this and reread the file.<br /><br />  The logging subsystem writes a file named <code>[appname]-LogConfigInUse.txt</code>. You can use this as a starting point for creating a <code>[appname]-LogConfig.txt</code> file. </ul>  <h3>Log Levels:</h3> <ul>Logging levels are used to clasify the messages that are being logged. The level names are self explanitory and vary depending on the importance of the message. <code>SEVERE</code> is the most important and <code>TRACE</code> is the least important. By catigorizing the messages it allows the logging system to show or hide certain types of messages. For example, if you have the scripting log level set to <code>WARNING</code> then only <code>WARNING</code>, <code>ERROR</code>, or <code>SEVERE</code> messages will be logged.<br /><br />  The available log levels are <code>TRACE</code>, <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, or <code>SEVERE</code>. This indicates the level of log message. <code>TRACE</code> corresponds to level 6, <code>SEVERE</code> corresponds to 1. The default log level is <code>INFO</code> </ul>
+</p>
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Log">Log</a>&nbsp;(level, msg)</td>
+	<td class="summary">Logs the message to a file.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Logging.GetLevelName">Logging.GetLevelName</a>&nbsp;(level)</td>
+	<td class="summary">Conversion function to make the constants into text </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Logging.GetScriptingLogLevel">Logging.GetScriptingLogLevel</a>&nbsp;()</td>
+	<td class="summary">Gets the scripting engines log level.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Logging.SetScriptingLogLevel">Logging.SetScriptingLogLevel</a>&nbsp;(newLevel)</td>
+	<td class="summary">Sets the scripting engines log level.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#PrintLog">PrintLog</a>&nbsp;(level, msg)</td>
+	<td class="summary">Prints the message and also logs the message.</td>
+	</tr>
+
+</table>
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="Log"></a><strong>Log</strong>&nbsp;(level, msg)</dt>
+<dd>
+Logs the message to a file.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>level</em></code>: {log_level} Level at which to log the <em>msg</em>.
+	</li>
+	
+	<li>
+	  <code><em>msg</em></code>: {string} String of the message you want to log 
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>Log( TRACE, "Trace["..TRACE.."] message logged." )<br /> Log( WARNING, "Warning["..WARNING.."] message logged." )<br /> Log( DEBUG, "Debug["..DEBUG.."] message logged." )<br /> Log( SEVERE, "Severe["..SEVERE.."] error message logged." )</pre></ul>
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Logging.GetLevelName"></a><strong>Logging.GetLevelName</strong>&nbsp;(level)</dt>
+<dd>
+Conversion function to make the constants into text
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>level</em></code>: {log_level} Enumerated level to convert to text.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>-- Setting the Script engine log level to DEBUG and storing the old log level.<br /> local logLevelName = Logging.GetLevelName( DEBUG )</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{string} A string containing the log level converted to text. </ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Logging.GetScriptingLogLevel"></a><strong>Logging.GetScriptingLogLevel</strong>&nbsp;()</dt>
+<dd>
+Gets the scripting engines log level.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>level, levelName = Logging.GetScriptingLogLevel()<br /> print( "The current log level before changing it: "..levelName.."["..level.."]"  )</pre></ul>
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>{log_level} The scripting engines current log level</li>
+	
+	<li>{string} The scripting engines current log level name. </li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Logging.SetScriptingLogLevel"></a><strong>Logging.SetScriptingLogLevel</strong>&nbsp;(newLevel)</dt>
+<dd>
+Sets the scripting engines log level.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>newLevel</em></code>: {log_level} Level at which to set the scripting engines log level at.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>-- Setting the Script engine log level to DEBUG and storing the old log level.<br /> local oldLevel = Logging.SetScriptingLogLevel( DEBUG )</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{int} The previous log level. </ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="PrintLog"></a><strong>PrintLog</strong>&nbsp;(level, msg)</dt>
+<dd>
+Prints the message and also logs the message.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>level</em></code>: {log_level} Level at which to log the <em>msg</em>.
+	</li>
+	
+	<li>
+	  <code><em>msg</em></code>: {string} String of the message you want to log and "display". 
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>PrintLog( TRACE, "Trace["..TRACE.."] message logged." )<br /> PrintLog( WARNING, "Warning["..WARNING.."] message logged." )<br /> PrintLog( DEBUG, "Debug["..DEBUG.."] message logged." )<br /> PrintLog( SEVERE, "Severe["..SEVERE.."] error message logged." )</pre></ul>
+
+
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

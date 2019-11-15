@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Chronos.html">Chronos</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Action.html">Chronos.Action</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.html">Chronos.Actions</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Checks.html">Chronos.Actions.Checks</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Interactive.html">Chronos.Actions.Interactive</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.MakeCheck.html">Chronos.Actions.MakeCheck</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Traceability.html">Chronos.Actions.Traceability</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Utilities.html">Chronos.Actions.Utilities</a>
+	</li>
+
+	<li><strong>Chronos.Auto</strong></li>
+	
+	<li>
+		<a href="../modules/Chronos.Config.html">Chronos.Config</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Csv.html">Chronos.Csv</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DSL.html">Chronos.DSL</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DebugInfoPrinter.html">Chronos.DebugInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DeviceComm.html">Chronos.DeviceComm</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Failure.html">Chronos.Failure</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Hex.html">Chronos.Hex</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Html.html">Chronos.Html</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.InfoPrinter.html">Chronos.InfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Runner.html">Chronos.Runner</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TeamCityInfoPrinter.html">Chronos.TeamCityInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestAccumulator.html">Chronos.TestAccumulator</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCase.html">Chronos.TestCase</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseRecorder.html">Chronos.TestCaseRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseResults.html">Chronos.TestCaseResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunRecorder.html">Chronos.TestRunRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunResults.html">Chronos.TestRunResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuite.html">Chronos.TestSuite</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteRecorder.html">Chronos.TestSuiteRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteResults.html">Chronos.TestSuiteResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Time.html">Chronos.Time</a>
+	</li>
+
+	<li>
+		<a href="../modules/LuaPP.html">LuaPP</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>Chronos.Auto</code></h1>
+
+<p>A typical usage of AutoChronos looks like this:  <pre class="example"> require "Chronos"<br/> require "Chronos.Auto"<br/> require "gScripted"<br/> <br/> local deviceComm<br/> <br/> TestSuite "Auto-Generated Test Cases"<br/> {<br/> &nbsp; 	Auto "commandsets/Audi_KWP.xml"<br/> &nbsp; 	{<br/> &nbsp; 		{ Pattern = "Coding Block .*", Reqs = { "SR-123" } },<br/> &nbsp; 		"ALS Return Pulse Width Values",<br/> &nbsp; 		{ &nbsp; 			Name = "Aim Calibration Values",<br/> &nbsp; 			Params =<br/> &nbsp; 			{<br/> &nbsp; 				["First Row"] = { Valid = { 6, 10, 55 }, Invalid = { 1, 99 } },<br/> &nbsp; 				["First Column"] = { Valid = { 50 }, Invalid = { 107 } },<br/> &nbsp; 				["Retrieve_Stored_Error"] = { Valid = { 1 } }<br/> &nbsp; 			},<br/> &nbsp; 			Verify = true<br/> &nbsp; 		}<br/> <br/> &nbsp; 		Setup = function()<br/> &nbsp; 			deviceComm = DeviceComm.new( "commandsets/Audi_KWP.xml" )<br/> &nbsp; 		end,<br/> <br/> &nbsp; 		Test = function( command )<br/> &nbsp; 			local results = AutoRun( deviceComm, command )<br/> &nbsp; 			AutoCheck( deviceComm, results )<br/> &nbsp; 		end<br/> &nbsp; 	}<br/> }</pre>  <b>Important Notes</b>  <ul> <li>You can pass in the regular TestCase functions, Setup, Teardown, and Test.</li> <li>The Test function here is different in that it takes an argument. AutoChronos will do some preprocessing and call this function with a Command object, set up according to what configuration options were passed in.</li> </ul></p>
+
+
+
+
+
+
+
+
+<h2>Tables</h2>
+<table class="table_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Command Descriptions">Command Descriptions</a></td>
+	<td class="summary">In a call to Auto, the user is expected to provide a path to a command set and any number of <b>Command Descriptions</b>.</td>
+	</tr>
+
+</table>
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Auto">Auto</a>&nbsp;(commandSet)</td>
+	<td class="summary">Creates an AutoChronos test.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#AutoCheck">AutoCheck</a>&nbsp;(deviceComm, results)</td>
+	<td class="summary">This is the "Read" step of the test.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#AutoRun">AutoRun</a>&nbsp;(deviceComm, command)</td>
+	<td class="summary">The "Write" step of the test.</td>
+	</tr>
+
+</table>
+
+
+<br/>
+<br/>
+
+
+<h2><a name="tables"></a>Tables</h2>
+<dl class="table">
+
+<dt><a name="Command Descriptions"></a><strong>Command Descriptions</strong></dt>
+<dd>In a call to Auto, the user is expected to provide a path to a command set and any number of <b>Command Descriptions</b>. Command Descriptions can be a simple string, which will be interpreted as the name of the Command to run, or it can be a table of explicit configuration options. <br/><br/> <h3>Usage:</h3>  <pre class="example"> Auto "commandsets/mycommands.cmdset"<br/> {<br/> &nbsp;	"Command 1",<br/> &nbsp;	{ Name = "Command 2" },<br/> &nbsp;	{<br/> &nbsp;		Name = "Command 3",<br/> &nbsp;		Reqs = { "SR-123", "SR-456" },<br/> &nbsp;		Mode = "Write",<br/> &nbsp;		Verify = true,<br/> &nbsp;		Params =<br/> &nbsp;		{<br/> &nbsp;			Param1 = { Valid = { 1, 2, 3 }, Invalid = { 4, 5, 6 } },<br/> &nbsp;			ArrayParam = { Valid = { { 1, 2 }, { 3, 4 } }, Invalid = { { 4, 5 } } },<br/> &nbsp;		}<br/> &nbsp;	},<br/> &nbsp;	{ Pattern = "Command %d", Mode = "Do" },<br/> <br/> &nbsp;	Test = ...<br/> }</pre> <br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>Name</em></code>: {string} The name of the command.<br/> &nbsp; &nbsp; Either <code>Name</code> or <code>Pattern</code> must be specified.<br/> &nbsp; &nbsp; Specifying a nonexistent command is an error.
+	</li>
+	
+	<li>
+	  <code><em>Pattern</em></code>: {string} A pattern used to pull multiple commands from the command set and apply these options to all of them.<br/> &nbsp; &nbsp; Either <code>Name</code> or <code>Pattern</code> must be specified.<br/> &nbsp; &nbsp; This option overrides <code>Name</code>.
+	</li>
+	
+	<li>
+	  <code><em>Reqs</em></code>: {table} [OPT] A table of strings used to link requirements to generated test cases.
+	</li>
+	
+	<li>
+	  <code><em>Mode</em></code>: {string} [OPT] The mode to use for this command. ("<i>Do</i>", "<i>Write</i>", or "<i>Read</i>".)<br/> &nbsp; &nbsp; Only needed if more than one mode is available.<br/> &nbsp; &nbsp; If omitted, all available modes will be used.<br/> &nbsp; &nbsp; Specifying an unavailable mode is an error.
+	</li>
+	
+	<li>
+	  <code><em>Verify</em></code>: {boolean} If true, <code>AutoCheck</code> will run the command in <i>Read</i> mode and check that the returned values match those written in <code>AutoRun</code>.<br/> &nbsp; &nbsp; Only valid on commands that are both <i>writable</i> and <i>readable</i>.<br/> &nbsp; &nbsp; Requires that <code>Mode</code> is set to <i>Write</i>.
+	</li>
+	
+	<li>
+	  <code><em>Params</em></code>: {table} A table of command parameters, each with subtables of <code>Valid</code> and <code>Invalid</code> values.<br/> &nbsp; &nbsp; Specifying this table, even if it is empty, prevents automatic generation of parameters.<br/> &nbsp; &nbsp; Therefore, if you use <code>Params</code> to specify values for a single parameter, the other parameters will not be tested for anything other than their default values.<br/> &nbsp; &nbsp; Specifying nonexistent parameters is an error.<br/> <br/>
+	</li>
+	
+	<li>
+	  <code><em>Test</em></code>: The Test function here is different in that it takes an argument. AutoChronos will do some preprocessing and call this function with a <code>Command</code> object, set up according to what configuration options were passed in..
+	</li>
+	
+	<li>
+	  <code><em>Setup</em></code>: The setup function. Called before the <code>Test</code> function.
+	</li>
+	
+	<li>
+	  <code><em>Teardown</em></code>: The teardown function. Called after the <code>Test</code> function. This is called even if the <code>Test</code> fuction fails.
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+</dl>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="Auto"></a><strong>Auto</strong>&nbsp;(commandSet)</dt>
+<dd>
+Creates an AutoChronos test. This will create test cases automatically and try to cover most if not all Commands in a CommandSet. Use this instead of the TestCase function.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>commandSet</em></code>: {string} The path to a CommandSet to be used to generate the test cases.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="../modules/Chronos.Auto.html#Command Descriptions">Command Descriptions</a></li>
+	<!-- <li><a href="#Command Descriptions">Command Descriptions</a></li> -->
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="AutoCheck"></a><strong>AutoCheck</strong>&nbsp;(deviceComm, results)</dt>
+<dd>
+This is the "Read" step of the test. If the command under test has <b>Verify = true</b> (defaults to true for commands that are both writable and readable), then this step will do a Read and then a CheckEqual to make sure that the returned values match the written values.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>deviceComm</em></code>: {table} The DeviceComm object to use to run the tests.
+	</li>
+	
+	<li>
+	  <code><em>results</em></code>: {table} The results returned from AutoRun. This contains all the results from a previous run.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="../modules/Chronos.Auto.html#Command Descriptions">Command Descriptions</a></li>
+	<!-- <li><a href="#Command Descriptions">Command Descriptions</a></li> -->
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="AutoRun"></a><strong>AutoRun</strong>&nbsp;(deviceComm, command)</dt>
+<dd>
+The "Write" step of the test. The actual run mode may be "Do", "Write", or "Read". This is typically used in the Test() function, in the definition of an AutoChronos test case.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>deviceComm</em></code>: {table} The DeviceComm object to use to run the tests.
+	</li>
+	
+	<li>
+	  <code><em>command</em></code>: {table} The Command to run.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="../modules/Chronos.Auto.html#Command Descriptions">Command Descriptions</a></li>
+	<!-- <li><a href="#Command Descriptions">Command Descriptions</a></li> -->
+	
+</ul>
+
+</dd>
+
+
+</dl>
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

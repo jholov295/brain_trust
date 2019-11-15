@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Chronos.html">Chronos</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Action.html">Chronos.Action</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.html">Chronos.Actions</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Checks.html">Chronos.Actions.Checks</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Interactive.html">Chronos.Actions.Interactive</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.MakeCheck.html">Chronos.Actions.MakeCheck</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Traceability.html">Chronos.Actions.Traceability</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Utilities.html">Chronos.Actions.Utilities</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Auto.html">Chronos.Auto</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Config.html">Chronos.Config</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Csv.html">Chronos.Csv</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DSL.html">Chronos.DSL</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DebugInfoPrinter.html">Chronos.DebugInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DeviceComm.html">Chronos.DeviceComm</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Failure.html">Chronos.Failure</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Hex.html">Chronos.Hex</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Html.html">Chronos.Html</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.InfoPrinter.html">Chronos.InfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Runner.html">Chronos.Runner</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TeamCityInfoPrinter.html">Chronos.TeamCityInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestAccumulator.html">Chronos.TestAccumulator</a>
+	</li>
+
+	<li><strong>Chronos.TestCase</strong></li>
+	
+	<li>
+		<a href="../modules/Chronos.TestCaseRecorder.html">Chronos.TestCaseRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseResults.html">Chronos.TestCaseResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunRecorder.html">Chronos.TestRunRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunResults.html">Chronos.TestRunResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuite.html">Chronos.TestSuite</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteRecorder.html">Chronos.TestSuiteRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteResults.html">Chronos.TestSuiteResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Time.html">Chronos.Time</a>
+	</li>
+
+	<li>
+		<a href="../modules/LuaPP.html">LuaPP</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>Chronos.TestCase</code></h1>
+
+<p>Represents a test case. <pre class="example"> testCase = Chronos.TestCase.new( "MyTestCase" )<br/> testCase.Test = function() end<br/> testCase.Setup = function() end<br/> testCase.Teardown = function() end<br/> </pre></p>
+
+
+
+
+
+
+
+
+<h2>Tables</h2>
+<table class="table_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestCase">Chronos.TestCase</a></td>
+	<td class="summary">Contails details about the test case.</td>
+	</tr>
+
+</table>
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestCase:GetName">Chronos.TestCase:GetName</a>&nbsp;()</td>
+	<td class="summary">Gets the name of the test case.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestCase:GetVersion">Chronos.TestCase:GetVersion</a>&nbsp;()</td>
+	<td class="summary">Gets the version of the test case.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestCase:Run">Chronos.TestCase:Run</a>&nbsp;(testCaseRecorder)</td>
+	<td class="summary">Runs all steps of test case execution using a specified Chronos.TestCaseRecorder.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestCase:TryFunction">Chronos.TestCase:TryFunction</a>&nbsp;(functionName, testCaseRecorder)</td>
+	<td class="summary">Wraps test step execution so that failures are caught and recorded.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#new">new</a>&nbsp;(name, func)</td>
+	<td class="summary">Creates a new test case.</td>
+	</tr>
+
+</table>
+
+
+<br/>
+<br/>
+
+
+<h2><a name="tables"></a>Tables</h2>
+<dl class="table">
+
+<dt><a name="Chronos.TestCase"></a><strong>Chronos.TestCase</strong></dt>
+<dd>Contails details about the test case.<br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>Anonymous</em></code>: True if the test case is anonymous.
+	</li>
+	
+	<li>
+	  <code><em>Name</em></code>: The name of the test case. (Read-only)
+	</li>
+	
+	<li>
+	  <code><em>Verison</em></code>: The version of the test case.
+	</li>
+	
+	<li>
+	  <code><em>Test</em></code>: The test function. Does the actual execution of the test.
+	</li>
+	
+	<li>
+	  <code><em>Setup</em></code>: The setup function. Called before the <code>Test</code> function.
+	</li>
+	
+	<li>
+	  <code><em>Teardown</em></code>: The teardown function. Called after the <code>Test</code> function. This is called even if the <code>Test</code> fuction fails.
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+</dl>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="Chronos.TestCase:GetName"></a><strong>Chronos.TestCase:GetName</strong>&nbsp;()</dt>
+<dd>
+Gets the name of the test case. Prefer this function rather than direct access, in case it is anonymous.
+
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The name of the test case.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestCase:GetVersion"></a><strong>Chronos.TestCase:GetVersion</strong>&nbsp;()</dt>
+<dd>
+Gets the version of the test case.
+
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The version of the test case.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestCase:Run"></a><strong>Chronos.TestCase:Run</strong>&nbsp;(testCaseRecorder)</dt>
+<dd>
+Runs all steps of test case execution using a specified Chronos.TestCaseRecorder.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>testCaseRecorder</em></code>: A Chronos.TestCaseRecorder to use for recording the test case's execution.
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The Chronos.TestCaseRecorder that was passed in.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestCase:TryFunction"></a><strong>Chronos.TestCase:TryFunction</strong>&nbsp;(functionName, testCaseRecorder)</dt>
+<dd>
+Wraps test step execution so that failures are caught and recorded.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>functionName</em></code>: The name of the function to execute, as a string.
+	</li>
+	
+	<li>
+	  <code><em>testCaseRecorder</em></code>: A Chronos.TestCaseRecorder to use for recording the test case's execution.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="new"></a><strong>new</strong>&nbsp;(name, func)</dt>
+<dd>
+Creates a new test case.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>name</em></code>: The name of the test case. (Optional)
+	</li>
+	
+	<li>
+	  <code><em>func</em></code>: The function that runs the actual test code. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>A new test case.</ul>
+
+
+
+</dd>
+
+
+</dl>
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

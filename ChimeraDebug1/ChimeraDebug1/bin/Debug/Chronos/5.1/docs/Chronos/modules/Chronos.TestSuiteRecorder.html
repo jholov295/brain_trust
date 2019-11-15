@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Chronos.html">Chronos</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Action.html">Chronos.Action</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.html">Chronos.Actions</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Checks.html">Chronos.Actions.Checks</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Interactive.html">Chronos.Actions.Interactive</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.MakeCheck.html">Chronos.Actions.MakeCheck</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Traceability.html">Chronos.Actions.Traceability</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Utilities.html">Chronos.Actions.Utilities</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Auto.html">Chronos.Auto</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Config.html">Chronos.Config</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Csv.html">Chronos.Csv</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DSL.html">Chronos.DSL</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DebugInfoPrinter.html">Chronos.DebugInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DeviceComm.html">Chronos.DeviceComm</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Failure.html">Chronos.Failure</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Hex.html">Chronos.Hex</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Html.html">Chronos.Html</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.InfoPrinter.html">Chronos.InfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Runner.html">Chronos.Runner</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TeamCityInfoPrinter.html">Chronos.TeamCityInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestAccumulator.html">Chronos.TestAccumulator</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCase.html">Chronos.TestCase</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseRecorder.html">Chronos.TestCaseRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseResults.html">Chronos.TestCaseResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunRecorder.html">Chronos.TestRunRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunResults.html">Chronos.TestRunResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuite.html">Chronos.TestSuite</a>
+	</li>
+
+	<li><strong>Chronos.TestSuiteRecorder</strong></li>
+	
+	<li>
+		<a href="../modules/Chronos.TestSuiteResults.html">Chronos.TestSuiteResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Time.html">Chronos.Time</a>
+	</li>
+
+	<li>
+		<a href="../modules/LuaPP.html">LuaPP</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>Chronos.TestSuiteRecorder</code></h1>
+
+<p>[Internal] TestSuiteRecorder is responsible for recording events of a Chronos.TestSuite's execution to an instance of Chronos.TestSuiteResults. Actions and failures bubble up from Chronos.TestSuiteRecorder, to inform the status of Chronos.TestRunRecorders.</p>
+
+
+
+
+
+
+
+
+<h2>Tables</h2>
+<table class="table_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuiteRecorder">Chronos.TestSuiteRecorder</a></td>
+	<td class="summary"> </td>
+	</tr>
+
+</table>
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuiteRecorder:AddAction">Chronos.TestSuiteRecorder:AddAction</a>&nbsp;(action)</td>
+	<td class="summary">Adds an action to the results of the test suite.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuiteRecorder:AddFailure">Chronos.TestSuiteRecorder:AddFailure</a>&nbsp;(failure)</td>
+	<td class="summary">Adds a failure to the results of the test suite.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuiteRecorder:CaseAction">Chronos.TestSuiteRecorder:CaseAction</a>&nbsp;(action)</td>
+	<td class="summary">Called from actions that bubble up from a Chronos.TestCase.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuiteRecorder:CaseFailure">Chronos.TestSuiteRecorder:CaseFailure</a>&nbsp;(failure)</td>
+	<td class="summary">Called from failures that bubble up from a Chronos.TestCase.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuiteRecorder:EndSuite">Chronos.TestSuiteRecorder:EndSuite</a>&nbsp;()</td>
+	<td class="summary">Marks the end of recording.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuiteRecorder:ResetState">Chronos.TestSuiteRecorder:ResetState</a>&nbsp;()</td>
+	<td class="summary">Resets the recording state to the default.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuiteRecorder:SaveCase">Chronos.TestSuiteRecorder:SaveCase</a>&nbsp;(testCaseResults)</td>
+	<td class="summary">Saves the results from a Chronos.TestCase's execution.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuiteRecorder:SetState">Chronos.TestSuiteRecorder:SetState</a>&nbsp;(state)</td>
+	<td class="summary">Sets the recording state.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuiteRecorder:StartCase">Chronos.TestSuiteRecorder:StartCase</a>&nbsp;(testCase)</td>
+	<td class="summary">Marks the start of a Chronos.TestCase's execution.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#new">new</a>&nbsp;(testSuite, testRunRecorder, saveResults)</td>
+	<td class="summary">Creates a new Chronos.TestSuiteRecorder.</td>
+	</tr>
+
+</table>
+
+
+<br/>
+<br/>
+
+
+<h2><a name="tables"></a>Tables</h2>
+<dl class="table">
+
+<dt><a name="Chronos.TestSuiteRecorder"></a><strong>Chronos.TestSuiteRecorder</strong></dt>
+<dd><br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>Results</em></code>: An instance of Chronos.TestSuiteResults that the recorder controls.
+	</li>
+	
+	<li>
+	  <code><em>State</em></code>: The current state of test suite execution.
+	</li>
+	
+	<li>
+	  <code><em>TestRunRecorder</em></code>: A backreference to the Chronos.TestRunRecorder that created this object.
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+</dl>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="Chronos.TestSuiteRecorder:AddAction"></a><strong>Chronos.TestSuiteRecorder:AddAction</strong>&nbsp;(action)</dt>
+<dd>
+Adds an action to the results of the test suite. This call will bubble up to self.TestRunRecorder:SuiteAction().
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>action</em></code>: The action.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuiteRecorder:AddFailure"></a><strong>Chronos.TestSuiteRecorder:AddFailure</strong>&nbsp;(failure)</dt>
+<dd>
+Adds a failure to the results of the test suite. This call will bubble up to self.TestRunRecorder:SuiteFailure().
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>failure</em></code>: The failure.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuiteRecorder:CaseAction"></a><strong>Chronos.TestSuiteRecorder:CaseAction</strong>&nbsp;(action)</dt>
+<dd>
+Called from actions that bubble up from a Chronos.TestCase. Will mark the results as passed if they would remain pending.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>action</em></code>: The action.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuiteRecorder:CaseFailure"></a><strong>Chronos.TestSuiteRecorder:CaseFailure</strong>&nbsp;(failure)</dt>
+<dd>
+Called from failures that bubble up from a Chronos.TestCase. Will mark the results as failed.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>failure</em></code>: The failure.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuiteRecorder:EndSuite"></a><strong>Chronos.TestSuiteRecorder:EndSuite</strong>&nbsp;()</dt>
+<dd>
+Marks the end of recording. Sets EndTime on the results, resets Chronos.ActiveTestCaseRecorder, and triggers TestSuiteEnded on Chronos.CurrentInfoPrinter.
+
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The finished results of the test suite.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuiteRecorder:ResetState"></a><strong>Chronos.TestSuiteRecorder:ResetState</strong>&nbsp;()</dt>
+<dd>
+Resets the recording state to the default. ("Idle")
+
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuiteRecorder:SaveCase"></a><strong>Chronos.TestSuiteRecorder:SaveCase</strong>&nbsp;(testCaseResults)</dt>
+<dd>
+Saves the results from a Chronos.TestCase's execution.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>testCaseResults</em></code>: The Chronos.TestCaseResults to save.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuiteRecorder:SetState"></a><strong>Chronos.TestSuiteRecorder:SetState</strong>&nbsp;(state)</dt>
+<dd>
+Sets the recording state.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>state</em></code>: The new state as a string.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuiteRecorder:StartCase"></a><strong>Chronos.TestSuiteRecorder:StartCase</strong>&nbsp;(testCase)</dt>
+<dd>
+Marks the start of a Chronos.TestCase's execution. Triggers TestCaseStarted on Chronos.CurrentInfoPrinter.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>testCase</em></code>: The Chronos.TestCase about to start.
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>A new Chronos.TestCaseRecorder for the test case, associated with self.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="new"></a><strong>new</strong>&nbsp;(testSuite, testRunRecorder, saveResults)</dt>
+<dd>
+Creates a new Chronos.TestSuiteRecorder.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>testSuite</em></code>: The test suite subject.
+	</li>
+	
+	<li>
+	  <code><em>testRunRecorder</em></code>: The Chronos.TestRunRecorder creating this object.
+	</li>
+	
+	<li>
+	  <code><em>saveResults</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>A new Chronos.TestSuiteRecorder.</ul>
+
+
+
+</dd>
+
+
+</dl>
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

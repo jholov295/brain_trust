@@ -1,0 +1,4 @@
+--Lexecutor execution caller
+require ( "wx" )
+APP_NAME="Chimera Flasher"
+dofile("Runner.lua")

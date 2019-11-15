@@ -1,0 +1,206 @@
+Introduction
+============
+
+The purpose of this document is to explain the history of Chronos, the architectural drivers, and outline a general development strategy for future maintainers.
+
+Please make sure this document reflects the current state of the project and remains useful to other developers. Add/remove/edit sections as necessary.
+
+
+About
+=====
+
+Chronos is a system testing framework, specifically for Lua. It is meant for validating the communication behavior of any device that uses a command set. It is meant to facilitate the highest level of software testing that is done to the device, and generate reports detailing the extent and status of that testing.
+
+Its use is not limited to testing hardware, however. It is written in plain Lua and does not explicitly require interaction with any hardware at all. It is well-suited for testing any Lua-accessible system, especially one that requires the level of traceability that Chronos provides with its requirement tracking and report generating facilities.
+
+Project:
+- http://eeweb.gentex.com/redmine/projects/chronos
+- http://eeweb.gentex.com/svn/tools/projects/Chronos/trunk
+
+Resources:
+- http://www.lua.org/manual/5.1/
+- http://penlight.luaforge.net/
+- http://www.mroth.net/lunit/documentation-0.4.txt
+- http://lemock.luaforge.net/userguide.html
+- http://code.google.com/p/luaforwindows/
+
+
+Stakeholders
+============
+
+This project has a number of diverse stakeholders. Any change must be considered in terms of all of the stakeholders.
+
+* Embedded Developers
+- Mostly used in CI. "Set it and forget it."
+- They are comfortable with complexity, but they want things to be easy and powerful.
+- System tests are shared among many developers, and if they fail it's everyone's problem, so expressiveness is important.
+  - Test scripts need to be easy to navigate and understand, which can be difficult since their tests have a fair amount of bootstrapping to be done.
+  - Test results need to be clear, point to where the problem is, and if possible suggest a solution.
+
+* Embedded Testers
+- Spend much longer working with test scripts.
+- Need to meet deadlines.
+- Seek to eliminate duplication as much as possible.
+  - If "your" way is too complex, they will write their own.
+- Any performance or relability hiccups are a big pain for them, since they are running their scripts constantly.
+
+* Testers
+- Similar to above.
+- Simplicity is key for these guys. They've got a job to do and they just want to do that, they don't have the patience or interest in mucking around setting things up.
+- Ease of use, good documentation, and a robust system is all you need.
+
+* Tools Group
+- Opportunistic users. Will use it if applicable and if it saves them time.
+
+
+Goals
+=====
+
+- Concise
+- Extensible
+- Flexible
+- Automateable
+- Runnable from plain Lua
+- Debuggable/Traceable
+- Dependencies limited to libraries included in Lua for Windows
+
+
+Development Process
+===================
+
+- Check out
+- Write/modify tests
+- Run BuildRunner.lua
+- See tests fail
+- Write/modify code
+- Run BuildRunner.lua
+- Repeat until all tests pass
+- Commit
+
+Note: For changes requiring long periods of unstable code or broken tests, use a branch.
+
+
+Deployment
+==========
+
+So far, deployment of Chronos has been scheduled for every Friday where there are changes and the current build is stable.
+
+The process is:
+- Update changelog
+- Commit (trunk)
+- Copy trunk to new tag (^/tags/yy.mm.revision)
+- Upload Windows installer to Redmine page
+- Add news item linking to newest installer and a summary of changes
+
+
+Understanding Code
+==================
+
+This codebase was developed by one person, using TDD. So there are occasional inconsistencies as I learned more about Lua, the project, and the third-party libraries. It is also slightly harder to understand the code, versus a traditional non-TDD style. My recommendation is to use the tests to understand the code, not the other way around.
+
+
+Testing Strategy
+================
+
+- lunit
+- lemock
+
+Stay state-based as much as possible. Use mocks when there is interaction between two objects or to stub out system/library interaction.
+
+Common tasks and aliases are set up in Test/TestHelper.lua.
+
+Tests for Checks use the MetaCheck function, which dissects a given Check function, allowing you to test it in a state-based manner rather than relying on behavior.
+
+Some test suites have a function called TableDriven which helps you generate test cases from a generic body and arguments to be passed to that body. It's copy-pasted because it needs access to _M and I'm not aware of any other way to get at it.
+
+
+Development Notes
+=================
+
+* When rendering reports, LuaPP accepts a custom environment (in the form of a table) to run the template code in.
+This environment gets the test results shoved into it at the global (_G) level, so you do TestSuites instead of TestResults.TestSuites. 
+
+
+* GetUserName was added because of some TeamCity goofiness with blasting the USERNAME environment variable on build agents.
+
+
+* CHRONOS_RUN_MANUALLY is a hack flag to signify that we are using the Chronos runner rather than running straight from Lua. This is important in a couple of ways.
+
+We look for this flag in Chronos/init.lua, and if it's not there we assume we're running from Lua, in which case we trigger "Debug Mode". (More on Debug Mode below.)
+
+We also look for this flag in Chronos/DSL.lua, and if it's not there we run test suites as soon as they are defined. Previously, we tried using newproxy and the __gc metamethod to hook into debugging at the exit of the current script, but it was unusable because the users who are running straight from Lua are SciTE users and therefore want to be able to step through their code and the __gc wouldn't trigger until after the debugger had detached.
+
+
+* Debug Mode has these effects:
+
+- Custom info printer
+- Default (empty) configuration so no reports are generated
+- Defines DEBUG_TRACEBACK_NO_PAUSE, which is looked for by SciTE, and tells the Lua Debugger module not to pause SciTE on a call to debug.traceback. (For some reason, they decided to modify the global call instead of writing their own function and using that...) Not having a pause is important because we do a traceback whenever there is a failure so we can give users good information.
+
+
+* The Chronos DSL is using a special feature of Lua which is the ability to call functions without the parentheses so long as there is only a single constant-value argument.
+
+TestSuite( "Suite",
+{
+  TestCase( "Case",
+  {
+    Test = function()
+    end
+  } )
+} )
+
+vs...
+
+TestSuite "Suite"
+{
+  TestCase "Case"
+  {
+    Test = function()
+    end
+  }
+}
+
+This requires some trickery on our part. What's actually happening here is that TestSuite takes the argument "Suite" and returns another function, which then takes the table argument and finishes making the test suite and returns it. TestCase does the same thing, which means that if the user doesn't complete the test case by providing the table argument, TestSuite's tail call will get a table with a function in it instead of a test case.
+
+It's a bit of a long way to go for prettiness, but anything that promotes testing is a good investment.
+
+
+* DeviceComm Hooks
+
+We decided a while back that Chronos should be usable without gScripted, but should still record any interaction with DeviceComm. So we accomplish this by hijacking the "require" keyword and checking for gScripted to be required. When it is required, we do our function-wrapping magic in Chronos/DeviceComm.lua.
+
+
+* FileTable
+
+FileTable maps an in-memory table to a file (tree of files, actually) on disk. This allows the table to use weak references (__mode = "v") and let Lua collect anything it refers to, loading it back in from disk when needed. So the number of tables for, say, test results, is not limited by the user's RAM.
+
+The implementation is, admittedly, rather sketchy. It was borne of a desire to write it in a generic way so the code wouldn't have to be kept in sync with the *results specifications.
+
+It requires hijacking some built-in Lua functions, and uses newproxy to gain access to more metamethods. As Lua matures (yeah, it's not mature at 5.1.2.3.4 or whatever it is...) it should become possible to implement in a more straightforward manner.
+
+The path is interpreted as a directory, conventionally ending in .table, which will contain three files: Contents, Metatable, and Subtables.
+
+- Contents: Contains all of the primitive data of the table, which is value-only and therefore not eligible for garbage collection.
+- Metatable: Contains a string used to find the metatable for the table, inferred from the metatable's _NAME index (generated by the module keyword).
+- Subtables: This file is necessary due to Lua's case sensitivity and Windows/OS X's case insensitivity.
+
+On the whole, if you have to work on this part of the code I'm deeply sorry because this is not the kind of thing that's easy to write in any language, let alone Lua.
+
+
+* GlobalExport
+
+Pretty self-explanatory, provides a mechanism for exposing module-contained indices to the global (_G) table.
+
+
+* Auto
+
+Auto is a fun part of the code base. It's entirely rule-based, so most of it is really easy to test. I wouldn't recommend looking at the code to understand what it does, though. Look at the wiki for the big picture and the tests for implementation information.
+
+
+* MakeCheck
+
+At a certain point, it became too complicated to add new Check* functions. They were being requested frequently, but there was so much boilerplate and informal convention associated with it, and so many tests that looked the same across several Checks, that something had to be done. I was already frustrated by how behavior-based the tests for Checks were, so I resolved to short-circuit the Check-specific code so that it could be isolated and tested using inputs and outputs rather than sequences of mock expectations. The result was a mini-DSL that filled in the conventional parts and gave my tests a handy state-based interface to use.
+
+See the documentation of the MakeCheck function for a description of the API spec and how to use it. If you need a Check that can cause multiple failures, look at CheckEqual for an example.
+
+It was written during a time crunch, so it's not the most elegant implementation. I know there are a couple of cases that it can't handle, but there's been no need for Checks to support any extra functionality so far, so I followed the YAGNI (You Ain't Gonna Need It) principle.

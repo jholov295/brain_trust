@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Debugging.html">Debugging</a>
+	</li>
+
+	<li>
+		<a href="../modules/DeviceComm.html">DeviceComm</a>
+	</li>
+
+	<li>
+		<a href="../modules/FileUtils.html">FileUtils</a>
+	</li>
+
+	<li>
+		<a href="../modules/Logging.html">Logging</a>
+	</li>
+
+	<li>
+		<a href="../modules/SerialPort.html">SerialPort</a>
+	</li>
+
+	<li>
+		<a href="../modules/SimpleLogging.html">SimpleLogging</a>
+	</li>
+
+	<li><strong>Strict</strong></li>
+	
+	<li>
+		<a href="../modules/String.html">String</a>
+	</li>
+
+	<li>
+		<a href="../modules/StringUtils.html">StringUtils</a>
+	</li>
+
+	<li>
+		<a href="../modules/Utils.html">Utils</a>
+	</li>
+
+	<li>
+		<a href="../modules/gScripted.html">gScripted</a>
+	</li>
+
+	<li>
+		<a href="../modules/gtx.html">gtx</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>Strict</code></h1>
+
+<p></p>
+
+
+<p><b>Author:</b>
+<table class="authors_list">
+
+	<tr><td class="name">Thomas Lauer</td></tr>
+
+</table>
+</p>
+
+
+
+<p><b>Release:</b> 1.00 <09/17/2007>  <h3>Features:</h3> <ul> <li>Two modes (weak, similar to what strict.lua does, and strong which requires full declaration of all globals)</li> <li>A customisable error handler and more.</li> </ul>  <h3>Note:</h3> <ul> See <a href="http://thomaslauer.com/comp/LuaStrict">http://thomaslauer.com/comp/LuaStrict</a>. This module is part of <em>cllib</em> (<em>Common Lua Library</em>). You will need extra files to use these functions. </ul>  <h3>Examples:</h3> <ul> <li>Weak (Default)</li> <ul><pre class="example"> require("Strict")<br /> -- The so-called "weak" mode is the default after require'ing Strict<br /> -- "Weak" means globals have to be initialised in the main part of a<br /> -- program before they can be used (similar to strict.lua)<br /> -- So z, below, is correctly initialised, whereas y is not<br /> <br /> function test1()<br /> &nbsp; &nbsp; local e<br /> &nbsp; &nbsp; print(z)      -- z has been initialised, so OK<br /> &nbsp; &nbsp; e=os.exit     -- os.exit exists, so OK<br /> &nbsp; &nbsp; e=string.exit -- not there, error<br /> end<br /> <br /> function test2()<br /> &nbsp; &nbsp; y=9  -- if y wasn't initialised in main part, this is an error<br /> &nbsp; &nbsp; print(y)<br /> end<br /> <br /> z=0<br /> print(pcall(test1))<br /> <br /> y=1<br /> print(pcall(test2))<br /> <br /> y=2 -- initialise and be happy<br /> print(pcall(test2))<br /> </pre></ul>  <li>Strong</li> <ul><pre class="example"> require("Strict")<br /> -- "Import" a couple of functions into globals, for convenience<br /> declareGlobal,isDeclared=Strict.declareGlobal,Strict.isDeclared<br /> -- ... then switch from default (weak) to strong checking<br /> -- "Strong" means that *all* global variables have to be declared<br /> --  via a call to declareGlobal()<br /> Strict.strong=true<br /> <br /> -- Show is a global and as such has to be declared<br /> declareGlobal("show")<br /> function show(b)<br /> &nbsp; &nbsp; if b then return "on" else return "off" end<br /> end<br /> <br /> --[[ NB: the code above and this are equivalent:<br /> declareGlobal("show",function (b)<br /> &nbsp; &nbsp; if b then return "on" else return "off" end<br /> end)<br /> --]]<br /> <br /> -- Switch off strict (i.e. neither weak nor strong)<br /> Strict.strict=false<br /> print("Strict mode is now "..show(Strict.strict))<br /> -- Use a few globals<br /> x=97<br /> y=98<br /> z=99<br /> print("-> "..x)<br /> print("-> "..y)<br /> print("-> "..z)<br /> <br /> -- Define a global function<br /> function square(n)<br /> &nbsp; &nbsp; print("-> "..n*n)<br /> end<br /> <br /> -- Switch back on<br /> Strict.strict=true<br /> print("Strict mode is now "..show(Strict.strict))<br /> <br /> declareGlobal("Bond",007)<br /> print("-> "..Bond)<br /> <br /> x=997<br /> y=998<br /> z=999<br /> square(x)<br /> square(y)<br /> square(z)<br /> square(Bond)<br /> <br /> -- check is a local, no declaration needed<br /> local function check(n)<br /> &nbsp; &nbsp; if isDeclared(n) then print(n.." is declared")<br /> &nbsp; &nbsp; else print(n.." is not declared") end<br /> end<br /> <br /> check("Q")<br /> declareGlobal("Q","clever")<br /> check("Q")<br /> <br /> declareGlobal("M")<br /> print(M)   -- M may be nil<br /> check("M") -- ... but it's still declared<br /> <br /> notDeclared=0 </pre></ul> </ul>
+</p>
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Strict.declareGlobal">Strict.declareGlobal</a>&nbsp;(n, v, m)</td>
+	<td class="summary">Declares a global variable when in strick mode.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Strict.isDeclared">Strict.isDeclared</a>&nbsp;(n, m)</td>
+	<td class="summary">Checks to see if a variable has been declared yet.</td>
+	</tr>
+
+</table>
+
+
+
+<h2>Tables</h2>
+<table class="table_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Strict.strict">Strict.strict</a></td>
+	<td class="summary">Turn on and off the Strict module.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Strict.strong">Strict.strong</a></td>
+	<td class="summary">Control the "strong" mode of operation.</td>
+	</tr>
+
+</table>
+
+
+
+<br/>
+<br/>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="Strict.declareGlobal"></a><strong>Strict.declareGlobal</strong>&nbsp;(n, v, m)</dt>
+<dd>
+Declares a global variable when in strick mode.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>n</em></code>: String with the name of the variable to declare.
+	</li>
+	
+	<li>
+	  <code><em>v</em></code>: [OPT] The default value of the global variable.
+	</li>
+	
+	<li>
+	  <code><em>m</em></code>: Do not use. Internal use only.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Strict.isDeclared"></a><strong>Strict.isDeclared</strong>&nbsp;(n, m)</dt>
+<dd>
+Checks to see if a variable has been declared yet.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>n</em></code>: Variable to check.
+	</li>
+	
+	<li>
+	  <code><em>m</em></code>: Do not use. Internal use only.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+<h2><a name="tables"></a>Tables</h2>
+<dl class="table">
+
+<dt><a name="Strict.strict"></a><strong>Strict.strict</strong></dt>
+<dd>Turn on and off the Strict module. If it is true the module will work. If false it will turn off the Strict module.<br /><br />
+
+
+
+</dd>
+
+
+<dt><a name="Strict.strong"></a><strong>Strict.strong</strong></dt>
+<dd>Control the "strong" mode of operation. If it is true then the module will operate in the "strong" strict mode. "Strong" means that <b>all</b> global variables have to be declared via a call to declareGlobal()<br /><br />
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

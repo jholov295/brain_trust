@@ -1,0 +1,114 @@
+---	Support for a common logging subsystem to enhance debugging.
+--	
+--
+--	@author		<a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a>
+--	@release	1.10 <11/04/2008>
+--	<h3>Usage:</h3>
+--	<ul>
+--	<pre class=example>
+--	PrintLog( TRACE, "This is a trace message that is displayed to the user <br /> and logged to a file." )<br />
+--	Log( ERROR, "This is an error message that is only loged to a file." )
+--	</pre>
+--	</ul>
+--	
+--	<h3>Log Storage:</h3>
+--	<ul>
+--	Log message automatically will be stored into one file per day. This happens
+--  in the background. Multiple processes can be writing log messages into
+--  the same directory -- a lock file is employed to coordinate the actions of
+--  more than one simultaneously running logging subsystems.<br /><br />
+--
+--  The message string for each log message gets written to the log file
+--  enclosed in double quotes and escaped using escaping rules similar to
+--  the rules for escaping characters in C/C++ string literals:
+--
+--  <pre>
+--  \n	newline (ASCII 10) <br />
+--  \r	carriage return (ASCII 13) <br />
+--  \t	tab (ASCII 9) <br />
+--  \\	backslash <br />
+--  \"	double quote <br />
+--  \xNN	ASCII characeter NN (NN is a hexadecimal number)
+--  </pre>
+--
+--  The <code>\xNN</code> escape sequence is used for any characters whose ASCII code is
+--  < 32 or > 127 except for the characters that already have special escape
+--  sequences list above (such as <code>\\n</code>).<br /><br />
+--
+--  (This escaping is to ensure that there is never ambiguity in how line in
+--  a log file should be parsed/interpreted.)
+--	</ul>
+--	
+--	<h3>Run-Time Configuration:</h3>
+--	<ul>
+--	Logging can be configured per source file (actually per "area", which
+--	normally is equivalent to a source file). The logging subsystem looks
+--	for a file named <code>[appname]-LogConfig.txt</code> ([appname] is your
+--	running applications name). If it is found, this file is read and used to
+--	configure the logging level for each source file. If you edit this file,
+--	the logging subsystem will detect this and reread the file.<br /><br />
+--
+--	The logging subsystem writes a file named <code>[appname]-LogConfigInUse.txt</code>. You can
+--	use this as a starting point for creating a <code>[appname]-LogConfig.txt</code> file.
+--	</ul>
+--
+--	<h3>Log Levels:</h3>
+--	<ul>Logging levels are used to clasify the messages that are being logged. The level
+--	names are self explanitory and vary depending on the importance of the message.
+--	<code>SEVERE</code> is the most important and <code>TRACE</code> is the least important.
+--	By catigorizing the messages it allows the logging system to show or hide certain
+--	types of messages. For example, if you have the scripting log level set to <code>WARNING</code>
+--	then only <code>WARNING</code>, <code>ERROR</code>, or <code>SEVERE</code> messages
+--	will be logged.<br /><br />
+--	
+--	The available log levels are <code>TRACE</code>, <code>DEBUG</code>, <code>INFO</code>,
+--	<code>WARNING</code>, <code>ERROR</code>, or <code>SEVERE</code>. This indicates the level
+--	of log message. <code>TRACE</code> corresponds to level 6, <code>SEVERE</code> corresponds to 1.
+--	The default log level is <code>INFO</code>
+--	</ul>
+module "Logging"
+
+---	Prints the message and also logs the message.
+--	@param	level {log_level} Level at which to log the <em>msg</em>.
+--	@param	msg {string} String of the message you want to log and "display".
+--
+--	@usage PrintLog( TRACE, "Trace["..TRACE.."] message logged." )<br />
+--	PrintLog( WARNING, "Warning["..WARNING.."] message logged." )<br />
+--	PrintLog( DEBUG, "Debug["..DEBUG.."] message logged." )<br />
+--	PrintLog( SEVERE, "Severe["..SEVERE.."] error message logged." )
+function PrintLog( level,  msg )
+
+---	Logs the message to a file.
+--	@param	level {log_level} Level at which to log the <em>msg</em>.
+--	@param	msg {string} String of the message you want to log
+--
+--	@usage Log( TRACE, "Trace["..TRACE.."] message logged." )<br />
+--	Log( WARNING, "Warning["..WARNING.."] message logged." )<br />
+--	Log( DEBUG, "Debug["..DEBUG.."] message logged." )<br />
+--	Log( SEVERE, "Severe["..SEVERE.."] error message logged." )
+function Log( level,  msg )
+
+---	Sets the scripting engines log level.
+--	@param newLevel {log_level} Level at which to set the scripting engines log level at.
+--	@return {int} The previous log level.
+--
+--	@usage -- Setting the Script engine log level to DEBUG and storing the old log level.<br />
+--	local oldLevel = Logging.SetScriptingLogLevel( DEBUG )
+function Logging.SetScriptingLogLevel( newLevel )
+
+---	Gets the scripting engines log level.
+--	@return	{log_level} The scripting engines current log level
+--	@return	{string} The scripting engines current log level name.
+--
+--	@usage level, levelName = Logging.GetScriptingLogLevel()<br />
+--	print( "The current log level before changing it: "..levelName.."["..level.."]"  )
+function Logging.GetScriptingLogLevel()
+
+---	Conversion function to make the constants into text
+--	@param level {log_level} Enumerated level to convert to text.
+--	@return {string} A string containing the log level converted to text.
+--
+--	@usage -- Setting the Script engine log level to DEBUG and storing the old log level.<br />
+--	local logLevelName = Logging.GetLevelName( DEBUG )
+function Logging.GetLevelName( level )
+

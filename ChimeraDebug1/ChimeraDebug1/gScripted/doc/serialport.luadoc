@@ -1,0 +1,155 @@
+---	Interface for direct communications with a serial port.
+--	This class has more functionality and most of the functions are documented, but some are missing.
+--	This documentation is a work in progress. If you want to see more about the SerialPort class,
+--	just visit the <a href="http://eeweb/programming/gtxdocs/classgtx_1_1_serial_port.html">gtx SerialPort documentation</a>.
+--	All the methods are available in the Lua binding, just some of them are not documented <em>yet</em>.
+--	@author		<a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a>
+--	@release	1.00 <09/04/2008>
+--	
+--	<h2>Warnings:</h2>
+--	This is a beta binding so all the bugs have not been worked out yet. Use at your own risk. (RJP-02/04/2008)
+--
+--	<h2>Types:</h2>
+--	There are a few types that can be used throughout this library. Here are the descriptions.
+--
+--	<h4>RtsControl</h4>
+--	Define the RTS control available.
+--	<ul>
+--		<pre class="example">
+--		RTS_DISABLE,<br />
+--		RTS_ENABLE,<br />
+--		RTS_HANDSHAKE,<br />
+--		RTS_TOGGLE
+--		</pre>
+--	</ul>
+--
+--	<h4>Parity</h4>
+--	Defines the types of parity available.
+--	<ul>
+--		<pre class="example">
+--		EVEN_PARITY,<br />
+--		ODD_PARITY,<br />
+--		MARK_PARITY,<br />
+--		SPACE_PARITY,<br />
+--		NO_PARITY
+--		</pre>
+--	</ul>
+--
+--	<h4>StopBits</h4>
+--	Defines the stop bits available.
+--	<ul>
+--		<pre class="example">
+--		ONE_STOP_BIT,<br />
+--		ONE5_STOP_BITS,<br />
+--		TWO_STOP_BITS
+--		</pre>
+--	</ul>
+module "SerialPort"
+
+---	Configure serial port. If this call fails a Lua error will occur.
+--	@param portName {string} String representation of the COM port to open. Typically this is "COMx", where x is the COM port number.
+--	@param baudRate {number} Baud rate to open the COM port with.
+--	@param dataBits {number} Number of data bits that occur between the start bit and the stop bit. A typical value is 8.
+--	@param stopBits {StopBits} Initial stop bits setting.
+--	@param parity {Parity} Initial parity setting.
+--	@param writeTimeoutInMilliseconds {number} Timeout for write operations.
+--	@param rts [DEF] {RtsControl} Initial RTS control. Defaults to RTS_ENABLE.
+--	@param enableHardwareFlowControl [DEF] {bool} If true, enables hardware flow control, else false. Defaults to false.
+--	@param enableSoftwareFlowControl [DEF] {bool} If true, enables software flow control, else false. Defaults to false.
+--	@param readMinimumTotalTimeoutMs [DEF] {number} Sets the minimum total time to wait for requested bytes before timing out.  In Windows a per-requested-byte timeout is added to this. Defaults to 100.
+--	@param readInterByteTimeoutMs [DEF] {number} Sets the time to wait between receiving bytes before timing out. Defaults to 100.
+function SerialPort:Init( portName, baudRate, dataBits, stopBits, parity, writeTimeoutInMilliseconds, rts, enableHardwareFlowControl, enableSoftwareFlowControl, readMinimumTotalTimeoutMs, readInterByteTimeoutMs )
+
+---	Releases the internal serial port handle.
+function SerialPort:Reset()
+
+---	Synchronously write data out the opened COM port. If this call fails a Lua error will occur.
+--	@param data {string} Data to be written.
+--	@param len [DEF] {number} Length of <em>data</em>. If <em>len</em> is -1 then it will call ::strlen() on <em>data</em>. Defaults to -1.
+function SerialPort:Write( data, len )
+
+---	Gets the state of the RTS line. A Lua error can occur when the current serial port
+--	is not open and [WINDOWS ONLY] if there is an error getting the current state of
+--	the serial port.
+--	@return {bool} True if the RTS line state is set, else false.
+function SerialPort:GetRTS()
+
+---	Set the state of the RTS line. If this call fails a Lua error will occur.
+--	@param high {bool} If true, sets the RTS line high. If false, sets the RTS line low.
+function SerialPort:SetRTS( high )
+
+---	Terminate all pending read operations, and empty the read buffer. If this call fails a Lua error will occur.
+function SerialPort:PurgeReadBuffer()
+
+---	Determine if the port is open.
+--	@return {bool} true if the port is open, else false.
+function SerialPort:IsOpen()
+
+---	You can check for buffered incoming data synchronously using this function.
+--	This call will block while reading data. The maximum time it can block is 
+--	basically the amount of time needed to completely fill the supplied buffer.
+--	If the port is not open and if the read encountered an error a Lua error can occur.
+--
+--	<h4>Warning:</h4>
+--	<ul>
+--	Calling this function from multiple threads is inadvisable. The incomming data
+--	will be arbitrally split between threads, resulting in fragmented data.
+--	</ul>
+--
+--	@param bufLen {number} Number of bytes to read.
+--	@return {string} The bytes read from the port.
+function SerialPort:Read( bufLen )
+
+---	Sets whether the Transmit() method automatically reads the echo of the message sent.
+--	This is required for the RS485 adapters that echo, for example.
+--	@param readLoopBack [DEF] {bool} If true, in the Transmit() method it will
+--		automatically read the echo message from the serial port. If false, it will
+--		not read the echo message automatically. Defaults to true.
+function SerialPort:SetReadLoopback( readLoopBack )
+
+---	Gets the read loopback status. You can use this to determine if the Transmit() method
+--	will automatically read the echo of the message sent to the DUT.
+--	@return {bool} status of the Read Loopback Messages flag.
+function SerialPort:GetReadLoopback()
+
+---	Higher level communication function, uses Read and Write internally. A Lua error can occur
+--	when there is any issue writing to the serial port.
+--	@param command {string} Data to send.
+--	@param commandLength {number} Length of the data to send.
+--	@param waitForResponse {bool} If true, it will wait for a response, specified by timeOutSeconds, 
+--		else it will return immediately without waiting for a response.
+--	@param expectedResponseSize [DEF] {number} The length of the response data sent back from the DUT. Defaults to 1.
+--	@param timeOutSeconds [DEF] {double} Time to wait for a response before considering it a timeout. 
+--		Give the time in seconds. Defaults to 5.0.
+--	@return {string} The response received from the <em>command</em> sent.
+--	@return {bool} True if the response timed out, else false.
+function SerialPort:Transmit( command, commandLength, waitForResponse, expectedResponseSize, timeOutSeconds );
+
+---	It reads the serial port until <em>eolChar</em> is received. A Lua error can occur when there
+--	is any issue writing to the serial port.
+--	<h3>Note:</h3>
+--	<ul>
+--	The <em>eolChar</em> must be a number, so "\n" is not correct syntax.
+--	Use <code>string.byte( "\n" )</code> to convert the character to a number.
+--	</ul>
+--
+--	@param data {string} Data to send.
+--	@param dataLength {number} Length of the data to send.
+--	@param eolChar [DEF] {number} Reads until it receives this character, or times out. Default is '\r' (13).
+--	@param timeOutSeconds [DEF] {double} Time to wait for a response before considering it a timeout. 
+--		Give the time in seconds. Defaults to 5.0.
+--	@return {string} The response received from the <em>command</em> sent.
+--	@return {bool} True if the response timed out, else false.
+--	@usage local messageToSend = "Testing\rEOL\rTransmit\r"<br />
+--	-- Transmit until the '\r' character is found using the default timeout of 5 seconds.<br />
+--	local response, isTimedOut = mySerialPort:TransmitUntilCharacter( messageToSend, #messageToSend )
+--	messageToSend = "Testing\nEOL\nTransmit\n"<br />
+--	-- Transmit until the '\n' character is found using a 0.5 second timeout.<br />
+--	local response, isTimedOut = mySerialPort:TransmitUntilCharacter( messageToSend, #messageToSend, string.byte( "\n" ), 0.5 )<br />
+function SerialPort:TransmitUntilCharacter( data, dataLength, eolChar, timeOutSeconds )
+
+---	Change baud rate on the fly. A Lua error can occur when the port is not open, if an error occurs getting the port state,
+--	and an error occurs setting the port state.
+--	@param rate {number} Baud rate to set.
+function SerialPort:SetBaud( rate )
+

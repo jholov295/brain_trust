@@ -1,0 +1,86 @@
+---	gScripted is a <a href="http://lua.org">Lua</a> module that allows users to do many things for
+--	general purpose and Device testing. It allows users to write <i>simple</i> scripts in a language
+--	that is simple yet powerful. It uses <a href="http://lua.org">Lua</a>. Many functions are
+--	available from the <a href="http://eeweb/programming/gtxdocs">gtx Library</a>. <br /><br />
+--
+--	For a quick guide to Lua
+--
+--	@author		<a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a>
+--	@release	1.00 <08/28/2008>
+--
+--	<h2>Note:</h2>
+--	<ul>When a file is loaded <code>Lua</code> will set the current working directory to the loaded scripts
+--	directory. Make sure your paths in your scripts are relative to the top level script (the script you are
+--	running). 
+--	</ul>
+--
+--	<h2>Lua:</h2>
+--	<ul>
+--		To use gScripted you need to write scripts in Lua. You can find out more about Lua here:<br /><br />
+--		<li><a href="http://lua.org/manual/">Lua manual</a></li>
+--		<li><a href="http://www.lua.org/pil/">Programming in Lua</a> – First Edition (book)</li>
+--	</ul>
+--
+--	<h2>Usage:</h2>
+--	<ul>
+--		<code>lua [options] [script [args]]</code>
+--		<h4>Options:</h4>
+--		<ul>
+--			<li><code>-e stat</code>  <ul>execute string 'stat'</ul></li>
+--			<li><code>-l name</code>  <ul>Require library 'name'</ul></li>
+--			<li><code>-v</code>       <ul>Show Lua version information.</ul></li>
+--			<li><code>--help</code>   <ul>Show Lua's help message. Look at this to see what other options are available./ul></li>
+--		</Ul>
+--	</ul>
+--
+--	<h2>General Information:</h2>
+--	<ul>
+--		<b>Script parameters:</b>
+--		<ul>
+--			When running a script you can access the command line parameters passed to the script
+--			(see above in the 'Usage' section) in a table called <code>arg</code>. The zero index
+--			always has the full file name of the running script. It also contains the rest of the
+--			parameters passed in as a normal Lua table.
+--			<pre class="example">
+--			print( "Script that is loaded: ", arg[0] )<br />
+--			print( "Number of arguments sent to the script: ", #arg )<br />
+--			print( "Unpacked arguments: ", unpack( arg ) )
+--			</pre>
+--		</ul>
+--	</ul>
+--
+module "gScripted"
+
+---	This is the version number of gScripted. This can be used to make your
+--	script usable with many versions of gScripted. This is available all the
+--	time so you don't have to have a gScripted object to use it.
+--
+--	<h4>Example:</h4>
+--	<pre class="example">
+--	if gScripted.version == 0.9 then<br />
+--	&nbsp; &nbsp; -- Do 0.9 specific stuff<br />
+--	end<br />
+--	</pre>
+--	@class table
+--	@name gScripted.version
+gScripted.version
+
+---	This is the build number of gScripted. This can be used to make your script
+--	usable with many versions of gScripted. This number actually gives you finer
+--	control of what versions you can work with. This is available all the time
+--	so you don't have to have a gScripted object to use it.
+--
+--	<h4>Example:</h4>
+--	<pre class="example">
+--	if gScripted.buildNumber == 1054 then<br />
+--	&nbsp; &nbsp; -- Do a finer grained version controls stuff here.<br />
+--	end
+--	</pre>
+--	@class table
+--	@name gScripted.buildNumber
+gScripted.buildNumber
+
+---	This function will sleep for <em>millis</em> amount of time.
+--	@param millis {int} number of milliseconds to sleep.
+function Sleep( millis )
+

@@ -1,0 +1,8 @@
+<Chronos>
+  <Reports>
+    <Report>
+      <TemplatePath>C:\Program Files\Lua\5.1\utils\Chronos\Templates\Default.lhtml</TemplatePath>
+      <OutputPath>DefaultReport.html</OutputPath>
+    </Report>
+  </Reports>
+</Chronos>

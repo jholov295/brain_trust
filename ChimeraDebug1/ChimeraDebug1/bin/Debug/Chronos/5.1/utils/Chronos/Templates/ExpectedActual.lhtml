@@ -1,0 +1,21 @@
+<html>
+  <head>
+  </head>
+  <body>
+# for _, testCase in ipairs( TestCases ) do
+    <h1>$( Chronos.Html.Escape( testCase.Name ) )</h1>
+    <table border="1">
+      <tr>
+        <th>Expected</th>
+        <th>Actual</th>
+      </tr>
+#   for _, action in ipairs( testCase.Actions ) do
+      <tr>
+        <td>$( Chronos.Html.Escape( action.Expected ) )</td>
+        <td>$( Chronos.Html.Escape( action.Actual ) )</td>
+      </tr>
+#   end
+    </table>
+# end
+  </body>
+</html>

@@ -1,0 +1,16 @@
+Source,Suite Name,Testcase Name,Requirements
+# for _, testSuite in ipairs( TestSuites ) do
+#   for _, testCase in ipairs( testSuite.TestCases ) do
+#     for _, source in ipairs( testCase.Sources or {} ) do
+#       reqs_string = ""
+#       for _, requirement in ipairs( testCase.Requirements or {} ) do
+#         if #reqs_string == 0 then
+#           reqs_string = requirement.Requirement
+#         else
+#           reqs_string = reqs_string..","..requirement.Requirement
+#         end
+#       end
+$( Chronos.Csv.Escape( source ) ),$( Chronos.Csv.Escape( testSuite.Name ) ),$( Chronos.Csv.Escape( testCase.Name ) ),$( Chronos.Csv.Escape( reqs_string ) )
+#     end
+#   end
+# end

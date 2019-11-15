@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Gentex.Devcomm.1.0.52\build\net451\Gentex.Devcomm.props" Condition="Exists('..\packages\Gentex.Devcomm.1.0.52\build\net451\Gentex.Devcomm.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED7C8AE6-C569-4FA6-BBE6-FD5D3C261741}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ChimeraDebug1</RootNamespace>
+    <AssemblyName>ChimeraDebug1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>detective_3077_CiH_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gentex, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.1.0.4.485\lib\net20\Gentex.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.Devcomm">
+      <HintPath>..\..\..\..\Desktop\mea\FdmBurnIn\Software\FDMBurnIn2p0\packages\Gentex.Devcomm.1.0.38\build\release\Gentex.Devcomm.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.MES.BinaryObjectStorageSystem.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.MES.BinaryObjectStorageSystem.Contracts.1.0.5\lib\net40\Gentex.MES.BinaryObjectStorageSystem.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.MES.Client.Contracts, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.MES.Client.Contracts.1.1.161\lib\net40\Gentex.MES.Client.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.MES.Client.Host.Contracts, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.MES.Client.Host.Contracts.1.1.57\lib\net40\Gentex.MES.Client.Host.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.MES.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.MES.Core.1.0.0\lib\net40\Gentex.MES.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.MES.Domain.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.MES.Domain.Contracts.1.0.24\lib\net40\Gentex.MES.Domain.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.MES.EntityModel.Contracts, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.MES.EntityModel.Contracts.3.0.16\lib\net40\Gentex.MES.EntityModel.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.MES.LegacyDataClient.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.MES.LegacyDataClient.Contracts.1.0.40\lib\net40\Gentex.MES.LegacyDataClient.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.ProcessControl.GPS.Client, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.ProcessControl.GPS.Client.1.2.4\lib\net40\Gentex.ProcessControl.GPS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.Redis, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.Redis.0.11.1\lib\net45\Gentex.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.Security.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.Security.Contracts.1.0.8\lib\net40\Gentex.Security.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.Tester, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.Tester.1.1.3\lib\net452\Gentex.Tester.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.Tester.DeviceComm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.Tester.DeviceComm.1.1.33\lib\net452\Gentex.Tester.DeviceComm.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentex.Utility.Publication.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gentex.Utility.Publication.Contracts.1.0.0\lib\net40\Gentex.Utility.Publication.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="GPSServices, Version=2.1.0.0, Culture=neutral">
+      <HintPath>..\packages\GPSServices.2.1.3\lib\GPSServices.dll</HintPath>
+    </Reference>
+    <Reference Include="MesAPI.Contracts, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MesAPI.Contracts.1.1.30\lib\net20\MesAPI.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=10.1.0.400, Culture=neutral, PublicKeyToken=89b483f429c47342">
+      <HintPath>..\packages\GPSServices.2.1.3\lib\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="ReflectionMagic, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReflectionMagic.1.1\lib\net40\ReflectionMagic.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.0.316.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.0.481\lib\net45\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasicTests.cs" />
+    <Compile Include="Connected Services\DevCommServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DevComm.cs" />
+    <Compile Include="Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FailLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FailLog.Designer.cs">
+      <DependentUpon>FailLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ledpopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ledpopup.Designer.cs">
+      <DependentUpon>ledpopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogData.Designer.cs">
+      <DependentUpon>LogData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="logError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="logError.Designer.cs">
+      <DependentUpon>logError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pass.Designer.cs">
+      <DependentUpon>Pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RichData.cs" />
+    <Compile Include="search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search.Designer.cs">
+      <DependentUpon>search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="selectTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="selectTest.Designer.cs">
+      <DependentUpon>selectTest.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Error.resx">
+      <DependentUpon>Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FailLog.resx">
+      <DependentUpon>FailLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ledpopup.resx">
+      <DependentUpon>ledpopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogData.resx">
+      <DependentUpon>LogData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logError.resx">
+      <DependentUpon>logError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pass.resx">
+      <DependentUpon>Pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="search.resx">
+      <DependentUpon>search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="selectTest.resx">
+      <DependentUpon>selectTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.CreateFromBufferResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.CreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.DestroyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.DoCommandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetAllCommandsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetDescriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetHardwareTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetInputParamsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetLastErrorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetOutputParamsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetParamLimitsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetParamsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetServiceVerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetUserSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.GetVersionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.InitializeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.IsDoableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.IsReadableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.IsWritableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.ReadCommandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.ReInitializeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.SetHardwareTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.SetParamValueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.ShutdownResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\ChimeraDebug1.DevCommServiceReference.WriteCommandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\DeviceCommService.wsdl" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="boost_bzip2-mgw44-mt-1_42.dll" />
+    <Content Include="boost_filesystem-mgw44-mt-1_42.dll" />
+    <Content Include="boost_iostreams-mgw44-mt-1_42.dll" />
+    <Content Include="boost_serialization-mgw44-mt-1_42.dll" />
+    <Content Include="boost_signals-mgw44-mt-1_42.dll" />
+    <Content Include="boost_system-mgw44-mt-1_42.dll" />
+    <Content Include="boost_thread-mgw44-mt-1_42.dll" />
+    <Content Include="boost_utils.dll" />
+    <Content Include="boost_wserialization-mgw44-mt-1_42.dll" />
+    <Content Include="boost_zlib-mgw44-mt-1_42.dll" />
+    <None Include="Connected Services\DevCommServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\DevCommServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\DevCommServiceReference\configuration91.svcinfo" />
+    <Content Include="detective_3077_CiH_icon.ico" />
+    <Content Include="detective_ojK_icon.ico" />
+    <Content Include="DeviceComm.dll" />
+    <Content Include="gtxAdvanced.dll" />
+    <Content Include="gtxCore.dll" />
+    <Content Include="Loki.dll" />
+    <Content Include="lua5.1.dll" />
+    <Content Include="mingwm10.dll" />
+    <Content Include="OpsManager915.dll" />
+    <Content Include="OpsManagerDLL.dll" />
+    <Content Include="QtCore4.dll" />
+    <Content Include="QtGui4.dll" />
+    <Content Include="QtSql4.dll" />
+    <Content Include="sherlock_h6S_icon.ico" />
+    <Content Include="sherlock_W54_icon.ico" />
+    <Content Include="vxlapi.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\DevCommServiceReference\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+xcopy /s /y "C:\Users\josh.holovka\source\repos\ChimeraDebug1\packages\NLua.1.3.2.1\lib\native\*.*" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Gentex.Devcomm.1.0.52\build\net451\Gentex.Devcomm.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Gentex.Devcomm.1.0.52\build\net451\Gentex.Devcomm.props'))" />
+    <Error Condition="!Exists('..\packages\Gentex.Devcomm.1.0.52\build\net451\Gentex.Devcomm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Gentex.Devcomm.1.0.52\build\net451\Gentex.Devcomm.targets'))" />
+    <Error Condition="!Exists('..\packages\SlowCheetah.2.5.48\build\SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SlowCheetah.2.5.48\build\SlowCheetah.targets'))" />
+  </Target>
+  <Import Project="..\packages\Gentex.Devcomm.1.0.52\build\net451\Gentex.Devcomm.targets" Condition="Exists('..\packages\Gentex.Devcomm.1.0.52\build\net451\Gentex.Devcomm.targets')" />
+  <Import Project="..\packages\SlowCheetah.2.5.48\build\SlowCheetah.targets" Condition="Exists('..\packages\SlowCheetah.2.5.48\build\SlowCheetah.targets')" />
+</Project>

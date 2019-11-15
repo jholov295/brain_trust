@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<ItemGroup>
+		<AvailableItemName Include="NativeBinary" />
+	</ItemGroup>
+	<ItemGroup>
+		<NativeBinary Include="$(SolutionDir)packages\*\build\release*\*.dll_$(Platform)">
+<TargetPath></TargetPath>
+		</NativeBinary>
+
+	</ItemGroup>
+		<PropertyGroup>
+			<PrepareForRunDependsOn>
+				$(PrepareForRunDependsOn);
+				CopyNativeBinaries
+			</PrepareForRunDependsOn>
+		</PropertyGroup>
+	<Target Name="StatusMessage" BeforeTargets="PrepareForBuild">
+		<Message Importance="High" Text="Solution Directory: $(SolutionDir)" />
+		<Message Importance="High" Text="Platform          : $(Platform)" />
+	</Target>
+
+	<Target Name="CopyNativeBinaries" DependsOnTargets="CopyFilesToOutputDirectory">
+		<Copy SourceFiles="@(NativeBinary)"
+		      DestinationFiles="@(NativeBinary->'$(OutDir)\%(TargetPath)\%(Filename).dll')"
+		      Condition="'%(Extension)'=='.dll_$(Platform)'">
+		<Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
+		</Copy>
+
+		<Copy SourceFiles="@(NativeBinary)"
+		      DestinationFiles="@(NativeBinary->'$(OutDir)\%(TargetPath)\%(Filename).%(Extension)')"
+		      Condition="'%(Extension)'!='.dll_$(Platform)'">
+		<Output TaskParameter="DestinationFiles" ItemName="FileWrites" />
+		</Copy>
+
+	</Target>
+
+</Project>

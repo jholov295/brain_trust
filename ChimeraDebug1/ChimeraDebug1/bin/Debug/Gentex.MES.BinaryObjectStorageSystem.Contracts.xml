@@ -1,0 +1,113 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Gentex.MES.BinaryObjectStorageSystem.Contracts
+</name>
+</assembly>
+<members>
+<member name="M:Gentex.MES.BinaryObjectStorageSystem.StreamingClient.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+	<summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.BinaryObjectStorageSystem.StreamingClient"/> class.
+ </summary>
+	<param name="binding">The binding.</param>
+	<param name="remoteAddress">The remote address.</param>
+</member><member name="M:Gentex.MES.BinaryObjectStorageSystem.StreamingClient.#ctor(System.String)">
+	<summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.BinaryObjectStorageSystem.StreamingClient"/> class.
+ </summary>
+	<param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+</member><member name="M:Gentex.MES.BinaryObjectStorageSystem.StreamingClient.#ctor(System.String,System.String)">
+	<summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.BinaryObjectStorageSystem.StreamingClient"/> class.
+ </summary>
+	<param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+	<param name="configurationFilePath">The configuration file path.</param>
+</member><member name="P:Gentex.MES.BinaryObjectStorageSystem.WriteBinaryObjectRequest.FileExtension">
+	<summary>
+ Extension To include on the end of the file name
+ </summary>
+	<value>ex. txt, jpg, png, etc..</value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Gentex.MES.BinaryObjectStorageSystem.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Gentex.MES.BinaryObjectStorageSystem.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:Gentex.MES.BinaryObjectStorageSystem.My.Resources.Resources.EndPointAddress">
+	<summary>
+  Looks up a localized string similar to http://zvm-msgprod/MES/BinaryObjectStorageSystem!1.0.0/Service.svc/Streamed.
+</summary>
+</member><member name="T:Gentex.MES.BinaryObjectStorageSystem.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="F:Gentex.MES.BinaryObjectStorageSystem.ContractConstants.ContractNamespace">
+	<summary>
+ A common contract namespace.
+ </summary>
+</member><member name="M:Gentex.MES.BinaryObjectStorageSystem.WriteBinaryObjectBuilder.Description(System.String)">
+	<summary>
+ Uses Description Key
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Gentex.MES.BinaryObjectStorageSystem.WriteBinaryObjectBuilder.Sequence(System.Nullable{System.Int32})">
+	<summary>
+ Uses Sequence Key
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Gentex.MES.BinaryObjectStorageSystem.WriteBinaryObjectBuilder.ExternalID(System.Nullable{System.Int64},System.String)">
+	<summary>
+ Uses ExternalID Key, Type Of ID
+ </summary>
+	<param name="value"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Gentex.MES.BinaryObjectStorageSystem.WriteBinaryObjectBuilder.RichDataID(System.Nullable{System.Int64})">
+	<summary>
+ Uses ExternalIDType Key with Value RichData
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Gentex.MES.BinaryObjectStorageSystem.ClientInitializationParameters.EndpointConfigurationName">
+	<summary>
+ Gets or sets the name of the endpoint configuration.
+ </summary>
+	<value>
+ The name of the endpoint configuration.
+ </value>
+</member><member name="P:Gentex.MES.BinaryObjectStorageSystem.ClientInitializationParameters.ConfigurationFilePath">
+	<summary>
+ Gets or sets the configuration file path.
+ </summary>
+	<value>
+ The configuration file path.
+ </value>
+</member><member name="T:Gentex.MES.BinaryObjectStorageSystem.ClientInitializationParameters">
+	<summary>
+ Initialization parameters for WCF client objects
+ </summary>
+</member><member name="M:Gentex.MES.BinaryObjectStorageSystem.ChannelFactoryWrapper`1.SetCustomMessageHeadersDelegate(System.Func{System.Collections.Generic.List{System.ServiceModel.Channels.MessageHeader}})">
+	<summary>
+ Set Custom Message Headers for the lifetime of channel
+ </summary>
+	<param name="CustomMessageHeadersDelegate"> Make sure Message Headers are in the ContractConstants.MessageHeaderNamespace</param>
+	<remarks></remarks>
+</member><member name="M:Gentex.MES.BinaryObjectStorageSystem.ChannelFactoryWrapper`1.Use(System.Action{`0},System.Collections.Generic.List{System.ServiceModel.Channels.MessageHeader})">
+	<summary>
+	</summary>
+	<param name="action"></param>
+	<param name="CustomMessageHeaders"> Make sure Message Headers are in the ContractConstants.MessageHeaderNamespace</param>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

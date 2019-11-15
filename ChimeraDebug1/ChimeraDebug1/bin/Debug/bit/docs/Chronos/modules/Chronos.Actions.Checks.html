@@ -1,0 +1,1107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Chronos.html">Chronos</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Action.html">Chronos.Action</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.html">Chronos.Actions</a>
+	</li>
+
+	<li><strong>Chronos.Actions.Checks</strong></li>
+	
+	<li>
+		<a href="../modules/Chronos.Actions.Interactive.html">Chronos.Actions.Interactive</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.MakeCheck.html">Chronos.Actions.MakeCheck</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Traceability.html">Chronos.Actions.Traceability</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Utilities.html">Chronos.Actions.Utilities</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Auto.html">Chronos.Auto</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Config.html">Chronos.Config</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Csv.html">Chronos.Csv</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DSL.html">Chronos.DSL</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DebugInfoPrinter.html">Chronos.DebugInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DeviceComm.html">Chronos.DeviceComm</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Failure.html">Chronos.Failure</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Hex.html">Chronos.Hex</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Html.html">Chronos.Html</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.InfoPrinter.html">Chronos.InfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Runner.html">Chronos.Runner</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TeamCityInfoPrinter.html">Chronos.TeamCityInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestAccumulator.html">Chronos.TestAccumulator</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCase.html">Chronos.TestCase</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseRecorder.html">Chronos.TestCaseRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseResults.html">Chronos.TestCaseResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunRecorder.html">Chronos.TestRunRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunResults.html">Chronos.TestRunResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuite.html">Chronos.TestSuite</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteRecorder.html">Chronos.TestSuiteRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteResults.html">Chronos.TestSuiteResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Time.html">Chronos.Time</a>
+	</li>
+
+	<li>
+		<a href="../modules/LuaPP.html">LuaPP</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>Chronos.Actions.Checks</code></h1>
+
+<p>Functions for validating conditions during test execution.</p>
+
+
+
+
+
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Check">Check</a>&nbsp;(condition, message)</td>
+	<td class="summary">Checks that a condition is true, failing the test case if it is false.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckBits">CheckBits</a>&nbsp;(mask, expected, actual, message)</td>
+	<td class="summary">Checks that a given bitwise mask of two values match.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckBitsHigh">CheckBitsHigh</a>&nbsp;(mask, actual, message)</td>
+	<td class="summary">Checks that a given bitwise mask of a value will yield all positive bits.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckBitsLow">CheckBitsLow</a>&nbsp;(mask, actual, message)</td>
+	<td class="summary">Checks that a given bitwise mask of a value will yield all zero bits.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckEqual">CheckEqual</a>&nbsp;(expected, actual, message)</td>
+	<td class="summary">Checks that two objects are equal, failing the test case if they aren't.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckEqualHex">CheckEqualHex</a>&nbsp;(expected, actual, message)</td>
+	<td class="summary">Checks that two objects are equal, failing the test case if they aren't.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckMatch">CheckMatch</a>&nbsp;(expected, actual, message)</td>
+	<td class="summary">Checks that a string matches the supplied match string.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckMax">CheckMax</a>&nbsp;(max, actual, message)</td>
+	<td class="summary">Checks that a value is no more than a given maximum.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckMaxHex">CheckMaxHex</a>&nbsp;(max, actual, message)</td>
+	<td class="summary">Checks that a value is no more than a given maximum.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckMin">CheckMin</a>&nbsp;(min, actual, message)</td>
+	<td class="summary">Checks that a value is at least a given minimum.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckMinHex">CheckMinHex</a>&nbsp;(min, actual, message)</td>
+	<td class="summary">Checks that a value is at least a given minimum.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckNotEqual">CheckNotEqual</a>&nbsp;(notExpected, actual, message)</td>
+	<td class="summary">Checks that two objects are not equal, failing if they are in fact equal.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckNotEqualHex">CheckNotEqualHex</a>&nbsp;(notExpected, actual, message)</td>
+	<td class="summary">Checks that two objects are not equal, failing if they are in fact equal.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckNotSequence">CheckNotSequence</a>&nbsp;(notExpected, array, message)</td>
+	<td class="summary">Checks that a given value or sequence does not exist as a subset of a given array.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckNotSequenceHex">CheckNotSequenceHex</a>&nbsp;(notExpected, array, message)</td>
+	<td class="summary">Checks that a given value or sequence does not exist as a subset of a given array.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckRange">CheckRange</a>&nbsp;(min, max, actual, message)</td>
+	<td class="summary">Checks that a value falls within a given range.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckRangeHex">CheckRangeHex</a>&nbsp;(min, max, actual, message)</td>
+	<td class="summary">Checks that a value falls within a given range.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckSequence">CheckSequence</a>&nbsp;(expected, array, message)</td>
+	<td class="summary">Checks that a given value or sequence exists as a subset of a given array.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckSequenceHex">CheckSequenceHex</a>&nbsp;(expected, array, message)</td>
+	<td class="summary">Checks that a given value or sequence exists as a subset of a given array.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckTimeMax">CheckTimeMax</a>&nbsp;(max, func, message)</td>
+	<td class="summary">Checks that a function takes at most max milliseconds to run.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckTimeMin">CheckTimeMin</a>&nbsp;(min, func, message)</td>
+	<td class="summary">Checks that a function takes at least min milliseconds to run.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#CheckTimeRange">CheckTimeRange</a>&nbsp;(min, max, func, message)</td>
+	<td class="summary">Checks that a function takes at least min milliseconds and at most max milliseconds to run.</td>
+	</tr>
+
+</table>
+
+
+<br/>
+<br/>
+
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="Check"></a><strong>Check</strong>&nbsp;(condition, message)</dt>
+<dd>
+Checks that a condition is true, failing the test case if it is false. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>condition</em></code>: The condition to check.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckBits"></a><strong>CheckBits</strong>&nbsp;(mask, expected, actual, message)</dt>
+<dd>
+Checks that a given bitwise mask of two values match. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>mask</em></code>: The bitwise mask to use.
+	</li>
+	
+	<li>
+	  <code><em>expected</em></code>: The expected value.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The actual value.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckBitsHigh"></a><strong>CheckBitsHigh</strong>&nbsp;(mask, actual, message)</dt>
+<dd>
+Checks that a given bitwise mask of a value will yield all positive bits. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>mask</em></code>: The bitwise mask to use.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The actual value.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckBitsLow"></a><strong>CheckBitsLow</strong>&nbsp;(mask, actual, message)</dt>
+<dd>
+Checks that a given bitwise mask of a value will yield all zero bits. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>mask</em></code>: The bitwise mask to use.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The actual value.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckEqual"></a><strong>CheckEqual</strong>&nbsp;(expected, actual, message)</dt>
+<dd>
+Checks that two objects are equal, failing the test case if they aren't. This function compares table indices, checking if two tables are logically equal. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>expected</em></code>: The expected object.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The actual object.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckEqualHex"></a><strong>CheckEqualHex</strong>&nbsp;(expected, actual, message)</dt>
+<dd>
+Checks that two objects are equal, failing the test case if they aren't. This function compares table indices, checking if two tables are logically equal. Shows values in hex. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>expected</em></code>: The expected object.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The actual object.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckMatch"></a><strong>CheckMatch</strong>&nbsp;(expected, actual, message)</dt>
+<dd>
+Checks that a string matches the supplied match string. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>expected</em></code>: The pattern to match.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The string to verify.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckMax"></a><strong>CheckMax</strong>&nbsp;(max, actual, message)</dt>
+<dd>
+Checks that a value is no more than a given maximum. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>max</em></code>: The maximum value.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The value to check.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckMaxHex"></a><strong>CheckMaxHex</strong>&nbsp;(max, actual, message)</dt>
+<dd>
+Checks that a value is no more than a given maximum. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>max</em></code>: The maximum value.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The value to check.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckMin"></a><strong>CheckMin</strong>&nbsp;(min, actual, message)</dt>
+<dd>
+Checks that a value is at least a given minimum. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>min</em></code>: The minimum value.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The value to check.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckMinHex"></a><strong>CheckMinHex</strong>&nbsp;(min, actual, message)</dt>
+<dd>
+Checks that a value is at least a given minimum. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>min</em></code>: The minimum value.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The value to check.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckNotEqual"></a><strong>CheckNotEqual</strong>&nbsp;(notExpected, actual, message)</dt>
+<dd>
+Checks that two objects are not equal, failing if they are in fact equal. This function compares table indices, checking if two tables are logically unequal. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>notExpected</em></code>: The unexpected object.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The actual object.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckNotEqualHex"></a><strong>CheckNotEqualHex</strong>&nbsp;(notExpected, actual, message)</dt>
+<dd>
+Checks that two objects are not equal, failing if they are in fact equal. This function compares table indices, checking if two tables are logically unequal. Shows values in hex. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>notExpected</em></code>: The unexpected object.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The actual object.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckNotSequence"></a><strong>CheckNotSequence</strong>&nbsp;(notExpected, array, message)</dt>
+<dd>
+Checks that a given value or sequence does not exist as a subset of a given array. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>notExpected</em></code>: The unexpected value or sequence.
+	</li>
+	
+	<li>
+	  <code><em>array</em></code>: The (non-)containing array.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckNotSequenceHex"></a><strong>CheckNotSequenceHex</strong>&nbsp;(notExpected, array, message)</dt>
+<dd>
+Checks that a given value or sequence does not exist as a subset of a given array. Shows values in hex. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>notExpected</em></code>: The unexpected value or sequence.
+	</li>
+	
+	<li>
+	  <code><em>array</em></code>: The (non-)containing array.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckRange"></a><strong>CheckRange</strong>&nbsp;(min, max, actual, message)</dt>
+<dd>
+Checks that a value falls within a given range. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>min</em></code>: The minimum value.
+	</li>
+	
+	<li>
+	  <code><em>max</em></code>: The maximum value.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The value to check.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckRangeHex"></a><strong>CheckRangeHex</strong>&nbsp;(min, max, actual, message)</dt>
+<dd>
+Checks that a value falls within a given range. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>min</em></code>: The minimum value.
+	</li>
+	
+	<li>
+	  <code><em>max</em></code>: The maximum value.
+	</li>
+	
+	<li>
+	  <code><em>actual</em></code>: The value to check.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckSequence"></a><strong>CheckSequence</strong>&nbsp;(expected, array, message)</dt>
+<dd>
+Checks that a given value or sequence exists as a subset of a given array. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>expected</em></code>: The expected value or sequence.
+	</li>
+	
+	<li>
+	  <code><em>array</em></code>: The containing array.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckSequenceHex"></a><strong>CheckSequenceHex</strong>&nbsp;(expected, array, message)</dt>
+<dd>
+Checks that a given value or sequence exists as a subset of a given array. Shows values in hex. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>expected</em></code>: The expected value or sequence.
+	</li>
+	
+	<li>
+	  <code><em>array</em></code>: The containing array.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckTimeMax"></a><strong>CheckTimeMax</strong>&nbsp;(max, func, message)</dt>
+<dd>
+Checks that a function takes at most max milliseconds to run. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>max</em></code>: The maximum run time in milliseconds.
+	</li>
+	
+	<li>
+	  <code><em>func</em></code>: The function to time.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckTimeMin"></a><strong>CheckTimeMin</strong>&nbsp;(min, func, message)</dt>
+<dd>
+Checks that a function takes at least min milliseconds to run. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>min</em></code>: The minimum run time in milliseconds.
+	</li>
+	
+	<li>
+	  <code><em>func</em></code>: The function to time.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="CheckTimeRange"></a><strong>CheckTimeRange</strong>&nbsp;(min, max, func, message)</dt>
+<dd>
+Checks that a function takes at least min milliseconds and at most max milliseconds to run. <b>This function is exported into the global table.</b>
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>min</em></code>: The minimum run time in milliseconds.
+	</li>
+	
+	<li>
+	  <code><em>max</em></code>: The maximum run time in milliseconds.
+	</li>
+	
+	<li>
+	  <code><em>func</em></code>: The function to time.
+	</li>
+	
+	<li>
+	  <code><em>message</em></code>: A message to display if the check fails. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+</dl>
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

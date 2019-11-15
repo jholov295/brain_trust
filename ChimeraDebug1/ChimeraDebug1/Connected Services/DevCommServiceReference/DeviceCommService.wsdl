@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wts="http://gentex.com/services/DeviceCommService" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ts="http://gentex.com/services/DeviceCommService" xmlns="http://schemas.xmlsoap.org/wsdl/" name="DeviceCommService" targetNamespace="http://gentex.com/services/DeviceCommService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <documentation>This Service provides a portable interface to the DeviceComm library.  Documentation, version info, and examples can be found on redmine: http://eeweb.gentex.com/redmine/projects/devicecommservice/wiki</documentation>
+  <documentation>Service Version: 1.1</documentation>
+  <documentation>Service SVN Revision: 121836</documentation>
+  <documentation>DeviceComm SVN Revision: 26496</documentation>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://gentex.com/services/DeviceCommService">
+      <xsd:complexType name="CreateRequest">
+        <xsd:sequence>
+          <xsd:element name="cmdSetPath" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CreateReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="dcIndex" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CreateFromBufferRequest">
+        <xsd:sequence>
+          <xsd:element name="cmdSet" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CreateFromBufferReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="dcIndex" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DestroyRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DestroyReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DoCommandRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+          <xsd:element maxOccurs="unbounded" name="inParams" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DoCommandReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element maxOccurs="unbounded" name="outParams" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetAllCommandsRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetAllCommandsReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element maxOccurs="unbounded" name="commands" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetDescriptionRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetDescriptionReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="description" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetHardwareTypesRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="succcess" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetHardwareTypesReply">
+        <xsd:sequence>
+          <xsd:element name="succcess" type="xsd:boolean" />
+          <xsd:element maxOccurs="unbounded" name="types" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetInputParamsRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetInputParamsReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element maxOccurs="unbounded" name="inParams" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetLastErrorRequest" />
+      <xsd:complexType name="GetLastErrorReply">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetNameRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetNameReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="dcName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetOutputParamsRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetOutputParamsReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element maxOccurs="unbounded" name="outParams" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetParamLimitsRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+          <xsd:element name="paramName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetParamLimitsReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element maxOccurs="unbounded" name="limits" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetParamsRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetParamsReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element maxOccurs="unbounded" name="params" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetServiceVerRequest" />
+      <xsd:complexType name="GetServiceVerReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="version" type="xsd:string" />
+          <xsd:element name="serviceSvnRevision" type="xsd:string" />
+          <xsd:element name="devcommSvnRevision" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetUserSettingsRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="hwType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetUserSettingsReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element maxOccurs="unbounded" name="settings" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetVersionRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GetVersionReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="version" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InitializeRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="hwType" type="xsd:string" />
+          <xsd:element maxOccurs="unbounded" name="settings" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="InitializeReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IsDoableRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IsDoableReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="isDoable" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IsReadableRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IsReadableReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="isReadable" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IsWritableRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="IsWritableReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="isWriteable" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReInitializeRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReInitializeReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReadCommandRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReadCommandReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element maxOccurs="unbounded" name="params" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SetHardwareTypeRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="hwType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SetHardwareTypeReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SetParamValueRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+          <xsd:element name="paramName" type="xsd:string" />
+          <xsd:element name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SetParamValueReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ShutdownRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ShutdownReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="WriteCommandRequest">
+        <xsd:sequence>
+          <xsd:element name="dcIndex" type="xsd:long" />
+          <xsd:element name="cmdName" type="xsd:string" />
+          <xsd:element maxOccurs="unbounded" name="inParams" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="WriteCommandReply">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Create" type="ts:CreateRequest" />
+      <xsd:element name="CreateFromBuffer" type="ts:CreateFromBufferRequest" />
+      <xsd:element name="CreateFromBufferReply" type="ts:CreateFromBufferReply" />
+      <xsd:element name="CreateReply" type="ts:CreateReply" />
+      <xsd:element name="Destroy" type="ts:DestroyRequest" />
+      <xsd:element name="DestroyReply" type="ts:DestroyReply" />
+      <xsd:element name="DoCommand" type="ts:DoCommandRequest" />
+      <xsd:element name="DoCommandReply" type="ts:DoCommandReply" />
+      <xsd:element name="GetAllCommands" type="ts:GetAllCommandsRequest" />
+      <xsd:element name="GetAllCommandsReply" type="ts:GetAllCommandsReply" />
+      <xsd:element name="GetDescription" type="ts:GetDescriptionRequest" />
+      <xsd:element name="GetDescriptionReply" type="ts:GetDescriptionReply" />
+      <xsd:element name="GetHardwareTypes" type="ts:GetHardwareTypesRequest" />
+      <xsd:element name="GetHardwareTypesReply" type="ts:GetHardwareTypesReply" />
+      <xsd:element name="GetInputParams" type="ts:GetInputParamsRequest" />
+      <xsd:element name="GetInputParamsReply" type="ts:GetInputParamsReply" />
+      <xsd:element name="GetLastError" type="ts:GetLastErrorRequest" />
+      <xsd:element name="GetLastErrorReply" type="ts:GetLastErrorReply" />
+      <xsd:element name="GetName" type="ts:GetNameRequest" />
+      <xsd:element name="GetNameReply" type="ts:GetNameReply" />
+      <xsd:element name="GetOutputParams" type="ts:GetOutputParamsRequest" />
+      <xsd:element name="GetOutputParamsReply" type="ts:GetOutputParamsReply" />
+      <xsd:element name="GetParamLimits" type="ts:GetParamLimitsRequest" />
+      <xsd:element name="GetParamLimitsReply" type="ts:GetParamLimitsReply" />
+      <xsd:element name="GetParams" type="ts:GetParamsRequest" />
+      <xsd:element name="GetParamsReply" type="ts:GetParamsReply" />
+      <xsd:element name="GetServiceVer" type="ts:GetServiceVerRequest" />
+      <xsd:element name="GetServiceVerReply" type="ts:GetServiceVerReply" />
+      <xsd:element name="GetUserSettings" type="ts:GetUserSettingsRequest" />
+      <xsd:element name="GetUserSettingsReply" type="ts:GetUserSettingsReply" />
+      <xsd:element name="GetVersion" type="ts:GetVersionRequest" />
+      <xsd:element name="GetVersionReply" type="ts:GetVersionReply" />
+      <xsd:element name="Initialize" type="ts:InitializeRequest" />
+      <xsd:element name="InitializeReply" type="ts:InitializeReply" />
+      <xsd:element name="IsDoable" type="ts:IsDoableRequest" />
+      <xsd:element name="IsDoableReply" type="ts:IsDoableReply" />
+      <xsd:element name="IsReadable" type="ts:IsReadableRequest" />
+      <xsd:element name="IsReadableReply" type="ts:IsReadableReply" />
+      <xsd:element name="IsWritable" type="ts:IsWritableRequest" />
+      <xsd:element name="IsWritableReply" type="ts:IsWritableReply" />
+      <xsd:element name="ReInitialize" type="ts:ReInitializeRequest" />
+      <xsd:element name="ReInitializeReply" type="ts:ReInitializeReply" />
+      <xsd:element name="ReadCommand" type="ts:ReadCommandRequest" />
+      <xsd:element name="ReadCommandReply" type="ts:ReadCommandReply" />
+      <xsd:element name="SetHardwareType" type="ts:SetHardwareTypeRequest" />
+      <xsd:element name="SetHardwareTypeReply" type="ts:SetHardwareTypeReply" />
+      <xsd:element name="SetParamValue" type="ts:SetParamValueRequest" />
+      <xsd:element name="SetParamValueReply" type="ts:SetParamValueReply" />
+      <xsd:element name="Shutdown" type="ts:ShutdownRequest" />
+      <xsd:element name="ShutdownReply" type="ts:ShutdownReply" />
+      <xsd:element name="WriteCommand" type="ts:WriteCommandRequest" />
+      <xsd:element name="WriteCommandReply" type="ts:WriteCommandReply" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateRequestMsg">
+    <wsdl:part name="parameters" element="ts:Create" />
+  </wsdl:message>
+  <wsdl:message name="CreateReplyMsg">
+    <wsdl:part name="parameters" element="ts:CreateReply" />
+  </wsdl:message>
+  <wsdl:message name="CreateFromBufferRequestMsg">
+    <wsdl:part name="parameters" element="ts:CreateFromBuffer" />
+  </wsdl:message>
+  <wsdl:message name="CreateFromBufferReplyMsg">
+    <wsdl:part name="parameters" element="ts:CreateFromBufferReply" />
+  </wsdl:message>
+  <wsdl:message name="DestroyRequestMsg">
+    <wsdl:part name="parameters" element="ts:Destroy" />
+  </wsdl:message>
+  <wsdl:message name="DestroyReplyMsg">
+    <wsdl:part name="parameters" element="ts:DestroyReply" />
+  </wsdl:message>
+  <wsdl:message name="DoCommandRequestMsg">
+    <wsdl:part name="parameters" element="ts:DoCommand" />
+  </wsdl:message>
+  <wsdl:message name="DoCommandReplyMsg">
+    <wsdl:part name="parameters" element="ts:DoCommandReply" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCommandsRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetAllCommands" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCommandsReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetAllCommandsReply" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetDescription" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetDescriptionReply" />
+  </wsdl:message>
+  <wsdl:message name="GetHardwareTypesRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetHardwareTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetHardwareTypesReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetHardwareTypesReply" />
+  </wsdl:message>
+  <wsdl:message name="GetInputParamsRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetInputParams" />
+  </wsdl:message>
+  <wsdl:message name="GetInputParamsReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetInputParamsReply" />
+  </wsdl:message>
+  <wsdl:message name="GetLastErrorRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetLastError" />
+  </wsdl:message>
+  <wsdl:message name="GetLastErrorReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetLastErrorReply" />
+  </wsdl:message>
+  <wsdl:message name="GetNameRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetName" />
+  </wsdl:message>
+  <wsdl:message name="GetNameReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetNameReply" />
+  </wsdl:message>
+  <wsdl:message name="GetOutputParamsRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetOutputParams" />
+  </wsdl:message>
+  <wsdl:message name="GetOutputParamsReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetOutputParamsReply" />
+  </wsdl:message>
+  <wsdl:message name="GetParamLimitsRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetParamLimits" />
+  </wsdl:message>
+  <wsdl:message name="GetParamLimitsReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetParamLimitsReply" />
+  </wsdl:message>
+  <wsdl:message name="GetParamsRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetParams" />
+  </wsdl:message>
+  <wsdl:message name="GetParamsReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetParamsReply" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceVerRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetServiceVer" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceVerReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetServiceVerReply" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSettingsRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetUserSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSettingsReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetUserSettingsReply" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionRequestMsg">
+    <wsdl:part name="parameters" element="ts:GetVersion" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionReplyMsg">
+    <wsdl:part name="parameters" element="ts:GetVersionReply" />
+  </wsdl:message>
+  <wsdl:message name="InitializeRequestMsg">
+    <wsdl:part name="parameters" element="ts:Initialize" />
+  </wsdl:message>
+  <wsdl:message name="InitializeReplyMsg">
+    <wsdl:part name="parameters" element="ts:InitializeReply" />
+  </wsdl:message>
+  <wsdl:message name="IsDoableRequestMsg">
+    <wsdl:part name="parameters" element="ts:IsDoable" />
+  </wsdl:message>
+  <wsdl:message name="IsDoableReplyMsg">
+    <wsdl:part name="parameters" element="ts:IsDoableReply" />
+  </wsdl:message>
+  <wsdl:message name="IsReadableRequestMsg">
+    <wsdl:part name="parameters" element="ts:IsReadable" />
+  </wsdl:message>
+  <wsdl:message name="IsReadableReplyMsg">
+    <wsdl:part name="parameters" element="ts:IsReadableReply" />
+  </wsdl:message>
+  <wsdl:message name="IsWritableRequestMsg">
+    <wsdl:part name="parameters" element="ts:IsWritable" />
+  </wsdl:message>
+  <wsdl:message name="IsWritableReplyMsg">
+    <wsdl:part name="parameters" element="ts:IsWritableReply" />
+  </wsdl:message>
+  <wsdl:message name="ReInitializeRequestMsg">
+    <wsdl:part name="parameters" element="ts:ReInitialize" />
+  </wsdl:message>
+  <wsdl:message name="ReInitializeReplyMsg">
+    <wsdl:part name="parameters" element="ts:ReInitializeReply" />
+  </wsdl:message>
+  <wsdl:message name="ReadCommandRequestMsg">
+    <wsdl:part name="parameters" element="ts:ReadCommand" />
+  </wsdl:message>
+  <wsdl:message name="ReadCommandReplyMsg">
+    <wsdl:part name="parameters" element="ts:ReadCommandReply" />
+  </wsdl:message>
+  <wsdl:message name="SetHardwareTypeRequestMsg">
+    <wsdl:part name="parameters" element="ts:SetHardwareType" />
+  </wsdl:message>
+  <wsdl:message name="SetHardwareTypeReplyMsg">
+    <wsdl:part name="parameters" element="ts:SetHardwareTypeReply" />
+  </wsdl:message>
+  <wsdl:message name="SetParamValueRequestMsg">
+    <wsdl:part name="parameters" element="ts:SetParamValue" />
+  </wsdl:message>
+  <wsdl:message name="SetParamValueReplyMsg">
+    <wsdl:part name="parameters" element="ts:SetParamValueReply" />
+  </wsdl:message>
+  <wsdl:message name="ShutdownRequestMsg">
+    <wsdl:part name="parameters" element="ts:Shutdown" />
+  </wsdl:message>
+  <wsdl:message name="ShutdownReplyMsg">
+    <wsdl:part name="parameters" element="ts:ShutdownReply" />
+  </wsdl:message>
+  <wsdl:message name="WriteCommandRequestMsg">
+    <wsdl:part name="parameters" element="ts:WriteCommand" />
+  </wsdl:message>
+  <wsdl:message name="WriteCommandReplyMsg">
+    <wsdl:part name="parameters" element="ts:WriteCommandReply" />
+  </wsdl:message>
+  <wsdl:portType name="DeviceCommService">
+    <wsdl:operation name="Create">
+      <wsdl:input message="ts:CreateRequestMsg" />
+      <wsdl:output message="ts:CreateReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateFromBuffer">
+      <wsdl:input message="ts:CreateFromBufferRequestMsg" />
+      <wsdl:output message="ts:CreateFromBufferReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="Destroy">
+      <wsdl:input message="ts:DestroyRequestMsg" />
+      <wsdl:output message="ts:DestroyReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="DoCommand">
+      <wsdl:input message="ts:DoCommandRequestMsg" />
+      <wsdl:output message="ts:DoCommandReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCommands">
+      <wsdl:input message="ts:GetAllCommandsRequestMsg" />
+      <wsdl:output message="ts:GetAllCommandsReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <wsdl:input message="ts:GetDescriptionRequestMsg" />
+      <wsdl:output message="ts:GetDescriptionReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHardwareTypes">
+      <wsdl:input message="ts:GetHardwareTypesRequestMsg" />
+      <wsdl:output message="ts:GetHardwareTypesReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInputParams">
+      <wsdl:input message="ts:GetInputParamsRequestMsg" />
+      <wsdl:output message="ts:GetInputParamsReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastError">
+      <wsdl:input message="ts:GetLastErrorRequestMsg" />
+      <wsdl:output message="ts:GetLastErrorReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <wsdl:input message="ts:GetNameRequestMsg" />
+      <wsdl:output message="ts:GetNameReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutputParams">
+      <wsdl:input message="ts:GetOutputParamsRequestMsg" />
+      <wsdl:output message="ts:GetOutputParamsReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParamLimits">
+      <wsdl:input message="ts:GetParamLimitsRequestMsg" />
+      <wsdl:output message="ts:GetParamLimitsReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParams">
+      <wsdl:input message="ts:GetParamsRequestMsg" />
+      <wsdl:output message="ts:GetParamsReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceVer">
+      <wsdl:input message="ts:GetServiceVerRequestMsg" />
+      <wsdl:output message="ts:GetServiceVerReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSettings">
+      <wsdl:input message="ts:GetUserSettingsRequestMsg" />
+      <wsdl:output message="ts:GetUserSettingsReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <wsdl:input message="ts:GetVersionRequestMsg" />
+      <wsdl:output message="ts:GetVersionReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <wsdl:input message="ts:InitializeRequestMsg" />
+      <wsdl:output message="ts:InitializeReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDoable">
+      <wsdl:input message="ts:IsDoableRequestMsg" />
+      <wsdl:output message="ts:IsDoableReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="IsReadable">
+      <wsdl:input message="ts:IsReadableRequestMsg" />
+      <wsdl:output message="ts:IsReadableReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="IsWritable">
+      <wsdl:input message="ts:IsWritableRequestMsg" />
+      <wsdl:output message="ts:IsWritableReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="ReInitialize">
+      <wsdl:input message="ts:ReInitializeRequestMsg" />
+      <wsdl:output message="ts:ReInitializeReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadCommand">
+      <wsdl:input message="ts:ReadCommandRequestMsg" />
+      <wsdl:output message="ts:ReadCommandReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="SetHardwareType">
+      <wsdl:input message="ts:SetHardwareTypeRequestMsg" />
+      <wsdl:output message="ts:SetHardwareTypeReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="SetParamValue">
+      <wsdl:input message="ts:SetParamValueRequestMsg" />
+      <wsdl:output message="ts:SetParamValueReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="Shutdown">
+      <wsdl:input message="ts:ShutdownRequestMsg" />
+      <wsdl:output message="ts:ShutdownReplyMsg" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteCommand">
+      <wsdl:input message="ts:WriteCommandRequestMsg" />
+      <wsdl:output message="ts:WriteCommandReplyMsg" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DeviceCommServiceSoapBinding" type="ts:DeviceCommService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateFromBuffer">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/CreateFromBuffer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Destroy">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/Destroy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoCommand">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/DoCommand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCommands">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetAllCommands" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHardwareTypes">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetHardwareTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInputParams">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetInputParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastError">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetLastError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutputParams">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetOutputParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParamLimits">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetParamLimits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParams">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceVer">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetServiceVer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSettings">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetUserSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersion">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/GetVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Initialize">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/Initialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDoable">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/IsDoable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsReadable">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/IsReadable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsWritable">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/IsWritable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReInitialize">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/ReInitialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadCommand">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/ReadCommand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetHardwareType">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/SetHardwareType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParamValue">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/SetParamValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Shutdown">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/Shutdown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteCommand">
+      <soap:operation soapAction="http://gentex.com/services/DeviceCommService/WriteCommand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DeviceCommServiceService">
+    <wsdl:port name="DeviceCommService" binding="ts:DeviceCommServiceSoapBinding">
+      <soap:address location="http://localhost:8081/soap/DeviceCommService/DeviceCommService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

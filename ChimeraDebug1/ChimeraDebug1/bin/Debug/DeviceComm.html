@@ -1,0 +1,1515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Debugging.html">Debugging</a>
+	</li>
+
+	<li><strong>DeviceComm</strong></li>
+	
+	<li>
+		<a href="../modules/FileUtils.html">FileUtils</a>
+	</li>
+
+	<li>
+		<a href="../modules/Logging.html">Logging</a>
+	</li>
+
+	<li>
+		<a href="../modules/SerialPort.html">SerialPort</a>
+	</li>
+
+	<li>
+		<a href="../modules/SimpleLogging.html">SimpleLogging</a>
+	</li>
+
+	<li>
+		<a href="../modules/String.html">String</a>
+	</li>
+
+	<li>
+		<a href="../modules/StringUtils.html">StringUtils</a>
+	</li>
+
+	<li>
+		<a href="../modules/Utils.html">Utils</a>
+	</li>
+
+	<li>
+		<a href="../modules/gScripted.html">gScripted</a>
+	</li>
+
+	<li>
+		<a href="../modules/gtx.html">gtx</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>DeviceComm</code></h1>
+
+<p>This is the main class that is used to interface the <em>gtx</em> DeviceComm library.<br /><br />  See the <a href=http://eeweb.gentex.com/svn/libraries/gentex/cpp/devicecomm/docs/html/index.html>DeviceComm Documentation</a> </p>
+
+
+<p><b>Author:</b>
+<table class="authors_list">
+
+	<tr><td class="name"><a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a></td></tr>
+
+</table>
+</p>
+
+
+
+<p><b>Release:</b> 2.1 <11/11/2009>  <p><b>Example:</b> <pre class=example> require( "gScripted" )<br /> require( "String" )<br /><br /> local devComm = DeviceComm.new( "RevComm.xml" )<br /> <br /> local settings =<br /> {<br /> &nbsp; &nbsp; Port="COM1",<br /> &nbsp; &nbsp; Baud=38400,<br /> &nbsp; &nbsp; ReadLoopback="true",<br /> &nbsp; &nbsp; AssertRTS="true"<br /> }<br /> devComm:Initialize( "Serial", settings )<br /> print( "-- DeviceComm Initialized" )<br /> <br /> print( "Calling devComm:Do(Unlock)..." )<br /> devComm:Do( "Unlock" )<br /> <br /> print( "Calling devComm:Do(ReadALSCalData)..." )<br /> local retVal = devComm:Do( "ReadALSCalData" )<br /> -- Display the returned parameters.<br /> print( "ReadALSCalData returned:" )<br /> for parameterName, parameterValue in pairs( retVal ) do<br /> &nbsp; &nbsp; print( "", parameterName, String.ToHex( parameterValue ), "["..String.ToDec( parameterValue ).."]" )<br /> end<br /> <br /> retVal = devComm:Write( "AmbientCal", { Cal = 4505 } )<br /> for parameterName, parameterValue in pairs( retVal ) do<br /> &nbsp; &nbsp; print( "", parameterName, String.ToHex( parameterValue ), "["..String.ToDec( parameterValue ).."]" )<br /> end<br /> <br /> print( "-- Shutting down the DeviceComm object" )<br /> devComm:Shutdown() </pre></p>
+</p>
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Command:GetParameterComment">Command:GetParameterComment</a>&nbsp;(paramName)</td>
+	<td class="summary">Gets the specified parameters comment.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Command:GetParameterMsbFirst">Command:GetParameterMsbFirst</a>&nbsp;(paramName)</td>
+	<td class="summary">Get the "MSB First" flag for the parameter by name.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Command:GetParameterRange">Command:GetParameterRange</a>&nbsp;(paramName)</td>
+	<td class="summary">Gets the valid range for the specified parameter.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Command:GetParameterType">Command:GetParameterType</a>&nbsp;(paramName)</td>
+	<td class="summary">Gets the parameter type from the specified parameter name.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Command:SetParameterComment">Command:SetParameterComment</a>&nbsp;(paramName, comment)</td>
+	<td class="summary">Set the comment of the parameter by name.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Command:SetParameterMsbFirst">Command:SetParameterMsbFirst</a>&nbsp;(paramName, msbFirst)</td>
+	<td class="summary">Set the "MSB First" flag for the parameter by name.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Command:SetParameterRange">Command:SetParameterRange</a>&nbsp;(paramName, range)</td>
+	<td class="summary">Set the valid range and default value of the parameter by name.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm.GetAvailableHardwareTypes">DeviceComm.GetAvailableHardwareTypes</a>&nbsp;()</td>
+	<td class="summary">Returns a list of all available hardware types.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm.new">DeviceComm.new</a>&nbsp;(commandSetPath)</td>
+	<td class="summary">Constructs a new DeviceComm object.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Broadcast">DeviceComm:Broadcast</a>&nbsp;(cmdName, inParameters)</td>
+	<td class="summary">Spawn a thread and broadcast the command in Do mode at periodic intervals.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Broadcast[Overload]">DeviceComm:Broadcast[Overload]</a>&nbsp;(cmd)</td>
+	<td class="summary"><strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and In/Out parameters.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Do">DeviceComm:Do</a>&nbsp;(name, inParameters)</td>
+	<td class="summary">Run a command using its name and a table filed with named input parameters.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Do[Overload]">DeviceComm:Do[Overload]</a>&nbsp;(cmd)</td>
+	<td class="summary"><strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and In/Out parameters.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:FindCommand">DeviceComm:FindCommand</a>&nbsp;(name)</td>
+	<td class="summary">Find the specified command from the loaded CommandSet.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:GetAllCommands">DeviceComm:GetAllCommands</a>&nbsp;()</td>
+	<td class="summary">Get all the available command names in the loaded CommandSet.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:GetDefaultSettings">DeviceComm:GetDefaultSettings</a>&nbsp;(hardwareType)</td>
+	<td class="summary">Use this function to get the default UserSettings for the specified hardware type.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:GetDescription">DeviceComm:GetDescription</a>&nbsp;()</td>
+	<td class="summary">Gets the loaded CommandSets description as written in the file.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:GetName">DeviceComm:GetName</a>&nbsp;()</td>
+	<td class="summary">Gets the loaded CommandSets name as written in the file.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:GetProtocolCommands">DeviceComm:GetProtocolCommands</a>&nbsp;(protocolGroupName)</td>
+	<td class="summary">Use this function to get the Commands for a Protocol Group.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:GetProtocolSettings">DeviceComm:GetProtocolSettings</a>&nbsp;(protocolGroupName)</td>
+	<td class="summary">Use this function to get the Protocol Settings for a Protocol Group.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:GetSettings">DeviceComm:GetSettings</a>&nbsp;()</td>
+	<td class="summary">Use this function to get the current UserSettings for the loaded CommandSet.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:GetVersion">DeviceComm:GetVersion</a>&nbsp;()</td>
+	<td class="summary">Gets the loaded CommandSets version as written in the file.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Initialize">DeviceComm:Initialize</a>&nbsp;(hardwareType, userSettings)</td>
+	<td class="summary">Initializes hardware objects (opens ports, starts threads, etc.) </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Listen">DeviceComm:Listen</a>&nbsp;(cmdName, callback)</td>
+	<td class="summary">Spawn a thread and wait for the specified incoming command.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Read">DeviceComm:Read</a>&nbsp;(name)</td>
+	<td class="summary">Run a command using its name.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Read[Overload]">DeviceComm:Read[Overload]</a>&nbsp;(cmd)</td>
+	<td class="summary"><strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and Mem parameters.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Reinitialize">DeviceComm:Reinitialize</a>&nbsp;()</td>
+	<td class="summary">Reinitializes the DeviceComm object and hardware using the last ones used.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:SetProtocolSettings">DeviceComm:SetProtocolSettings</a>&nbsp;(protocolGroupName, protocolSettings)</td>
+	<td class="summary">Use this function to set the Protocol Settings for a Protocol Group.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Shutdown">DeviceComm:Shutdown</a>&nbsp;()</td>
+	<td class="summary">Shuts down hardware (closes ports, stops threads, etc.) </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:StopPeriodic">DeviceComm:StopPeriodic</a>&nbsp;(periodicId)</td>
+	<td class="summary">Stop a periodic command.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Write">DeviceComm:Write</a>&nbsp;(name, parameters)</td>
+	<td class="summary">Run a command using its name.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm:Write[Overload]">DeviceComm:Write[Overload]</a>&nbsp;(cmd)</td>
+	<td class="summary"><strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and Mem parameters.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm[] (Operator)">DeviceComm[] (Operator)</a>&nbsp;(commandName)</td>
+	<td class="summary">Bracket operator - Simple syntax sugar that makes finding/getting a specified command by name easy and look good.</td>
+	</tr>
+
+</table>
+
+
+
+<h2>Tables</h2>
+<table class="table_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Command">Command</a></td>
+	<td class="summary">The Command class.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#DeviceComm">DeviceComm</a></td>
+	<td class="summary">The DeviceComm class.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Range">Range</a></td>
+	<td class="summary">A valid range of values for a parameter.</td>
+	</tr>
+
+</table>
+
+
+
+<br/>
+<br/>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="Command:GetParameterComment"></a><strong>Command:GetParameterComment</strong>&nbsp;(paramName)</dt>
+<dd>
+Gets the specified parameters comment.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>paramName</em></code>: {string} The name of the parameter that you want the comment for.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} The parameter comment as a string.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Command:GetParameterMsbFirst"></a><strong>Command:GetParameterMsbFirst</strong>&nbsp;(paramName)</dt>
+<dd>
+Get the "MSB First" flag for the parameter by name.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>paramName</em></code>: {string} The name of the parameter to get the "MSB First" flag for.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{boolean} The state of the "MSB First" flag.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Command:GetParameterRange"></a><strong>Command:GetParameterRange</strong>&nbsp;(paramName)</dt>
+<dd>
+Gets the valid range for the specified parameter.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>paramName</em></code>: {string} The name of the parameter that you want the range for.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{<a href="#Range">Range</a>} The range as a table.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Command:GetParameterType"></a><strong>Command:GetParameterType</strong>&nbsp;(paramName)</dt>
+<dd>
+Gets the parameter type from the specified parameter name.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>paramName</em></code>: {string} The name of the parameter that you want the type for.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{string} The parameter type as a string.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Command:SetParameterComment"></a><strong>Command:SetParameterComment</strong>&nbsp;(paramName, comment)</dt>
+<dd>
+Set the comment of the parameter by name.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>paramName</em></code>: {string} The name of the parameter to get the type for.
+	</li>
+	
+	<li>
+	  <code><em>comment</em></code>: {string} The comment of the paramter.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Command:SetParameterMsbFirst"></a><strong>Command:SetParameterMsbFirst</strong>&nbsp;(paramName, msbFirst)</dt>
+<dd>
+Set the "MSB First" flag for the parameter by name.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>paramName</em></code>: {string} The name of the parameter to set the "MSB First" flag for.
+	</li>
+	
+	<li>
+	  <code><em>msbFirst</em></code>: {boolean} The new state of the "MSB First" flag.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Command:SetParameterRange"></a><strong>Command:SetParameterRange</strong>&nbsp;(paramName, range)</dt>
+<dd>
+Set the valid range and default value of the parameter by name.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>paramName</em></code>: {string} The name of the parameter to get the range for.
+	</li>
+	
+	<li>
+	  <code><em>range</em></code>: {<a href="#Range">Range</a>} The range as a table.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm.GetAvailableHardwareTypes"></a><strong>DeviceComm.GetAvailableHardwareTypes</strong>&nbsp;()</dt>
+<dd>
+Returns a list of all available hardware types.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{table} Array of supported hardware types.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm.new"></a><strong>DeviceComm.new</strong>&nbsp;(commandSetPath)</dt>
+<dd>
+Constructs a new DeviceComm object. Used to allow adding a metatable to the Lunax Class creator.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>commandSetPath</em></code>: {string} String to a valid DeviceComm CommandSet xml file.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{table} The DeviceComm object.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Broadcast"></a><strong>DeviceComm:Broadcast</strong>&nbsp;(cmdName, inParameters)</dt>
+<dd>
+Spawn a thread and broadcast the command in Do mode at periodic intervals. Uses the command's PeriodInMilliseconds for the interval. If the Command.PeriodInMilliseconds < 0, only sends once If the Command.PeriodInMilliseconds == 0, does not pause between transmissions If the Command.PeriodInMilliseconds > 0, sleeps for that number of milliseconds between transmissions
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>cmdName</em></code>: {string} The name of the devcomm::Command to listen for.
+	</li>
+	
+	<li>
+	  <code><em>inParameters</em></code>: [DEF] {table} A named table that holds key/value pairs. The keys should be the name of the parameter and the value should be the value you want to set for that particular parameter. This defaults to empty, meaning no parameters are required or will use the commandsets default values.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local speedId = devComm:Broadcast( "Speed", { Speed = 0 } )</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{number} Id of the thread, can be used with StopPeriodic to stop broadcasting. </ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Broadcast[Overload]"></a><strong>DeviceComm:Broadcast[Overload]</strong>&nbsp;(cmd)</dt>
+<dd>
+<strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and In/Out parameters.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>cmd</em></code>: {<a href="#Command">Command</a>} The <a href="#Command">Command</a> with the In elements filled in.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{<a href="#Command">Command</a>} A <a href="#Command">Command</a> class. @usage-- Find the Speed command.<br /> local speedCmd = devComm["Speed"]<br /> -- Change the Speed parameter to 0.<br /> speedCmd.In["Speed"] = 0<br /> local speedID = devComm:Broadcast( speedCmd )</code></ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/DeviceComm.html#DeviceComm[] (Operator)DeviceComm[] (Operator)"> -->
+	<li><a href="#DeviceComm[] (Operator)">
+		DeviceComm[] (Operator)</li>
+	</a>
+	
+	<!-- <li><a href="#DeviceComm:FindCommand"> -->
+	<li><a href="#DeviceComm:FindCommand">
+		DeviceComm:FindCommand</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Do"></a><strong>DeviceComm:Do</strong>&nbsp;(name, inParameters)</dt>
+<dd>
+Run a command using its name and a table filed with named input parameters.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>name</em></code>: {string} The name of the devcomm::Command you want to Do as a string.
+	</li>
+	
+	<li>
+	  <code><em>inParameters</em></code>: [DEF] {table} A named table that holds key/value pairs. The keys should be the name of the parameter and the value should be the value you want to set for that particular parameter. This defaults to empty, meaning no parameters are required or will use the commandsets default values.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local retVal = devComm:Do( "ReadGlareIntegrationReturnPulse", { integrationTimeInMicroSec = 1024 } )<br /> -- retVal contains a table with the key returnPulseWidth with the mirrors response.</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{table} A table of named out parameters. </ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Do[Overload]"></a><strong>DeviceComm:Do[Overload]</strong>&nbsp;(cmd)</dt>
+<dd>
+<strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and In/Out parameters.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>cmd</em></code>: {<a href="#Command">Command</a>} The <a href="#Command">Command</a> with the <code>In</code> elements filled in.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local retCmd = devComm:Do( cmd )<br /> -- retCmd contains a table with a full Command with the mirrors response filled in.<br/ > -- Look at the 'Out' element in the returned <a href="#Command">Command</a> for the details.</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{<a href="#Command">Command</a>} A <a href="#Command">Command</a> class. See the <a href="#Command">Command</a> table docs for more information.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/DeviceComm.html#DeviceComm[] (Operator)DeviceComm[] (Operator)"> -->
+	<li><a href="#DeviceComm[] (Operator)">
+		DeviceComm[] (Operator)</li>
+	</a>
+	
+	<!-- <li><a href="#DeviceComm:FindCommand"> -->
+	<li><a href="#DeviceComm:FindCommand">
+		DeviceComm:FindCommand</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:FindCommand"></a><strong>DeviceComm:FindCommand</strong>&nbsp;(name)</dt>
+<dd>
+Find the specified command from the loaded CommandSet. <h3>Note:</h3> <ul> This does not ever need to be used. Use the [] syntax to look up a command easily. <pre class=example>local cmd = devComm["CoolCommandName"]</pre> </ul> 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>name</em></code>: {string} The name of the command
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{<a href="#Command">Command</a>} A Command class. See the Command table docs for more information.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/DeviceComm.html#DeviceComm[] (Operator)DeviceComm[] (Operator)"> -->
+	<li><a href="#DeviceComm[] (Operator)">
+		DeviceComm[] (Operator)</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:GetAllCommands"></a><strong>DeviceComm:GetAllCommands</strong>&nbsp;()</dt>
+<dd>
+Get all the available command names in the loaded CommandSet.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{table} An array of all the available command names.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:GetDefaultSettings"></a><strong>DeviceComm:GetDefaultSettings</strong>&nbsp;(hardwareType)</dt>
+<dd>
+Use this function to get the default UserSettings for the specified hardware type. Use this if you want to get the settings prior to Initialization.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>hardwareType</em></code>: {string} The hardware type to get the default settigns for.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>DefaultHardwareSettings - {table} A table of default settings for the hardware.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#DeviceComm:GetSettings"> -->
+	<li><a href="#DeviceComm:GetSettings">
+		DeviceComm:GetSettings</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:GetDescription"></a><strong>DeviceComm:GetDescription</strong>&nbsp;()</dt>
+<dd>
+Gets the loaded CommandSets description as written in the file.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>print( devComm:GetDescription() ) gives 'RevComm CommandSet'</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{string} The CommandSets description.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:GetName"></a><strong>DeviceComm:GetName</strong>&nbsp;()</dt>
+<dd>
+Gets the loaded CommandSets name as written in the file. This is not the file name.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>print( devComm:GetName() ) gives 'RevComm'</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{string} The CommandSets name.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:GetProtocolCommands"></a><strong>DeviceComm:GetProtocolCommands</strong>&nbsp;(protocolGroupName)</dt>
+<dd>
+Use this function to get the Commands for a Protocol Group.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>protocolGroupName</em></code>: {string} The name of the protocol group.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{table} A table of command names.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:GetProtocolSettings"></a><strong>DeviceComm:GetProtocolSettings</strong>&nbsp;(protocolGroupName)</dt>
+<dd>
+Use this function to get the Protocol Settings for a Protocol Group.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>protocolGroupName</em></code>: {string} The name of the protocol group.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>{table} A table of protocol settings.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:GetSettings"></a><strong>DeviceComm:GetSettings</strong>&nbsp;()</dt>
+<dd>
+Use this function to get the current UserSettings for the loaded CommandSet. The DeviceComm object must be intialized before calling this.
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>CurrentHardwareSettings - {table} A table of current settings for the hardware.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#DeviceComm.Initialize"> -->
+	<li><a href="#DeviceComm.Initialize">
+		DeviceComm.Initialize</li>
+	</a>
+	
+	<!-- <li><a href="#DeviceComm.GetDefaultSettings"> -->
+	<li><a href="#DeviceComm.GetDefaultSettings">
+		DeviceComm.GetDefaultSettings</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:GetVersion"></a><strong>DeviceComm:GetVersion</strong>&nbsp;()</dt>
+<dd>
+Gets the loaded CommandSets version as written in the file.
+
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>print( devComm:GetVersion() ) gives '6725'</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{number} The CommandSets version.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Initialize"></a><strong>DeviceComm:Initialize</strong>&nbsp;(hardwareType, userSettings)</dt>
+<dd>
+Initializes hardware objects (opens ports, starts threads, etc.)
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>hardwareType</em></code>: {string} String to an available hardware type.
+	</li>
+	
+	<li>
+	  <code><em>userSettings</em></code>: {table} Table of keys/value pairs that represent settings specific to the hardware. (e.g. COM Port: settings[port] = "COM1")
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#DeviceComm.GetAvailableHardwareTypes"> -->
+	<li><a href="#DeviceComm.GetAvailableHardwareTypes">
+		DeviceComm.GetAvailableHardwareTypes</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Listen"></a><strong>DeviceComm:Listen</strong>&nbsp;(cmdName, callback)</dt>
+<dd>
+Spawn a thread and wait for the specified incoming command.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>cmdName</em></code>: {string} The name of the devcomm::Command to listen for.
+	</li>
+	
+	<li>
+	  <code><em>callback</em></code>: {function} Function to call when the specified command is recieved.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>-- Setup the callback that gets called every time the HBStatus message is recieved.<br /> -- The functions one required argument will be a <a href="#Command">Command</a>.<br /> function OnHBStatus( command )<br /> &nbsp; &nbsp; -- Simply display the HBStatus.<br /> &nbsp; &nbsp; print( command.Out["HBStatus"] )<br /> end<br /> <br /> -- ...<br /> <br /> local hbStatusId = devComm:Listen( "HBStatus", OnHBStatus )</code></pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{number} Id of the thread, can be used with StopPeriodic to stop broadcasting. </ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Read"></a><strong>DeviceComm:Read</strong>&nbsp;(name)</dt>
+<dd>
+Run a command using its name.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>name</em></code>: {string} The name of the <a href="#Command">Command</a> you want to Read as a string.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local retVal = devComm:Read( "AmbientCal" )<br /> -- retVal contains a table with the key 'cal' with the mirrors response as it's value.</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{table} A table of named memory parameters. </ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Read[Overload]"></a><strong>DeviceComm:Read[Overload]</strong>&nbsp;(cmd)</dt>
+<dd>
+<strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and Mem parameters.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>cmd</em></code>: {<a href="#Command">Command</a>} The <a href="#Command">Command</a> to run.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local retCmd = devComm:Read( cmd )<br /> -- retCmd contains a table with a full <a href="#Command">Command</a> with the mirrors response filled in.<br /> -- Look at the 'Mem' element in the returned <a href="#Command">Command</a> for the details.</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{<a href="#Command">Command</a>} A <a href="#Command">Command</a> class with the Mem elements filled in.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/DeviceComm.html#DeviceComm[] (Operator)DeviceComm[] (Operator)"> -->
+	<li><a href="#DeviceComm[] (Operator)">
+		DeviceComm[] (Operator)</li>
+	</a>
+	
+	<!-- <li><a href="#DeviceComm:FindCommand"> -->
+	<li><a href="#DeviceComm:FindCommand">
+		DeviceComm:FindCommand</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Reinitialize"></a><strong>DeviceComm:Reinitialize</strong>&nbsp;()</dt>
+<dd>
+Reinitializes the DeviceComm object and hardware using the last ones used. This will first Shutdown() your DeviceComm object before Initializing it, if it is still initialized when this is called.
+
+
+
+
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#DeviceComm:Initialize"> -->
+	<li><a href="#DeviceComm:Initialize">
+		DeviceComm:Initialize</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:SetProtocolSettings"></a><strong>DeviceComm:SetProtocolSettings</strong>&nbsp;(protocolGroupName, protocolSettings)</dt>
+<dd>
+Use this function to set the Protocol Settings for a Protocol Group.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>protocolGroupName</em></code>: {string} The name of the protocol group.
+	</li>
+	
+	<li>
+	  <code><em>protocolSettings</em></code>: {table} A table of protocol settings.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Shutdown"></a><strong>DeviceComm:Shutdown</strong>&nbsp;()</dt>
+<dd>
+Shuts down hardware (closes ports, stops threads, etc.)
+
+
+
+
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#DeviceComm:Initialize"> -->
+	<li><a href="#DeviceComm:Initialize">
+		DeviceComm:Initialize</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:StopPeriodic"></a><strong>DeviceComm:StopPeriodic</strong>&nbsp;(periodicId)</dt>
+<dd>
+Stop a periodic command.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>periodicId</em></code>: {int} Unique id, returned by Broadcast or Listen.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local hbStatusId = devComm:Broadcast( "HBStatus" )<br />-- ...<br />devComm:StopPeriodic( hbStatusId )</pre></ul>
+
+
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#DeviceComm:Listen"> -->
+	<li><a href="#DeviceComm:Listen">
+		DeviceComm:Listen</li>
+	</a>
+	
+	<!-- <li><a href="#DeviceComm:Broadcast "> -->
+	<li><a href="#DeviceComm:Broadcast ">
+		DeviceComm:Broadcast </li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Write"></a><strong>DeviceComm:Write</strong>&nbsp;(name, parameters)</dt>
+<dd>
+Run a command using its name.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>name</em></code>: {string} The name of the devcomm::Command you want to Write as a string.
+	</li>
+	
+	<li>
+	  <code><em>parameters</em></code>: [DEF] {table} A named table that holds key/value pairs. The keys should be the name of the parameter and the value should be the value you want to set for that particular parameter. This defaults to empty, meaning no parameters are required or will use the commandsets default values.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local retVal = devComm:Write( "AmbientCal", { Cal = 0x60 } )<br /> -- retVal contains a <a href="#Command">Command</a> object with any changes.</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{table} A table of named memory parameters. </ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm:Write[Overload]"></a><strong>DeviceComm:Write[Overload]</strong>&nbsp;(cmd)</dt>
+<dd>
+<strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and Mem parameters.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>cmd</em></code>: {<a href="#Command">Command</a>} The <a href="#Command">Command</a> to run.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local cmd = devComm["AmbientCal"]<br /> cmd.Mem["Cal"] = 0x60<br /> local retCmd = devComm:Write( cmd )<br /> -- retCmd contains a table with a full <a href="#Command">Command</a> with the mirrors response filled in.<br /> -- Look at the 'Mem' element in the returned <a href="#Command">Command</a> for the details.</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{<a href="#Command">Command</a>} A <a href="#Command">Command</a> class with the Mem elements filled in.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#../modules/DeviceComm.html#DeviceComm[] (Operator)DeviceComm[] (Operator)"> -->
+	<li><a href="#DeviceComm[] (Operator)">
+		DeviceComm[] (Operator)</li>
+	</a>
+	
+	<!-- <li><a href="#DeviceComm:FindCommand"> -->
+	<li><a href="#DeviceComm:FindCommand">
+		DeviceComm:FindCommand</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="DeviceComm[] (Operator)"></a><strong>DeviceComm[] (Operator)</strong>&nbsp;(commandName)</dt>
+<dd>
+Bracket operator - Simple syntax sugar that makes finding/getting a specified command by name easy and look good. This is the perfered method to find a command out of a CommandSet.
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>commandName</em></code>: {string} The key specified during the index.
+	</li>
+	
+</ul>
+
+
+
+
+<h3>Usage:</h3>
+<ul><pre class=example>local devComm = DeviceComm.new( "RevComm.xml" )<br /> -- ...<br /> local cmd = devComm["CoolCommandName"]</pre></ul>
+
+
+
+<h3>Return value:</h3>
+<ul>{<a href="#Command">Command</a>} Returns the <a href="#Command">Command</a> of the specified command name.</ul>
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<!-- <li><a href="#DeviceComm:FindCommand"> -->
+	<li><a href="#DeviceComm:FindCommand">
+		DeviceComm:FindCommand</li>
+	</a>
+	
+</ul>
+
+</dd>
+
+
+</dl>
+
+
+
+
+<h2><a name="tables"></a>Tables</h2>
+<dl class="table">
+
+<dt><a name="Command"></a><strong>Command</strong></dt>
+<dd>The Command class.<br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>Name</em></code>: The name of the command.
+	</li>
+	
+	<li>
+	  <code><em>PeriodInMilliseconds</em></code>: The period the command should be transmited at in milliseconds as a number.
+	</li>
+	
+	<li>
+	  <code><em>TimeoutInSeconds</em></code>: The timeout, in seconds, to wait for a response as a string.
+	</li>
+	
+	<li>
+	  <code><em>Comment</em></code>: The comment of the command as a string.
+	</li>
+	
+	<li>
+	  <code><em>IsDoable</em></code>: true if the Command can be called using <a href="#DeviceComm:Do">Do</a>, else false.
+	</li>
+	
+	<li>
+	  <code><em>IsReadable</em></code>: True if the command can be used in a <a href="#DeviceComm:Read">Read</a> call, else false.
+	</li>
+	
+	<li>
+	  <code><em>IsWritable</em></code>: True if the command can be used in a <a href="#DeviceComm:Write">Write</a> call, else false.
+	</li>
+	
+	<li>
+	  <code><em>Mem</em></code>: The memory parameters as a table. Used with DeviceComm:Read() and DeviceComm:Write().
+	</li>
+	
+	<li>
+	  <code><em>In</em></code>: The in parameters as a table. Used as input parameters to DeviceComm:Do().
+	</li>
+	
+	<li>
+	  <code><em>Out</em></code>: The out parameters as a table. Used as return values from DeviceComm:Do().
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+<dt><a name="DeviceComm"></a><strong>DeviceComm</strong></dt>
+<dd>The DeviceComm class. It is a small table that returns a DeviceComm class. See the function for more information. <br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>buildNumber</em></code>: [UNSUPPORTED] This is the build number of the DeviceComm library. This can be used to make your script usable with many versions of the DeviceComm library. This is available all the time so you don't have to have a DeviceComm object to use it. <h4>Example:</h4> <pre class="example"> if DeviceComm.buildNumber < 4023 then<br /> &nbsp; &nbsp; -- Do something for any version lower than 4023<br /> &nbsp; &nbsp; error( "This script does not support version "..DeviceComm.buildNumber.." of the DeviceComm library." )<br /> end </pre>
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+<dt><a name="Range"></a><strong>Range</strong></dt>
+<dd>A valid range of values for a parameter.<br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>High</em></code>: The highest valid value for the parameter.
+	</li>
+	
+	<li>
+	  <code><em>Low</em></code>: The lowest valid value for the parameter.
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+</dl>
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

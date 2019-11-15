@@ -1,0 +1,336 @@
+---	This is the main class that is used to interface the <em>gtx</em> DeviceComm library.<br /><br />
+--
+--	See the <a href=http://eeweb.gentex.com/svn/libraries/gentex/cpp/devicecomm/docs/html/index.html>DeviceComm Documentation</a>
+--
+--	@author		<a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a>
+--	@release	2.1 <11/11/2009>
+--
+--	<p><b>Example:</b>
+--	<pre class=example>
+--	require( "gScripted" )<br />
+--	require( "String" )<br /><br />
+--	local devComm = DeviceComm.new( "RevComm.xml" )<br />
+--	<br />
+--	local settings =<br />
+--	{<br />
+--	&nbsp; &nbsp; Port="COM1",<br />
+--	&nbsp; &nbsp; Baud=38400,<br />
+--	&nbsp; &nbsp; ReadLoopback="true",<br />
+--	&nbsp; &nbsp; AssertRTS="true"<br />
+--	}<br />
+--	devComm:Initialize( "Serial", settings )<br />
+--	print( "-- DeviceComm Initialized" )<br />
+--	<br />
+--	print( "Calling devComm:Do(Unlock)..." )<br />
+--	devComm:Do( "Unlock" )<br />
+--	<br />
+--	print( "Calling devComm:Do(ReadALSCalData)..." )<br />
+--	local retVal = devComm:Do( "ReadALSCalData" )<br />
+--	-- Display the returned parameters.<br />
+--	print( "ReadALSCalData returned:" )<br />
+--	for parameterName, parameterValue in pairs( retVal ) do<br />
+--	&nbsp; &nbsp; print( "", parameterName, String.ToHex( parameterValue ), "["..String.ToDec( parameterValue ).."]" )<br />
+--	end<br />
+--	<br />
+--	retVal = devComm:Write( "AmbientCal", { Cal = 4505 } )<br />
+--	for parameterName, parameterValue in pairs( retVal ) do<br />
+--	&nbsp; &nbsp; print( "", parameterName, String.ToHex( parameterValue ), "["..String.ToDec( parameterValue ).."]" )<br />
+--	end<br />
+--	<br />
+--	print( "-- Shutting down the DeviceComm object" )<br />
+--	devComm:Shutdown()
+--	</pre></p>
+module "DeviceComm"
+
+---	The DeviceComm class. It is a small table that returns a DeviceComm class.
+--	See the function for more information.
+--
+--	@class table
+--	@name DeviceComm
+--	@field buildNumber [UNSUPPORTED] This is the build number of the DeviceComm
+--		library. This can be used to make your script usable with many versions
+--		of the DeviceComm library. This is available all the time so you don't have
+--		to have a DeviceComm object to use it.
+--	<h4>Example:</h4>
+--	<pre class="example">
+--	if DeviceComm.buildNumber < 4023 then<br />
+--	&nbsp; &nbsp; -- Do something for any version lower than 4023<br />
+--	&nbsp; &nbsp; error( "This script does not support version "..DeviceComm.buildNumber.." of the DeviceComm library." )<br />
+--	end
+--	</pre>
+
+---	The Command class.
+--	@class table
+--	@name Command
+--	@field Name The name of the command.
+--	@field PeriodInMilliseconds The period the command should be transmited at in milliseconds as a number.
+--	@field TimeoutInSeconds The timeout, in seconds, to wait for a response as a string.
+--	@field Comment The comment of the command as a string.
+--	@field IsDoable true if the Command can be called using <a href="#DeviceComm:Do">Do</a>, else false.
+--	@field IsReadable True if the command can be used in a <a href="#DeviceComm:Read">Read</a> call, else false.
+--	@field IsWritable True if the command can be used in a <a href="#DeviceComm:Write">Write</a> call, else false.
+--	@field Mem The memory parameters as a table. Used with DeviceComm:Read() and DeviceComm:Write().
+--	@field In The in parameters as a table. Used as input parameters to DeviceComm:Do().
+--	@field Out The out parameters as a table. Used as return values from DeviceComm:Do().
+
+--- A valid range of values for a parameter.
+--  @class table
+--  @name Range
+--  @field High The highest valid value for the parameter.
+--  @field Low The lowest valid value for the parameter.
+
+---	Gets the loaded CommandSets name as written in the file. This is not the file name.
+--	@return {string} The CommandSets name.
+--	@usage print( devComm:GetName() ) gives 'RevComm'
+function DeviceComm:GetName()
+
+---	Gets the loaded CommandSets version as written in the file.
+--	@return {number} The CommandSets version.
+--	@usage print( devComm:GetVersion() ) gives '6725'
+function DeviceComm:GetVersion()
+
+---	Gets the loaded CommandSets description as written in the file.
+--	@return {string} The CommandSets description.
+--	@usage print( devComm:GetDescription() ) gives 'RevComm CommandSet'
+function DeviceComm:GetDescription()
+
+---	Get all the available command names in the loaded CommandSet.
+--	@return {table} An array of all the available command names.
+function DeviceComm:GetAllCommands()
+
+---	Initializes hardware objects (opens ports, starts threads, etc.)
+--	@param hardwareType {string} String to an available hardware type.
+--	@param userSettings {table} Table of keys/value pairs that represent settings specific to the hardware. (e.g. COM Port: settings[port] = "COM1")
+--	@see DeviceComm.GetAvailableHardwareTypes
+function DeviceComm:Initialize( hardwareType, userSettings )
+
+---	Reinitializes the DeviceComm object and hardware using the last ones used.
+--	This will first Shutdown() your DeviceComm object before Initializing it,
+--	if it is still initialized when this is called.
+--	@see DeviceComm:Initialize
+function DeviceComm:Reinitialize()
+
+---	Shuts down hardware (closes ports, stops threads, etc.)
+--	@see DeviceComm:Initialize
+function DeviceComm:Shutdown()
+
+---	Use this function to get the default UserSettings for the specified hardware type.
+--	Use this if you want to get the settings prior to Initialization.
+--	@param hardwareType {string} The hardware type to get the default settigns for.
+--	@return DefaultHardwareSettings - {table} A table of default settings for the hardware.
+--	@see DeviceComm:GetSettings
+function DeviceComm:GetDefaultSettings( hardwareType )
+
+---	Use this function to get the current UserSettings for the loaded CommandSet.
+--	The DeviceComm object must be intialized before calling this.
+--	@return CurrentHardwareSettings - {table} A table of current settings for the hardware.
+--	@see DeviceComm.Initialize
+--	@see DeviceComm.GetDefaultSettings
+function DeviceComm:GetSettings()
+
+---	Use this function to get the Protocol Settings for a Protocol Group.
+--	@param protocolGroupName {string} The name of the protocol group.
+--	@return {table} A table of protocol settings.
+function DeviceComm:GetProtocolSettings( protocolGroupName );
+
+---	Use this function to set the Protocol Settings for a Protocol Group.
+--	@param protocolGroupName {string} The name of the protocol group.
+--	@param protocolSettings {table} A table of protocol settings.
+function DeviceComm:SetProtocolSettings( protocolGroupName, protocolSettings );
+
+---	Use this function to get the Commands for a Protocol Group.
+--	@param protocolGroupName {string} The name of the protocol group.
+--	@return {table} A table of command names.
+function DeviceComm:GetProtocolCommands( protocolGroupName );
+
+---	Returns a list of all available hardware types.
+--	@return {table} Array of supported hardware types.
+function DeviceComm.GetAvailableHardwareTypes()
+
+---	Constructs a new DeviceComm object.
+--	Used to allow adding a metatable to the Lunax Class creator.
+--	@param commandSetPath {string} String to a valid DeviceComm CommandSet xml file.
+--	@return {table} The DeviceComm object.
+function DeviceComm.new( commandSetPath )
+
+---	Bracket operator - Simple syntax sugar that makes finding/getting a specified
+--	command by name easy and look good. This is the perfered method to find a
+--	command out of a CommandSet.
+--	@class function
+--	@name DeviceComm[] (Operator)
+--	@param commandName {string} The key specified during the index.
+--	@return {<a href="#Command">Command</a>} Returns the <a href="#Command">Command</a>
+--		of the specified command name.
+--	@usage local devComm = DeviceComm.new( "RevComm.xml" )<br />
+--		-- ...<br />
+--		local cmd = devComm["CoolCommandName"]
+--	@see DeviceComm:FindCommand
+function DeviceComm[]
+
+---	Find the specified command from the loaded CommandSet.
+--	<h3>Note:</h3>
+--	<ul>
+--	This does not ever need to be used. Use the [] syntax to look up a command easily.
+--	<pre class=example>local cmd = devComm["CoolCommandName"]</pre>
+--	</ul>
+--
+--	@param name {string} The name of the command
+--	@return {<a href="#Command">Command</a>} A Command class. See the Command table docs for more information.
+--	@see DeviceComm[] (Operator)
+function DeviceComm:FindCommand( name )
+
+---	Run a command using its name and a table filed with named input parameters.
+--	@param name {string} The name of the devcomm::Command you want to Do as a string.
+--	@param inParameters [DEF] {table} A named table that holds key/value pairs.
+--		The keys should be the name of the parameter and the value should be the
+--		value you want to set for that particular parameter. This defaults to empty,
+--		meaning no parameters are required or will use the commandsets default values.
+--	@return {table} A table of named out parameters.
+--
+--	@usage local retVal = devComm:Do( "ReadGlareIntegrationReturnPulse", { integrationTimeInMicroSec = 1024 } )<br />
+--	-- retVal contains a table with the key returnPulseWidth with the mirrors response.
+function DeviceComm:Do( name, inParameters )
+
+---	<strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and In/Out parameters.
+--	@param cmd {<a href="#Command">Command</a>} The <a href="#Command">Command</a> with
+--		the <code>In</code> elements filled in.
+--	@return {<a href="#Command">Command</a>} A <a href="#Command">Command</a> class.
+--		See the <a href="#Command">Command</a> table docs for more information.
+--	@usage local retCmd = devComm:Do( cmd )<br />
+--		-- retCmd contains a table with a full Command with the mirrors response filled in.<br/ >
+--		-- Look at the 'Out' element in the returned <a href="#Command">Command</a> for the details.
+--	@see DeviceComm[] (Operator)
+--	@see DeviceComm:FindCommand
+function DeviceComm:Do[Overload]( cmd )
+
+---	Run a command using its name.
+--	@param name {string} The name of the <a href="#Command">Command</a> you want to Read as a string.
+--	@return {table} A table of named memory parameters.
+--
+--	@usage local retVal = devComm:Read( "AmbientCal" )<br />
+--	-- retVal contains a table with the key 'cal' with the mirrors response as it's value.
+function DeviceComm:Read( name )
+
+---	<strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and Mem parameters.
+--	@param cmd {<a href="#Command">Command</a>} The <a href="#Command">Command</a> to run.
+--	@return {<a href="#Command">Command</a>} A <a href="#Command">Command</a> class with the Mem elements filled in.
+--	@usage local retCmd = devComm:Read( cmd )<br />
+--	-- retCmd contains a table with a full <a href="#Command">Command</a> with the mirrors response filled in.<br />
+--	-- Look at the 'Mem' element in the returned <a href="#Command">Command</a> for the details.
+--	@see DeviceComm[] (Operator)
+--	@see DeviceComm:FindCommand
+function DeviceComm:Read[Overload]( cmd )
+
+---	Run a command using its name.
+--	@param name {string} The name of the devcomm::Command you want to Write as a string.
+--	@param parameters [DEF] {table} A named table that holds key/value pairs.
+--		The keys should be the name of the parameter and the value should be the
+--		value you want to set for that particular parameter. This defaults to empty,
+--		meaning no parameters are required or will use the commandsets default values.
+--	@return {table} A table of named memory parameters.
+--
+--	@usage local retVal = devComm:Write( "AmbientCal", { Cal = 0x60 } )<br />
+--	-- retVal contains a <a href="#Command">Command</a> object with any changes.
+function DeviceComm:Write( name, parameters )
+
+---	<strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class and Mem parameters.
+--	@param cmd {<a href="#Command">Command</a>} The <a href="#Command">Command</a> to run.
+--	@return {<a href="#Command">Command</a>} A <a href="#Command">Command</a> class with
+--		the Mem elements filled in.
+--	@usage local cmd = devComm["AmbientCal"]<br />
+--		cmd.Mem["Cal"] = 0x60<br />
+--		local retCmd = devComm:Write( cmd )<br />
+--		-- retCmd contains a table with a full <a href="#Command">Command</a> with the mirrors response filled in.<br />
+--		-- Look at the 'Mem' element in the returned <a href="#Command">Command</a> for the details.
+--	@see DeviceComm[] (Operator)
+--	@see DeviceComm:FindCommand
+function DeviceComm:Write[Overload]( cmd )
+
+---	Spawn a thread and wait for the specified incoming command.
+--	@param cmdName {string} The name of the devcomm::Command to listen for.
+--	@param callback {function} Function to call when the specified command is recieved.
+--	@return {number} Id of the thread, can be used with StopPeriodic to stop broadcasting.
+--
+--	@usage -- Setup the callback that gets called every time the HBStatus message is recieved.<br />
+--	-- The functions one required argument will be a <a href="#Command">Command</a>.<br />
+--	function OnHBStatus( command )<br />
+--	&nbsp; &nbsp; -- Simply display the HBStatus.<br />
+--	&nbsp; &nbsp; print( command.Out["HBStatus"] )<br />
+--	end<br />
+--	<br />
+--	-- ...<br />
+--	<br />
+--	local hbStatusId = devComm:Listen( "HBStatus", OnHBStatus )</code>
+function DeviceComm:Listen( cmdName, callback )
+
+---	Spawn a thread and broadcast the command in Do mode at periodic intervals.
+--	Uses the command's PeriodInMilliseconds for the interval.
+--	If the Command.PeriodInMilliseconds < 0, only sends once
+--	If the Command.PeriodInMilliseconds == 0, does not pause between transmissions
+--	If the Command.PeriodInMilliseconds > 0, sleeps for that number of milliseconds between transmissions
+--	@param cmdName {string} The name of the devcomm::Command to listen for.
+--	@param inParameters [DEF] {table} A named table that holds key/value pairs.
+--		The keys should be the name of the parameter and the value should be the
+--		value you want to set for that particular parameter. This defaults to empty,
+--		meaning no parameters are required or will use the commandsets default values.
+--	@return {number} Id of the thread, can be used with StopPeriodic to stop broadcasting.
+--
+--	@usage local speedId = devComm:Broadcast( "Speed", { Speed = 0 } )
+function DeviceComm:Broadcast( cmdName, inParameters )
+
+---	<strong>Overload</strong> - Run a command using a <a href="#Command">Command</a> class
+--	and In/Out parameters.
+--	@param cmd {<a href="#Command">Command</a>} The <a href="#Command">Command</a> with the In
+--		elements filled in.
+--	@return {<a href="#Command">Command</a>} A <a href="#Command">Command</a> class.
+--	@usage-- Find the Speed command.<br />
+--	local speedCmd = devComm["Speed"]<br />
+--	-- Change the Speed parameter to 0.<br />
+--	speedCmd.In["Speed"] = 0<br />
+--	local speedID = devComm:Broadcast( speedCmd )</code>
+--	@see DeviceComm[] (Operator)
+--	@see DeviceComm:FindCommand
+function DeviceComm:Broadcast[Overload]( cmd )
+
+---	Stop a periodic command.
+--	@param periodicId {int} Unique id, returned by Broadcast or Listen.
+--	@see DeviceComm:Listen
+--	@see DeviceComm:Broadcast
+--
+--	@usage local hbStatusId = devComm:Broadcast( "HBStatus" )<br />-- ...<br />devComm:StopPeriodic( hbStatusId )
+function DeviceComm:StopPeriodic( periodicId )
+
+---	Gets the parameter type from the specified parameter name.
+--	@param paramName {string} The name of the parameter that you want the type for.
+--	@return {string} The parameter type as a string.
+function Command:GetParameterType( paramName )
+
+---	Gets the specified parameters comment.
+--	@param paramName {string} The name of the parameter that you want the comment for.
+--	@return {string} The parameter comment as a string.
+function Command:GetParameterComment( paramName )
+
+---	Set the comment of the parameter by name.
+--	@param paramName {string} The name of the parameter to get the type for.
+--	@param comment {string} The comment of the paramter.
+function Command:SetParameterComment( paramName, comment )
+
+--- Gets the valid range for the specified parameter.
+--  @param paramName {string} The name of the parameter that you want the range for.
+--  @return {<a href="#Range">Range</a>} The range as a table.
+function Command:GetParameterRange( paramName )
+
+--- Set the valid range and default value of the parameter by name.
+--	@param paramName {string} The name of the parameter to get the range for.
+--	@param range {<a href="#Range">Range</a>} The range as a table.
+function Command:SetParameterRange( paramName, range )
+	
+--- Get the "MSB First" flag for the parameter by name.
+--	@param paramName {string} The name of the parameter to get the "MSB First" flag for.
+--	@return {boolean} The state of the "MSB First" flag.
+function Command:GetParameterMsbFirst( paramName )
+
+--- Set the "MSB First" flag for the parameter by name.
+--	@param paramName {string} The name of the parameter to set the "MSB First" flag for.
+--	@param msbFirst {boolean} The new state of the "MSB First" flag.
+function Command:SetParameterMsbFirst( paramName, msbFirst )

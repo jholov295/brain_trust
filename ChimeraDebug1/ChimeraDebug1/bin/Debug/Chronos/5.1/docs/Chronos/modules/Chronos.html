@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li><strong>Chronos</strong></li>
+	
+	<li>
+		<a href="../modules/Chronos.Action.html">Chronos.Action</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.html">Chronos.Actions</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Checks.html">Chronos.Actions.Checks</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Interactive.html">Chronos.Actions.Interactive</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.MakeCheck.html">Chronos.Actions.MakeCheck</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Traceability.html">Chronos.Actions.Traceability</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Utilities.html">Chronos.Actions.Utilities</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Auto.html">Chronos.Auto</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Config.html">Chronos.Config</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Csv.html">Chronos.Csv</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DSL.html">Chronos.DSL</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DebugInfoPrinter.html">Chronos.DebugInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DeviceComm.html">Chronos.DeviceComm</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Failure.html">Chronos.Failure</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Hex.html">Chronos.Hex</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Html.html">Chronos.Html</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.InfoPrinter.html">Chronos.InfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Runner.html">Chronos.Runner</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TeamCityInfoPrinter.html">Chronos.TeamCityInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestAccumulator.html">Chronos.TestAccumulator</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCase.html">Chronos.TestCase</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseRecorder.html">Chronos.TestCaseRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseResults.html">Chronos.TestCaseResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunRecorder.html">Chronos.TestRunRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunResults.html">Chronos.TestRunResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuite.html">Chronos.TestSuite</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteRecorder.html">Chronos.TestSuiteRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteResults.html">Chronos.TestSuiteResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Time.html">Chronos.Time</a>
+	</li>
+
+	<li>
+		<a href="../modules/LuaPP.html">LuaPP</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>Chronos</code></h1>
+
+<p>Chronos is a Lua framework for performing system tests using command sets through DeviceComm. <pre class="example"> require "Chronos"<br/> <br/> local deviceComm<br/> <br/> local settings =<br/> {<br/> &nbsp; Port = "COM3",<br/> &nbsp; Baud = 38400,<br/> &nbsp; ReadLoopback = "true",<br/> &nbsp; AssertRTS = "true"<br/> }<br/> <br/> TestSuite "My Excellent Test Suite"<br/> {<br/> &nbsp; Setup = function()<br/> &nbsp; &nbsp; deviceComm = DeviceComm.new( "MyCommandset.xml" )<br/> &nbsp; &nbsp; deviceComm:Initialize( "Serial", settings )<br/> &nbsp; end,<br/> <br/> &nbsp; Teardown = function()<br/> &nbsp; &nbsp; deviceComm:Do( "AllDone" )<br/> &nbsp; end,<br/> <br/> &nbsp; EachSetup = function()<br/> &nbsp; &nbsp; deviceComm:Do( "Unlock" )<br/> &nbsp; end,<br/> <br/> &nbsp; TestCase "My Radical Test Case"<br/> &nbsp; {<br/> &nbsp; &nbsp; Setup = function()<br/> &nbsp; &nbsp; &nbsp; deviceComm:Do( "LetMeMessWithStuff" )<br/> &nbsp; &nbsp; end,<br/> <br/> &nbsp; &nbsp; function()<br/> &nbsp; &nbsp; &nbsp; local result = deviceComm:Do( "MessingWithTheMirror", { Param1 = 0xdeadbeef } )<br/> &nbsp; &nbsp; &nbsp; CheckEqual( 0x05, result.Out.ReturnValue, "Bad Things happened!" )<br/> &nbsp; &nbsp; end<br/> &nbsp; },<br/> <br/> &nbsp; TestCase "My Tubular Test Case"<br/> &nbsp; {<br/> &nbsp; &nbsp; Teardown = function()<br/> &nbsp; &nbsp; &nbsp; deviceComm:Do( "ResetValues" )<br/> &nbsp; &nbsp; end,<br/> <br/> &nbsp; &nbsp; Test = function()<br/> &nbsp; &nbsp; &nbsp; local result = deviceComm:Do( "ChangeSomeValues", { Value1 = 0x11, Value2 = 0x22, Value3 = 0x33 } )<br/> &nbsp; &nbsp; &nbsp; CheckSequenceHex( { 0x11, 0x22, 0x33 }, result.Out.SetValues )<br/> &nbsp; &nbsp; &nbsp; Check( result.Out.AwesomeFlag, StartHex() .. "Awesome flag was not set," ..<br/> &nbsp; &nbsp; &nbsp; &nbsp; " so I'm going to print some stuff in hex: " .. 123 .. " and " .. 45 .. EndHex() ..<br/> &nbsp; &nbsp; &nbsp; &nbsp; " but this is in decimal: " .. 67 )<br/> &nbsp; &nbsp; end<br/> &nbsp; }<br/> }<br/> </pre></p>
+
+
+
+
+
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#GenerateReport">GenerateReport</a>&nbsp;(results, templatePath)</td>
+	<td class="summary">Generates a report and returns it as a string.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#GetActiveRecorder">GetActiveRecorder</a>&nbsp;()</td>
+	<td class="summary">Gets the active test recorder that an action should use, preferring a Chronos.TestCaseRecorder to a Chronos.TestSuiteRecorder.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#GetUserName">GetUserName</a>&nbsp;()</td>
+	<td class="summary">Provides a safe way to get the username of the shell running the script.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#RenderReport">RenderReport</a>&nbsp;(results, templatePath, outputPath)</td>
+	<td class="summary">Renders a report to a file.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Run">Run</a>&nbsp;(testSuites, saveResults)</td>
+	<td class="summary">Runs a given array of test suites.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#RunAccumulated">RunAccumulated</a>&nbsp;(saveResults)</td>
+	<td class="summary">Runs all test suites stored in the current test accumulator.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#RunSuiteCase">RunSuiteCase</a>&nbsp;(testSuite, testCase, saveResults)</td>
+	<td class="summary">Runs a single test case within the context of a given test suite.</td>
+	</tr>
+
+</table>
+
+
+<br/>
+<br/>
+
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="GenerateReport"></a><strong>GenerateReport</strong>&nbsp;(results, templatePath)</dt>
+<dd>
+Generates a report and returns it as a string. Report templates will have access to all of the elements of the test results, as well as the Chronos module and anything in the global table.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>results</em></code>: A TestRunResults table returned by a call to Chronos.Run().
+	</li>
+	
+	<li>
+	  <code><em>templatePath</em></code>: The path to the template.
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The body of the generated template as a string</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="GetActiveRecorder"></a><strong>GetActiveRecorder</strong>&nbsp;()</dt>
+<dd>
+Gets the active test recorder that an action should use, preferring a Chronos.TestCaseRecorder to a Chronos.TestSuiteRecorder.
+
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The active test recorder, or nil if there is none.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="GetUserName"></a><strong>GetUserName</strong>&nbsp;()</dt>
+<dd>
+Provides a safe way to get the username of the shell running the script. Most useful in reports.
+
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The username of the current user, or "User" if no information is available.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="RenderReport"></a><strong>RenderReport</strong>&nbsp;(results, templatePath, outputPath)</dt>
+<dd>
+Renders a report to a file.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>results</em></code>: A TestRunResults table returned by a call to Chronos.Run().
+	</li>
+	
+	<li>
+	  <code><em>templatePath</em></code>: The path to the template.
+	</li>
+	
+	<li>
+	  <code><em>outputPath</em></code>: The path to the desired output location.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Run"></a><strong>Run</strong>&nbsp;(testSuites, saveResults)</dt>
+<dd>
+Runs a given array of test suites.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>testSuites</em></code>: The test suites to run.
+	</li>
+	
+	<li>
+	  <code><em>saveResults</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The Chronos.TestRunResults of the run</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="RunAccumulated"></a><strong>RunAccumulated</strong>&nbsp;(saveResults)</dt>
+<dd>
+Runs all test suites stored in the current test accumulator.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>saveResults</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The Chronos.TestRunResults of the run</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="RunSuiteCase"></a><strong>RunSuiteCase</strong>&nbsp;(testSuite, testCase, saveResults)</dt>
+<dd>
+Runs a single test case within the context of a given test suite.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>testSuite</em></code>: The test suite to use to provide the setup/teardown facilities for the test case.
+	</li>
+	
+	<li>
+	  <code><em>testCase</em></code>: The test case to run.
+	</li>
+	
+	<li>
+	  <code><em>saveResults</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The Chronos.TestRunResults of the run</ul>
+
+
+
+</dd>
+
+
+</dl>
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

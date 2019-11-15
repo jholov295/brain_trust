@@ -1,0 +1,153 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Gentex.MES.EntityModel.Contracts
+</name>
+</assembly>
+<members>
+<member name="P:Gentex.MES.EntityModel.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.BusinessModelReadFunctions">
+	<summary>
+  Looks up a localized string similar to BusinessModelReadFunctions.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.BusinessModelWriteFunctions">
+	<summary>
+  Looks up a localized string similar to BusinessModelWriteFunctions.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Data_Type_Address">
+	<summary>
+  Looks up a localized string similar to DataTypes.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.DataServiceDEVBaseAddress">
+	<summary>
+  Looks up a localized string similar to http://zvm-msgdev2/MES/EntityModel/api/.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.DataServiceProductionBaseAddress">
+	<summary>
+  Looks up a localized string similar to http://zvm-msgprod/MES/EntityModel/api/.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.DataServiceQABaseAddress">
+	<summary>
+  Looks up a localized string similar to http://zvm-msgqa/MES/EntityModel/api/.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Entity_Item_Address">
+	<summary>
+  Looks up a localized string similar to EntityItems.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Entity_Property_Group_Address">
+	<summary>
+  Looks up a localized string similar to EntityPropertyGroups.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Entity_Tree_Item_Address">
+	<summary>
+  Looks up a localized string similar to EntityTreeItems.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Entity_Type_Address">
+	<summary>
+  Looks up a localized string similar to EntityTypes.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.EntityModelReadFunctions">
+	<summary>
+  Looks up a localized string similar to EntityModelReadFunctions.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.EntityModelWriteFunctions">
+	<summary>
+  Looks up a localized string similar to EntityModelWriteFunctions.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.EntityPropertyGroupLink_Address">
+	<summary>
+  Looks up a localized string similar to EntityPropertyGroupLink.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.EntityTreeLink_Address">
+	<summary>
+  Looks up a localized string similar to EntityTreeLink.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.EntityType_Property_Group_Address">
+	<summary>
+  Looks up a localized string similar to EntityTypePropertyGroup.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Organizational_Level_Address">
+	<summary>
+  Looks up a localized string similar to OrganizationalLevels.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Property_Group_Address">
+	<summary>
+  Looks up a localized string similar to PropertyGroups.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Property_Group_Context_Address">
+	<summary>
+  Looks up a localized string similar to PropertyGroupContext.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Property_Item_Address">
+	<summary>
+  Looks up a localized string similar to Properties.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Property_Tree_Item_Address">
+	<summary>
+  Looks up a localized string similar to PropertyTreeItems.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.PropertyLink_Address">
+	<summary>
+  Looks up a localized string similar to PropertyLink.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.StreamedEndpointAddress">
+	<summary>
+  Looks up a localized string similar to http://zvm-msgprod1/MES/EntityModelHost!1.0.0/Service.svc.
+</summary>
+</member><member name="P:Gentex.MES.EntityModel.My.Resources.Resources.Unit_Of_Measure_Address">
+	<summary>
+  Looks up a localized string similar to UnitOfMeasures.
+</summary>
+</member><member name="T:Gentex.MES.EntityModel.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:Gentex.MES.EntityModel.TraversalPath.GetEndNodes(Gentex.MES.EntityModel.Node,System.Boolean)">
+	<summary>
+ Returns the End Nodes of paths
+ </summary>
+	<param name="Node"></param>
+	<param name="ValidateIsSatisfiedByQuery"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Gentex.MES.EntityModel.StreamClient.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+	<summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.EntityModel.StreamClient"/> class.
+ </summary>
+	<param name="binding">The binding.</param>
+	<param name="remoteAddress">The remote address.</param>
+</member><member name="M:Gentex.MES.EntityModel.StreamClient.#ctor(System.String)">
+	<summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.EntityModel.StreamClient"/> class.
+ </summary>
+	<param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+</member><member name="M:Gentex.MES.EntityModel.StreamClient.#ctor(System.String,System.String)">
+	<summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.EntityModel.StreamClient"/> class.
+ </summary>
+	<param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+	<param name="configurationFilePath">The configuration file path.</param>
+</member><member name="M:Gentex.MES.EntityModel.ChannelFactoryWrapper`1.SetCustomMessageHeadersDelegate(System.Func{System.Collections.Generic.List{System.ServiceModel.Channels.MessageHeader}})">
+	<summary>
+ Set Custom Message Headers for the lifetime of channel
+ </summary>
+	<param name="CustomMessageHeadersDelegate"> Make sure Message Headers are in the ContractConstants.MessageHeaderNamespace</param>
+	<remarks></remarks>
+</member><member name="M:Gentex.MES.EntityModel.ChannelFactoryWrapper`1.Use(System.Action{`0},System.Collections.Generic.List{System.ServiceModel.Channels.MessageHeader})">
+	<summary>
+	</summary>
+	<param name="action"></param>
+	<param name="CustomMessageHeaders"> Make sure Message Headers are in the ContractConstants.MessageHeaderNamespace</param>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

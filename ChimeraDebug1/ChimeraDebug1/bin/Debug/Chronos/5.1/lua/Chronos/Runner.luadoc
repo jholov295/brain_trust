@@ -1,0 +1,15 @@
+--- Command line interface to Chronos.
+-- Chronos tests can be run directly from the Lua interpreter, but the Chronos runner itself is the only way to produce reports from a test run.
+-- <pre>
+-- Run the specified Chronos suites and generate reports.<br/>
+-- <br/>
+-- -c,--config   (default ChronosConfig.xml)   Specifies the Chronos config file to use.<br/>
+-- -s,--suite    (default all)                 A single test suite to run, by name.<br/>
+-- -t,--case     (default all)                 A single test case to run, by name, if only running one test suite.<br/>
+-- -m,--teamcity                               Output using TeamCity format.<br/>
+-- -v,--version                                Print the Chronos version.<br/>
+-- &lt;files...&gt;    (default none)                Paths/patterns/directories of Chronos test files to run.<br/>
+-- <br/>
+-- Example: Chronos --config MyConfig.xml Tests/*Test.lua<br/>
+-- </pre>
+module "Chronos.Runner"

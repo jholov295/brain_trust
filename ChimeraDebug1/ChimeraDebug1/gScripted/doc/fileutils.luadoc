@@ -1,0 +1,124 @@
+---	A collection of utility functions more or less related to file operations. 
+--	@author		<a href="mailto:ryan.pusztai@gentex.com">Ryan Pusztai</a>
+--	@release	1.00 <07/18/2008>
+module "FileUtils"
+
+---	Returns the size of a file.
+--	@param name {string} The name of the file.
+--	@return {int} -1 if file size not found or if size is > 0x7fffffff 
+function FileUtils.GetSize( name )
+
+---	Checks to see if a file exists.
+--	@param file {string} The name of the file .
+--	@return {bool} true if file exists, else false.
+function FileUtils.DoesFileExist( file )
+
+---	Checks to see if a directory exists. 
+--	@param dir {string} The name of the directory.
+--	return {bool} true if directory exists, else false.
+function FileUtils.DoesDirExist( dir )
+
+---	Given a string which contains a path to file, I return a string containing
+--	just the filename. For example, if "c:\temp\foo.txt" is passed in, the
+--	result would be "foo.txt".
+--	@param path {string} A string containing the input path to be parsed.
+--	@return {string} The resulting filename extracted from the path.
+function FileUtils.GetFileName( path )
+
+---	Given a string which contains a path to file, I return a string containing
+--	the file extension. For example, if "c:\temp\foo.txt" is passed in, the
+--	result would be "txt".
+--	@param path {string} A string containing the input path to be parsed.
+--	@return {string} The resulting file extension extracted from the path.
+function FileUtils.GetFileExtension( path )
+
+---	Given a string which contains a filename or a path to a file, I return a
+--	string containing the same data passed in, with the file type suffix
+--	excluded. For example, if "c:\temp\foo.txt" is passed in, the result
+--	would be "c:\temp\foo".
+--	@param path {string} A string containing the input path to be parsed.
+--	@return {string} The resulting base filename extracted from the path.
+function FileUtils.GetBaseFileName( path )
+
+---	Get the directory from a path that includes a file name.
+--	@param path {string} The complete path and file name of a file.
+--	@return {string} The directory portion of a file name path.
+function FileUtils.GetDir( path )
+
+---	Get the file name from a path that includes a directory.
+--	@param path {string} The complete path and file name of a file.
+--	@return {string} The file name portion of a file path.
+function FileUtils.GetFileFromPath( path )
+
+---	Get the directory one level up from a file path.
+--	@param path {string}
+--	@param result {string} Must be an empty string.
+--	@return {bool} true is successful, else false.
+--	@return {string} The parent directory.
+function FileUtils.GetParentDirectory( path, result )
+
+---	Move a file to another location. This function will fail if the
+--	destination path does not exist. Use CreateDirs() to implement this
+--	behavior.
+--	@param src {string} The source path and file name.
+--	@param dest {string} The destination path and file name.
+--	@return {bool} false if move failed, else true.
+function FileUtils.MoveFileTo( src, dest )
+
+---	Copy a file to another location. This function will fail if the
+--	destination path does not exist. Use CreateDirs() to implement this
+--	behavior. 
+--	@param src {string} The source path and file name.
+--	@param dest {string} The destination path and file name.
+--	@param overwriteIfExists {bool} If true, the existing file will be overwritten.
+--	@return {bool} false if copy failed, else true.
+function FileUtils.CopyFileTo( src, dest, overwriteIfExists )
+
+---	Read a file into a string.
+--	@param file {string} The complete path and file name of a file.
+--	@return {string} A string containing the contents of the file.
+function FileUtils.ReadFileIntoString( file )
+
+---	Get the name of the currently running executable.
+--	@return {string} A string containing the name of the currently
+--		running executable.
+function FileUtils.GetCurrentProgram()
+
+---	Get the current working directory of the running process.
+--	@return {string} A string containing the directory of the currently
+--		running process. 
+function FileUtils.GetWorkingDir()
+
+---	Make a file writable or read-only.
+--	@param file {string} The complete path and file name of a file.
+--	@param readOnly {bool} If true, makes the file read only. If false,
+--		make the file writeable.
+--	@return {bool} true if setting the file to read only was successful,
+--		else false.
+function FileUtils.SetReadOnly( file, readOnly )
+
+---	Check to see if a file has the read-only attribute set.
+--	@param file {string} The complete path of the file.
+--	@return {bool} true if the file is read only, else false.
+function FileUtils.IsReadOnly( file )
+
+---	Create all of the directories in the specified path. Optionally
+--	ignores the last element in the path if skipLast == true
+--	(do this for a file path).
+--	@param path {string} The complete path and file name of a file.
+--	@param skipLast [OPT] {bool} If true, ignores the last element in the
+--		path. Usefull for file paths only. This defaults to false.
+function FileUtils.CreateDirs( path, skipLast )
+
+---	Delete a file or directory.
+--	@param path {string} The directory name or file path.
+--	@return {bool} true if <i>path</i> was deleted, else false.
+function FileUtils.Delete( path )
+
+---	Get the process ID the currently running process.
+--	@return {int} The process ID.
+function FileUtils.GetProcessID()
+
+---	Get the thread ID the currently active thread.
+--	@return The thread ID.
+function FileUtils.GetThreadID()

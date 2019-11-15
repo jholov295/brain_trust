@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
+	<object class="wxDialog" name="DevicesExplorerDialog">
+		<style>wxCAPTION|wxCLOSE_BOX|wxDIALOG_NO_PARENT|wxMAXIMIZE_BOX|wxMINIMIZE_BOX|wxRESIZE_BORDER|wxSYSTEM_MENU</style>
+		<title>DevicesExplorer v2.00</title>
+		<centered>1</centered>
+		<object class="wxBoxSizer">
+			<orient>wxHORIZONTAL</orient>
+			<object class="sizeritem">
+				<option>1</option>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxStaticBoxSizer">
+					<orient>wxVERTICAL</orient>
+					<label>CommandSet Details</label>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxRIGHT|wxLEFT</flag>
+						<border>5</border>
+						<object class="wxStaticText" name="m_staticText1">
+							<label>Loaded CommandSet</label>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxEXPAND|wxBOTTOM|wxRIGHT|wxLEFT</flag>
+						<border>5</border>
+						<object class="wxFilePickerCtrl" name="m_loadedCommandSetFilePicker">
+							<value></value>
+							<message>Select a commandset</message>
+							<wildcard>*.*</wildcard>
+							<style>wxFLP_CHANGE_DIR|wxFLP_DEFAULT_STYLE</style>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxRIGHT|wxLEFT</flag>
+						<border>5</border>
+						<object class="wxStaticText" name="m_staticText2">
+							<label>Available Commands</label>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxBOTTOM|wxRIGHT|wxLEFT|wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxListBox" name="m_availableCommandsListBox">
+							<style>wxLB_NEEDED_SB|wxLB_SINGLE|wxLB_SORT</style>
+							<enabled>0</enabled>
+							<content />
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxRIGHT|wxLEFT</flag>
+						<border>5</border>
+						<object class="wxStaticText" name="m_staticText3">
+							<label>Command Prototype</label>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxEXPAND|wxBOTTOM|wxRIGHT|wxLEFT</flag>
+						<border>5</border>
+						<object class="wxTextCtrl" name="m_commandPrototypeTextCtrl">
+							<style>wxTE_READONLY</style>
+							<enabled>0</enabled>
+							<value></value>
+							<maxlength>0</maxlength>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxStaticBoxSizer">
+					<orient>wxVERTICAL</orient>
+					<label>Available Hardware</label>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxALL</flag>
+						<border>5</border>
+						<object class="wxListBox" name="m_availableHardwareListBox">
+							<style>wxLB_NEEDED_SB|wxLB_SINGLE|wxLB_SORT</style>
+							<enabled>0</enabled>
+							<content />
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+	</object>
+</resource>

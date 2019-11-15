@@ -1,0 +1,11 @@
+Requirement, File, Line #, Behavior
+# for _, testCase in ipairs( TestCases ) do
+#   local seen = { }
+#   for _, requirement in ipairs( testCase.Requirements or {} ) do
+#     local req = tostring( requirement.Requirement )
+#     if not seen[ req ] then
+$( Chronos.Csv.Escape( req ) ), $( Chronos.Csv.Escape( testCase.SourceFile ) ), $( Chronos.Csv.Escape( testCase.LineNumber ) ), $( Chronos.Csv.Escape( requirement.Comment or testCase.Name ) )
+#     seen[ req ] = true
+#     end
+#   end
+# end

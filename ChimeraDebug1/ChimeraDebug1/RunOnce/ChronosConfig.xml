@@ -1,0 +1,8 @@
+<Chronos>
+    <Reports>
+        <Report>
+            <TemplatePath>C:\Program Files (x86)\Lua\5.1\utils\Chronos\Templates\default.lhtml</TemplatePath>
+            <OutputPath>ChimeraTestResults.html</OutputPath>
+        </Report>
+	</Reports>
+</Chronos>

@@ -1,0 +1,12 @@
+<AutoChronos>
+  <Reports>
+    <Report>
+      <TemplatePath>C:\Program Files\Lua\5.1\utils\Chronos\Templates\Default.lhtml</TemplatePath>
+      <OutputPath>DefaultReport.html</OutputPath>
+    </Report>
+    <Report>
+      <TemplatePath>C:\Program Files\Lua\5.1\utils\Chronos\Templates\RequirementTracking.ltsv</TemplatePath>
+      <OutputPath>RequirementTracking.tsv</OutputPath>
+    </Report>
+  </Reports>
+</AutoChronos>

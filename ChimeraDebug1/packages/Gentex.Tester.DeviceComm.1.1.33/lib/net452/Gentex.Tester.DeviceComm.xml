@@ -1,0 +1,2431 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Gentex.Tester.DeviceComm
+</name>
+</assembly>
+<members>
+<member name="T:Gentex.Tester.DeviceComm.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.My.Resources.Resources.arrow_refresh">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.My.Resources.Resources.connect">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.My.Resources.Resources.DeleteHS">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.My.Resources.Resources.disconnect">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.My.Resources.Resources.Minus">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.My.Resources.Resources.Plus">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.My.Resources.Resources.server_connect">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary">
+ <summary>
+ Class contains dictionary collection of <see cref="T:DeviceComm.Data.MemoryMapTest"/> objects
+ and methods related to the contained operation data
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.CLASSNAME">
+ <summary>
+ Class name constant for error reporting
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary._keyCache">
+ <summary>
+ A string list to cache the keys of defined operation objects
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.KeyCache">
+ <summary>
+ Gets the list of cached key values
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.TestsFailed">
+ <summary>
+ Gets a value indicating if any operations failed
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.FailMessages">
+ <summary>
+ Gets a collection of fail messages, retrieved from each test
+ that failed.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.TestItem(System.String)">
+ <summary>
+ Gets or sets a <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapTest"/> in the dictionary by its key
+ </summary>
+ <param name="key">The string representing the test</param>
+ <remarks>Get returns Nothing if no item matches the provided key.
+ Set will add a new item with the provided key if no item matches the provided key.</remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.TestItem(System.String,System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="commandName"></param>
+ <param name="parameterName"></param>
+ <value></value>
+ <returns></returns>
+ <remarks>Get returns Nothing if no item matches the provided key.
+ Set does nothing is no item matches the provided key.</remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.OpsManagerStartTime">
+ <summary>
+ get or set the start time of Opsmanager Operations
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.TestTime">
+ <summary>
+ get or set the test time of Opsmanager Operations
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.Add(Gentex.Tester.DeviceComm.Data.MemoryMapTest)">
+ <summary>
+ Adds a new <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapTest"/> to the dictionary
+ </summary>
+ <param name="Oitem"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.Add(System.String,System.String,System.String,System.String,System.String,System.String,System.String,Gentex.Tester.DeviceComm.OperationTypes)">
+ <summary>
+ Adds a new <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapTest"/> to the dictionary
+ </summary>
+ <param name="key"></param>
+ <param name="desc"></param>
+ <param name="cmdname"></param>
+ <param name="paramname"></param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.Add(System.String,Gentex.Tester.DeviceComm.Data.MemoryMapTest)">
+ <summary>
+ Adds a new <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapTest"/> to the dictionary
+ </summary>
+ <param name="key"></param>
+ <param name="Oitem"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.ClearKeyCache">
+ <summary>
+ Clears the list of cached keys
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.Contains(System.String)">
+ <summary>
+ Checks the dictionary by key for the presence of an operation
+ </summary>
+ <param name="key"></param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.Contains(Gentex.Tester.DeviceComm.Data.MemoryMapTest)">
+ <summary>
+ Check the dictionary for the presence of the <paramref name="test"/> <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapTest"/>.
+ </summary>
+ <param name="test">The <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapTest"/> to look for.</param>
+ <returns>True if the test item is found.</returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.Contains(System.String,System.String)">
+ <summary>
+ Checks for a test item in the dictionary that has the <paramref name="commandName"/>
+ and <paramref name="parameterName"/>.
+ </summary>
+ <param name="commandName">The name of the command to look for.</param>
+ <param name="parameterName">The name of the parameter to look for.</param>
+ <returns>True if the test item is found.</returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.ContainsTestTag(System.String)">
+ <summary>
+ Returns true if the log file test tag exists in the test dictionary.
+ </summary>
+ <param name="key"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.OperationLocation_FromString(System.String)">
+ <summary>
+ Gets a <see cref="T:Gentex.Tester.DeviceComm.TestStations"/> value from its string representation
+ </summary>
+ <param name="Location"></param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.OperationType_FromString(System.String)">
+ <summary>
+ Gets a <see cref="T:Gentex.Tester.DeviceComm.OperationTypes"/> value from its string representation
+ </summary>
+ <param name="type"></param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.RefreshKeyCache">
+ <summary>
+ Refresh the list of keys from the dictionary key collection
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.ResetTests">
+ <summary>
+ Iterates through each test item in the dictionary, performing
+ a reset on each.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.SecondsFromStart(System.DateTime)">
+ <summary>
+ Subtracts the specified timeStamp from the OpsmanagerStartTime to get the number of seconds from start
+ </summary>
+ <param name="timeStamp"></param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.StartTimer">
+ <summary>
+ Sets the OpsManager Operations Start Time.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.StopOpTimer(System.String)">
+ <summary>
+ Stops the time for the specified operation.
+ </summary>
+ <param name="key"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.StopOpTimer(System.String,System.Boolean)">
+ <summary>
+ Stops the time for the specified operation.
+ </summary>
+ <param name="key"></param>
+ <param name="addTo"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.StopTimer">
+ <summary>
+ Stops the time for the entire Opsmanager sequence.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary.ValueFormat_FromString(System.String)">
+ <summary>
+ Gets a <see cref="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.ValueFormat"/> value from its string representation
+ </summary>
+ <param name="format"></param>
+ <returns></returns>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.CommandCalls">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.PrepareinputParams(Gentex.Tester.DeviceComm.DeviceCommService,System.String,System.Collections.Generic.List{System.String})">
+ <summary>
+ 
+ </summary>
+ <param name="dcObject"></param>
+ <param name="CmdName"></param>
+ <param name="inParams"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.SelectCommandName(Gentex.Tester.DeviceComm.DeviceCommService,System.Collections.Generic.List{System.String},System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="dcObject"></param>
+ <param name="CmdList"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.ReadFirmwareVersion(Gentex.Tester.DeviceComm.DeviceCommService,System.String@)">
+ <summary>
+ Reads the firmware part number and returns as string, used for mirrortypes who's commandset executes a Do.
+ </summary>
+ <param name="dcOjbect"></param>
+ <param name="output"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.ReadFirmwareVersion(Gentex.Tester.DeviceComm.DeviceCommService,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+ <summary>
+ Reads the firmware part number and returns as a dicionary of string, string with parameter name(s) and value(s)
+ </summary>
+ <param name="dcObject"></param>
+ <param name="output"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.ReadFirmwareVersion_ReadOrDo(Gentex.Tester.DeviceComm.DeviceCommService,System.String@)">
+ <summary>
+ Reads the firmware part number and returns as string, used for mirrortypes who's commandset execuses a Read.
+ </summary>
+ <param name="dcOjbect"></param>
+ <param name="output"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.ReadFirmwareVersion_ReadOrDo(Gentex.Tester.DeviceComm.DeviceCommService,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+ <summary>
+ Reads the firmware part number and returns as a dicionary of string, string with parameter name(s) and value(s)
+ </summary>
+ <param name="dcObject"></param>
+ <param name="output"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.ReadECUSerialNumber(Gentex.Tester.DeviceComm.DeviceCommService,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+ <summary>
+ Searches the current opsmanageer object commandset for: DID F17C - FAZIT - ECU Serial Number*, ECU Serial Number, and VwFazitString. Returns a string.
+ </summary>
+ <param name="dcObject"></param>
+ <param name="output"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.WriteECUSerialNumber(Gentex.Tester.DeviceComm.DeviceCommService,System.Collections.Generic.List{System.String})">
+ <summary>
+ Searches the current opsmanageer object commandset for: DID F17C - FAZIT - ECU Serial Number*, ECU Serial Number, and VwFazitString. Returns a string.
+ </summary>
+ <param name="dcObject"></param>
+ <param name="inputs"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.ReadEcuVwSparePartNumber(Gentex.Tester.DeviceComm.DeviceCommService,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+ <summary>
+ Searches the current opsmanageer object commandset for: DID F187 - VW Spare Part Number*, and VwSlaveSparePartNumber
+ </summary>
+ <param name="dcObject"></param>
+ <param name="output"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.ReadECUHardwareNumber(Gentex.Tester.DeviceComm.DeviceCommService,System.Collections.Generic.Dictionary{System.String,System.String}@,System.String)">
+ <summary>
+ Searches the current opsmanageer object commandset for: DID F191 - ECU Hardware Number*, ECU Hardware Number, and VwSlaveHardwareNumber.
+ </summary>
+ <param name="dcObject"></param>
+ <param name="output"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.ReadECUHardwareVersion(Gentex.Tester.DeviceComm.DeviceCommService,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+ <summary>
+ Searches the current opsmanageer object commandset for: VwSlaveHardwareVersionNumber.
+ </summary>
+ <param name="dcObject"></param>
+ <param name="output"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.ReadECUPartNumber(Gentex.Tester.DeviceComm.DeviceCommService,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+ <summary>
+ Searches the current opsmanageer object commandset for: VwSlaveSerialNumber.
+ </summary>
+ <param name="dcObject"></param>
+ <param name="output"></param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.CommandCalls.OverrideLedState(Gentex.Tester.DeviceComm.DeviceCommService,System.Collections.Generic.List{System.String})">
+ <summary>
+ Provides functionality for overriding the state or mode of a product's LEDs. 
+ </summary>
+ <param name="dcObject">communication object</param>
+ <param name="input">override parameters</param>
+ <remarks>Override LEDs, LED_Control, ChangeLEDMode</remarks>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.OperationTypes">
+ <summary>
+ The types of memory map operations that can be conducted.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.TestStations">
+ <summary>
+ The types of test equipment that memory map operations
+ can be performed on.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.MessageTypes">
+ <summary>
+ The types of error messages that can occur during device communication.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.ValueFormats">
+ <summary>
+ Formats that can be used for presenting data in log files and databases.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.Common">
+ <summary>
+ Module containing shared common methods. 
+ </summary>
+ <remarks>!!! IMPORTANT NOTE !!!
+ The files in this library are shared with many applications. Feel free to add functions and additional
+ overloads of existing functions, but unless it is broken DO NOT change or remove any existing functions!
+ </remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Common.LastDeviceCommMessage">
+ <summary>
+ Holds the last DeviceComm Message.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Common.UpdateDeviceCommMessage(Gentex.Tester.DeviceComm.DeviceCommService@,System.String,Gentex.Tester.DeviceComm.MessageTypes)">
+ <summary>
+ Helper routine that formats a DeviceComm message based on the <paramref name="MsgType"/>.
+ </summary>
+ <param name="DCObject"></param>
+ <param name="Procedure"></param>
+ <param name="MsgType"></param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Common.RetrieveDeviceCommSettings(System.String,System.Boolean)">
+ <summary>
+ Function used to parse hardware settings that are required for DeviceComm 
+ initialization.
+ </summary>
+ <param name="filePath">File location holding Hardware Settings</param>
+ <param name="filePathIsURL">Indicates whether the filePath is a URL or a local drive path</param>
+ <returns>a KeyValuePair with the key as the hardware type and the value as a list of settings</returns>
+ <remarks>Utilized if the file contains a single set of settings and doesn't have sections</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Common.RetrieveDeviceCommSettings(System.String,System.String,System.Boolean)">
+ <summary>
+ Function used to parse hardware settings that are required for DeviceComm 
+ initialization.
+ </summary>
+ <param name="filePath">File location holding Hardware Settings</param>
+ <param name="sectionName">The name of the section of the file to collect settings from</param>
+ <param name="filePathIsURL">Indicates whether the filePath is a URL or a local drive path</param>
+ <returns>A collection of key/value pairs representing each setting type/setting value</returns>
+ <remarks>If there are multiple sets of settings in the file include the header name of the section in the file. If the file contains
+ only one set of settings leave sectionName empty.</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Common.RetrieveDCServiceSettings_Web(System.String)">
+ <summary>
+ Function used to parse hardware settings that are required for DeviceComm 
+ initialization.
+ </summary>
+ <param name="url">the url of the file containing the settings</param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Common.RetrieveDCServiceSettings_Web(System.String,System.String)">
+ <summary>
+ Function used to parse hardware settings that are required for DeviceComm 
+ initialization.
+ </summary>
+ <param name="url">The url of the file containing the settings.</param>
+ <param name="sectionName">The name of the section of the file containing the desired settings.</param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Common.FormURL(Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings,System.String)">
+ <summary>
+ Build a full URL from the specified short URL by adding the server name or IP specified in the app settings
+ </summary>
+ <param name="shortURL">The short URL to build from</param>
+ <returns>The full URL to retrieve</returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Common.GetConfigurationFileLocation(Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings,System.Boolean)">
+ <summary>
+ Gets the path or URL to the inf file location for this tester
+ </summary>
+ <param name="FullURL">>Value indicating whether the returned url should be the full URL including server name</param>
+ <returns>The path or URL to the inf file location, depending on the UseLocalFileCache HMI setting.</returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.#ctor">
+ <summary>
+ Initializes a new instance of the DeviceCommSettings class.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.#ctor(System.String)">
+ <summary>
+ Initializes a new instance of the DeviceCommSettings class.
+ </summary>
+ <param name="SettingsKey">Settings section name</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.#ctor(System.ComponentModel.IComponent)">
+ <summary>
+ Initializes a new instance of the DeviceCommSettings class.
+ </summary>
+ <param name="owner">Settings owner</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.#ctor(System.ComponentModel.IComponent,System.String)">
+ <summary>
+ Initializes a new instance of the DeviceCommSettings class.
+ </summary>
+ <param name="owner">Settings owner</param>
+ <param name="SettingsKey">Settings section name</param>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.ChimeraIpAddress">
+ <summary>
+ Gets or sets the IP address of the chimera for this application instance
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.OpsManagerFilesLocalDirectory">
+ <summary>
+ Gets or sets the local directory for operations manager files.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.OpsManagerFilesShortURL">
+ <summary>
+ Gets the URL of the operations manager files.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.DeviceCommFilesLocalDirectory">
+ <summary>
+ Gets or sets the local directory to look in for device communication configuration files.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.SVNServerIPAddress">
+ <summary>
+ Gets or sets the SVN server IP address.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.SVNServerName">
+ <summary>
+ Gets or sets the SVN server name.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.SVNServerUseIP">
+ <summary>
+ Gets or sets a value indicating whether to use the IP address when retrieving web pages.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.UseLocalFileCache">
+ <summary>
+ Gets or sets whether to use locally stored product files versus SVN repository files
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.Log_DataSent">
+ <summary>
+ Gets or sets a value indicating whether data sent messages should be logged
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.Log_DataReceived">
+ <summary>
+ Gets or sets a value indicating whether data received messages should be logged
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.Log_GeneralInfo">
+ <summary>
+ Gets or sets a value indicating whether general information messages should be logged
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.Log_TrappedError">
+ <summary>
+ Gets or sets a value indicating whether trapped error messages should be logged
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Configuration.DeviceCommSettings.LiveLogging">
+ <summary>
+ Gets or sets a value indicating whether an event should be raised each time a log is added
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.CommandItem._commandName">
+ <summary>
+ The name of the Command that this object represents
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.CommandItem._parameterDictionary">
+ <summary>
+ The parameters associated with this command object
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.CommandItem.#ctor">
+ <summary>
+ Creates a <see cref="T:Gentex.Tester.DeviceComm.Data.CommandItem"/> instance
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.CommandItem.#ctor(System.String)">
+ <summary>
+ Creates a <see cref="T:Gentex.Tester.DeviceComm.Data.CommandItem"/> instance
+ </summary>
+ <param name="name">The name of the command</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.CommandItem.#ctor(System.String,System.Collections.Generic.Dictionary{System.String,Gentex.Tester.DeviceComm.Data.ParameterItem})">
+ <summary>
+ 
+ </summary>
+ <param name="name">The name of the command</param>
+ <param name="parameters">The dictionary of parameters of the command</param>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.CommandItem.Name">
+ <summary>
+ Gets or sets the name of the command
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.CommandItem.Comments">
+ <summary>
+ Gets or sets the comments of the command.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.CommandItem.Doable">
+ <summary>
+ Gets or sets whether the command supports a Do operation
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.CommandItem.Readable">
+ <summary>
+ Gets or sets whether the command supports a Read operation
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.CommandItem.Writeable">
+ <summary>
+ Gets or sets whether the command supports a Write operation
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.CommandItem.ParameterItem(System.String)">
+ <summary>
+ Gets or sets a parameter item of the command
+ </summary>
+ <param name="key">The string value representing the parameter to get or set</param>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.CommandItem.Parameters">
+ <summary>
+ Gets or sets the parameter dictionary
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.CommandItem.ParameterList">
+ <summary>
+ Gets the list of parameter names of this command item
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.CommandSet.LinkedMemoryMap">
+ <summary>
+ If this instance was created from a memory map, gets the identity of the associated memory map.
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.Data.MemoryMapIdentity">
+ <summary>
+ Contains the necessary information to identify a memory map
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapIdentity.#ctor(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Creates a new instance with all of the necessary information to identify a memory map.
+ </summary>
+ <param name="productPartNumber">The part number of the product that utilizes the memory map</param>
+ <param name="mapPartNumber">The part number of the memory map</param>
+ <param name="mapRevision">The revision of the memory map</param>
+ <param name="mapVersion">The version of the memory map</param>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.Data.MemoryMapOperation">
+ <summary>
+ Contains information about an individual operation that a memory map specifies
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapOperation.OperationName">
+ <summary>
+ Gets or sets the name of the operation
+ </summary>
+ <returns>This typically should be the name of the device communication command from the command set that the memory map references</returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapOperation.OperationType">
+ <summary>
+ Gets or sets the type of this operation
+ </summary>
+ <returns>A <see cref="T:Gentex.Tester.DeviceComm.OperationTypes"/> enumerated value</returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapOperation.AssociatedMemoryMap">
+ <summary>
+ Gets or sets the <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapIdentity"/> this operation is associated with.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapOperation.StationType">
+ <summary>
+ Gets or sets the type of station that this operation is to be performed on
+ </summary>
+ <returns>A <see cref="T:Gentex.Tester.DeviceComm.TestStations"/> enumerated value</returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapOperation.Command">
+ <summary>
+ Gets or sets the <see cref="T:Gentex.Tester.DeviceComm.Data.CommandItem"/> associated with this operation
+ </summary>
+ <returns></returns>
+ <remarks>Setting this value will also set the <see cref="P:Gentex.Tester.DeviceComm.Data.MemoryMapOperation.OperationName"/> to the <see cref="P:Gentex.Tester.DeviceComm.Data.CommandItem.Name"/></remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.ParameterItem._parameterName">
+ <summary>
+ The name of the Parameter that this object represents
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.ParameterItem._limits">
+ <summary>
+ The default limits in the command set or the overriden limits from the memory map.
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.ParameterItem._defaultValue">
+ <summary>
+ The default value in the command set or the overriden value from the memory map.
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.ParameterItem._value">
+ <summary>
+ Holds the latest value of the parameter for both input and output values.
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.ParameterItem._valueFormat">
+ <summary>
+ The format that the value and limits will be represented in.
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.ParameterItem._paramType">
+ <summary>
+ The type of the parameter
+ </summary>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.Data.ParameterItem.ParameterType">
+ <summary>
+ Describes the available types of a parameter
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.ParameterItem.ParameterName">
+ <summary>
+ Gets or sets the name of the parameter
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.ParameterItem.ParamValue">
+ <summary>
+ Gets or sets the value of the parameter
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.ParameterItem.LowLimit">
+ <summary>
+ Gets the low limit of the parameter
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.ParameterItem.HighLimit">
+ <summary>
+ Gets the high (upper) limit of the parameter
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.ParameterItem.Limits">
+ <summary>
+ Gets the <see cref="T:Gentex.Tester.DeviceComm.ParameterLimits"></see> for the parameter
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.ParameterItem.Comments">
+ <summary>
+ Gets or sets the comments of the command.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.ParameterItem.DefaultValue">
+ <summary>
+ Gets the default value of the parameter
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.ParameterItem.ValueFormat">
+ <summary>
+ Gets or sets the format of the parameter data
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.ParameterItem.ParamType">
+ <summary>
+ Gets or sets the type of this parameter
+ </summary>
+ <value></value>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.ParameterItem.#ctor">
+ <summary>
+ Initializes a new instance of a ParameterItem class.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.ParameterItem.#ctor(System.String)">
+ <summary>
+ Initializes a new instance of a ParameterItem class.
+ </summary>
+ <param name="name">The name of the parameter being created</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.ParameterItem.#ctor(System.String,Gentex.Tester.DeviceComm.ParameterLimits,System.String,Gentex.Tester.DeviceComm.Data.ParameterItem.ParameterType)">
+ <summary>
+ Initializes a new instance of a ParameterItem class.
+ </summary>
+ <param name="name">The name of the parameter being created</param>
+ <param name="limits">The limits of the parameter</param>
+ <param name="value">The default value of the parameter</param>
+ <param name="type">The type of the parameter</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.ParameterItem.#ctor(System.String,Gentex.Tester.DeviceComm.ParameterLimits,System.String,Gentex.Tester.DeviceComm.Data.ParameterItem.ParameterType,System.String)">
+ <summary>
+ Initializes a new instance of a ParameterItem class.
+ </summary>
+ <param name="name">The name of the parameter being created</param>
+ <param name="limits">The limits of the parameter</param>
+ <param name="value">The default value of the parameter</param>
+ <param name="type">The type of the parameter</param>
+ <param name="comments">The comments about the parameter provided by the creator of the command.</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.ParameterItem.#ctor(System.String,Gentex.Tester.DeviceComm.ParameterLimits,System.String,Gentex.Tester.DeviceComm.Data.ParameterItem.ParameterType,Gentex.Tester.DeviceComm.ValueFormats)">
+ <summary>
+ Initializes a new instance of a ParameterItem class.
+ </summary>
+ <param name="name">The name of the parameter being created</param>
+ <param name="limits">The limits of the parameter</param>
+ <param name="value">The default value of the parameter</param>
+ <param name="type">The type of the parameter</param>
+ <param name="format">The format that the limits and values should be set to</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.ParameterItem.#ctor(System.String,Gentex.Tester.DeviceComm.ParameterLimits,System.String,Gentex.Tester.DeviceComm.Data.ParameterItem.ParameterType,Gentex.Tester.DeviceComm.ValueFormats,System.String)">
+ <summary>
+ Initializes a new instance of a ParameterItem class.
+ </summary>
+ <param name="name">The name of the parameter being created</param>
+ <param name="limits">The limits of the parameter</param>
+ <param name="value">The default value of the parameter</param>
+ <param name="type">The type of the parameter</param>
+ <param name="format">The format that the limits and values should be set to</param>
+ <param name="comments">The comments about the parameter provided by the creator of the command.</param>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.Data.StationOperations">
+ <summary>
+ Container class for grouping a collection of <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapOperation"/> objects
+ that are associated with a specific station.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.StationOperations.#ctor">
+ <summary>
+ Creates default instance of the class
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.StationOperations.#ctor(Gentex.Tester.DeviceComm.TestStations,System.Collections.Generic.List{Gentex.Tester.DeviceComm.Data.MemoryMapOperation})">
+ <summary>
+ Creates an instance of the class with the station type and the associated operations
+ </summary>
+ <param name="station">The station this class is related to</param>
+ <param name="operations">The operations associated with the station</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.StationOperations.#ctor(System.Collections.Generic.List{Gentex.Tester.DeviceComm.Data.MemoryMapOperation})">
+ <summary>
+ Creates a new instance and populates the <see cref="P:Gentex.Tester.DeviceComm.Data.StationOperations.Station"/> and <see cref="P:Gentex.Tester.DeviceComm.Data.StationOperations.Operations"/> properties
+ by retrieving the first <see cref="P:Gentex.Tester.DeviceComm.Data.MemoryMapOperation.StationType"/> and filters the 
+ <paramref name="operations"/> based on that requirement.
+ </summary>
+ <param name="operations"></param>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.StationOperations.Station">
+ <summary>
+ Gets the type of station this class is related to
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.StationOperations.Operations">
+ <summary>
+ Gets or sets the collection of <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapOperation"/> objects associated with the <see cref="P:Gentex.Tester.DeviceComm.Data.StationOperations.Station"/>
+ </summary>
+ <returns></returns>
+ <remarks>When setting this property the <see cref="P:Gentex.Tester.DeviceComm.Data.StationOperations.Station"/> will be updated using the <see cref="P:Gentex.Tester.DeviceComm.Data.MemoryMapOperation.StationType"/>
+ of the first object in the list and this property will only be populated with <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapOperation"/> objects
+ that match the <see cref="P:Gentex.Tester.DeviceComm.Data.StationOperations.Station"/></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.StationOperations.GetOperationsByType(Gentex.Tester.DeviceComm.OperationTypes)">
+ <summary>
+ Retrieves the <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapOperation"/> objects in <see cref="P:Gentex.Tester.DeviceComm.Data.StationOperations.Operations"/>
+ that have the same operation type as <paramref name="operationType"/>
+ </summary>
+ <param name="operationType">The <see cref="T:Gentex.Tester.DeviceComm.OperationTypes"/></param> to filter by
+ <returns></returns>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.Data.MemoryMapTest">
+ <summary>
+ Class to contain all properties and methods related to a specific MemoryMap Test
+ </summary>
+ <remarks>Acts as a linkage between the memory map operations and the test item class
+ for any given test system.</remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.CLASSNAME">
+ <summary>
+ Class name constant for error reporting.
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.StrOpType">
+ <summary>
+ Enumerated type of operation.
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.strCommandName">
+ <summary>
+ Name of the command this operation refers to.
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.strParameterName">
+ <summary>
+ Name of the parameter this operation refers to.
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.strKey">
+ <summary>
+ Unique Tag associated with each operation.
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.strDescriptor">
+ <summary>
+ 
+ </summary>
+ <remarks>Formatted as CommandName:ParameterName</remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.strLowLimit">
+ <summary>
+ String representation of the parameter low limit
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.strHighLimit">
+ <summary>
+ String representation of the parameter high limit
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.strExpectedVal">
+ <summary>
+ String representation of the expected value for
+ this test.
+ </summary>
+ <remarks>Used for all OpsManager operations
+ except limit checks.</remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.strDefaultVal">
+ <summary>
+ String representation of the parameter default value
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest._IsDefaultValue">
+ <summary>
+ Status of the Set Value in relation to the Default Value
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.blnAllowDefaults">
+ <summary>
+ Value indicating whether the test should fail
+ if the test value equals the default value.
+ </summary>
+ <remarks>Used for the calibration tests</remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest._TestValue">
+ <summary>
+ String representation of the parameter's current value
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.blnPerformed">
+ <summary>
+ Value indicating whether this test has been performed
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.blnFailed">
+ <summary>
+ Value indicating whether this test passed or failed
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.strFailMessage">
+ <summary>
+ 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.datStartTime">
+ <summary>
+ Operation Start Time
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.dblElapsedTime">
+ <summary>
+ Operation Elapsed Time
+ </summary>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.Data.MemoryMapTest.dblRTS">
+ <summary>
+ Relative Time Stamp
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapTest.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,Gentex.Tester.DeviceComm.OperationTypes)">
+ <summary>
+ 
+ </summary>
+ <param name="key">The unique identifier for each test item.</param>
+ <param name="desc">Description</param>
+ <param name="cmdName"></param>
+ <param name="paramName"></param>
+ <param name="LL">Low Limit</param>
+ <param name="HL">High limit</param>
+ <param name="DV">Default value</param>
+ <param name="type"></param>
+ <remarks>The expected value will initialize to the default value.</remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.OperationType">
+ <summary>
+ Gets the type of memory map operation that this
+ tests performs.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.CommandName">
+ <summary>
+ Gets the name of the command that has the
+ parameter this test is for.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.ParameterName">
+ <summary>
+ Gets the name of the parameter of the command that this 
+ test is for.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.Key">
+ <summary>
+ Gets the unique key for this test
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.Description">
+ <summary>
+ Gets or sets the description of the test
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.LowLimit">
+ <summary>
+ Gets the low limit of the test, which is 
+ the low limit from the command set for the
+ command/parameter associated with this test.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.HighLimit">
+ <summary>
+ Gets the high limit of the test, which is 
+ the high limit from the command set for the
+ command/parameter associated with this test.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.DefaultValue">
+ <summary>
+ Gets the default value of the test, which is the 
+ value from the command set for the command/parameter
+ associated with this test.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.ExpectedValue">
+ <summary>
+ Gets or sets the expected test value
+ </summary>
+ <remarks>This value defaults to the 
+ default value and for most memory map tests does not need to change.</remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.IsDefaultValue">
+ <summary>
+ Gets a value indicating whether the test value equals
+ the default value.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.DefaultsAllowed">
+ <summary>
+ Gets or sets whether a default test value
+ is acceptable.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.TestValue">
+ <summary>
+ Gets the value of the test.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.TestPerformed">
+ <summary>
+ Gets a value indicating whether this test was performed.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.FailMessage">
+ <summary>
+ Gets the fail message for this test. 
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.Failed">
+ <summary>
+ Gets the value indicating if this test failed.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.ValueFormat">
+ <summary>
+ Gets or sets the format the data for this test
+ is set to.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.ElapsedTime">
+ <summary>
+ Gets the elapsed time for this test.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.Data.MemoryMapTest.RTS">
+ <summary>
+ Gets the relative time stamp for this test.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapTest.Reset">
+ <summary>
+ Resets the test value, failed status, and performed status to their default values.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapTest.StartTimer">
+ <summary>
+ Sets the start time to the current time.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapTest.StopTimer(System.DateTime)">
+ <summary>
+ Calculates the test time, relative to the tests start time.
+ </summary>
+ <param name="OpStartTime">The start time of the test cycle</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapTest.StopTimer(System.DateTime,System.Boolean)">
+ <summary>
+ Calculates the test time, relative to the start time.
+ </summary>
+ <param name="OpStartTime">The start time of the test cycle.</param>
+ <param name="AddUp">Value indicating whether to overwrite the 
+ test time to the current test time or add up the time from each
+ iteration of this test.</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapTest.SetLimits(System.String,System.String)">
+ <summary>
+ Set the limits for this test
+ </summary>
+ <param name="lowLimit">The low limit</param>
+ <param name="highLimit">The high limit</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapTest.PerformTest(System.String)">
+ <summary>
+ Sets the test value and conducts the necessary tests
+ to determine pass or fail.
+ </summary>
+ <param name="testVal">The value to test.</param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapTest.LimitsTest(System.String,System.String,System.String)">
+ <summary>
+ Checks the <paramref name="testValue"/> against the <paramref name="lowLimit"/>
+ and <paramref name="highLimit"/>.
+ </summary>
+ <param name="testValue">The value to test</param>
+ <param name="lowLimit">The low limit to test against</param>
+ <param name="highLimit">The high limit to test agains</param>
+ <returns>True if failed (outside limits), false if passed</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapTest.DefaultTest(System.String,System.String)">
+ <summary>
+ Checks the <paramref name="testValue"/> against the <paramref name="defaultValue"/>
+ </summary>
+ <param name="testValue">The value to test</param>
+ <param name="defaultValue">The default value to test against</param>
+ <returns>True if failed (<paramref name="testValue"/> equals <paramref name="defaultValue"/>), false if passed.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.Data.MemoryMapTest.ExpectedValueTest(System.String,System.String)">
+ <summary>
+ Checks the <paramref name="testValue"/> against the <paramref name="expectedValue"/>
+ </summary>
+ <param name="testValue">The value to test</param>
+ <param name="expectedValue">The expected value to test against</param>
+ <returns>True if failed (<paramref name="testValue"/> does not equal <paramref name="expectedValue"/>), false if passed.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.DeviceCommunicationManager">
+ <summary>
+ Class to hold a group of device communication objects and perform
+ managerial duties on those objects
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommunicationManager.InitializeAndLoadMemoryMaps(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},Gentex.Tester.DeviceComm.TestStations)">
+ <summary>
+ Creates new instances of memory maps, initializes memory maps, and loads
+ all memory maps for the current model.
+ </summary>
+ <param name="partNumbers">list of memory map part numbers specified by the model</param>
+ <param name="revisions">list of memory map revisions associated with each memory map</param>
+ <param name="versions">list of memory map versions associated with each memory map</param>
+ <param name="assemblyNumbers">list of assembly part numbers associated with each memory map</param>
+ <returns>True if each memory map was successfully created</returns>
+ <remarks>Each list must be equal in size</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommunicationManager.CreateDeviceCommunication">
+ <summary>
+ Creates one or more devicecomm objects from the command sets tied to the 
+ loaded memory map(s).
+ </summary>
+ <returns></returns>
+ <remarks>Must load memory maps prior to calling this</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommunicationManager.CreateDeviceCommunication(System.Collections.Generic.List{System.String})">
+ <summary>
+ Creates one or more devicecomm objects using commandset files
+ </summary>
+ <param name="commandSetFilePaths">list of paths to command set files</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommunicationManager.CreateAndInitializeDeviceCommunication(System.Collections.Generic.List{System.String},System.Boolean)">
+ <summary>
+ Creates the necessary devicecomm objects for communication to the product.
+ </summary>
+ <param name="deviceCommConfigurationFiles"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommunicationManager.ShutdownDeviceCommunication">
+ <summary>
+ Perform shutdown and disposal of
+ device communication resources.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.Index">
+ <summary>
+ Pointer to the DeviceCommServiceClient
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.LastError">
+ <summary>
+ The last error retrieved from the DeviceCommServiceClient
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.ErrorCount">
+ <summary>
+ The number of device comm errors that have occurred since the instance was created
+ </summary>
+ <returns>Reset to 0 using ClearErrorCounter</returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.ID">
+ <summary>
+ Uniquely identifies each instance of the DeviceCommService class
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.LinkedMemoryMap">
+ <summary>
+ the part number of the memory map that is linked to this instance
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.ClientName">
+ <summary>
+ Stores the self-described name of the DeviceCommServiceClient
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.Initialized">
+ <summary>
+ Value indicating whether the DevieCommServiceClient has been
+ initialized (hardware connection)
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.Created">
+ <summary>
+ Value indicating whether the DeviceCommServiceClient has been
+ created (command set loaded)
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.CommandsCached">
+ <summary>
+ Value indicating whether the commands from the retrieved
+ command set have been cached.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.Command(System.String)">
+ <summary>
+ Retrieves the <see cref="T:Gentex.Tester.DeviceComm.Data.CommandItem"/> with the specified <paramref name="key"/>
+ </summary>
+ <param name="key">The string identifier of the <see cref="T:Gentex.Tester.DeviceComm.Data.CommandItem"/> to be retrieved.</param>
+ <value></value>
+ <returns>the requested <see cref="T:Gentex.Tester.DeviceComm.Data.CommandItem"/></returns>
+ <remarks>returns Nothing if no command is found.</remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.CommandCache">
+ <summary>
+ The dictionary of <see cref="T:Gentex.Tester.DeviceComm.Data.CommandItem"/> objects
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.HardwareType">
+ <summary>
+ Gets the name of the hardware the service is connected to
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.HardwareSettings">
+ <summary>
+ Gets the list of hardware settings in the format 
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.ChimeraIP">
+ <summary>
+ Gets the IP address of the chimera if a chimera is being used
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.DeviceCommService.DeviceCommSettings">
+ <summary>
+ Injects an instance of DeviceCommSettings for all DeviceCommService objects to reference
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.ClearCommandCache">
+ <summary>
+ Clears the dictionary of command items and
+ sets the <see cref="P:Gentex.Tester.DeviceComm.DeviceCommService.CommandsCached"/> property to False.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.ClearHardwareInfo">
+ <summary>
+ Clears the hardware information
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.ClearLastError">
+ <summary>
+ Clears the DeviceCommServiceClient's last error message.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.ClearLogging">
+ <summary>
+ Clears the cached log history
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetAllCommands">
+ <summary>
+ Retrieves a list of all the command names in the loaded commandset
+ </summary>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetDescription">
+ <summary>
+ Retrieves the self described description from the underlying device comm service
+ </summary>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetLastError">
+ <summary>
+ Request the last error from the DeviceCommServiceClient.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetInputParameters(System.String)">
+ <summary>
+ Retrieves the input parameters for the command.
+ </summary>
+ <param name="commandName">The name of the command</param>
+ <returns>A list of input parameters</returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetOutputParameters(System.String)">
+ <summary>
+ Retrieves the output parameters for the command
+ </summary>
+ <param name="commandName">The name of the command</param>
+ <returns>A list of output parameters</returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetParameterLimits(System.String,System.String)">
+ <summary>
+ Retrieves the limits for the parameter
+ </summary>
+ <param name="commandName">The name of the command</param>
+ <param name="parameter">The name of the parameter</param>
+ <returns></returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetParameterValues(System.String,System.String)">
+ <summary>
+ Retrieves the value of the specified parameter for the specified command
+ </summary>
+ <param name="commandName">The name of the command</param>
+ <param name="parameter">The name of the parameter</param>
+ <returns>The value of the parameter</returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetParameters(System.String)">
+ <summary>
+ Retrieves the parameter names of the <paramref name="commandName"/> command.
+ </summary>
+ <param name="commandName">Command to retrieve parameters for.</param>
+ <returns>a list of parameter names</returns>
+ <remarks></remarks>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetParametersWithValues(System.String)">
+ <summary>
+ Retrieves the parameters and parameter values for the specified command.
+ </summary>
+ <param name="commandName">The command to retrieve parameter/value pairs for</param>
+ <returns></returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetServiceVersion">
+ <summary>
+ Returns the version, service SVN revision, and devicecomm SVN revision
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.GetVersion">
+ <summary>
+ Returns the version
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.LoadCommandsDictionary">
+ <summary>
+ Load all commands available in the currently loaded commandset into memory
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.LoadCommandParameters(System.String)">
+ <summary>
+ Load each parameter of the <paramref name="commandName"/> as a <see cref="T:Gentex.Tester.DeviceComm.Data.ParameterItem"/> and return a 
+ dictionary that can be loaded into the <see cref="T:Gentex.Tester.DeviceComm.Data.CommandItem"/> Object.
+ </summary>
+ <param name="commandName"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.SetParameterValue(System.String,System.String,System.String)">
+ <summary>
+ This method modifies a command parameter value in the cached commandset
+ </summary>
+ <param name="commandName">The name of the command in the commandset</param>
+ <param name="parameter">The parameter of the command to modify the value of</param>
+ <param name="value">The new value to apply to the parameter</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.CreateAndInitialize(System.String,System.String,System.Boolean,System.String,System.Boolean,System.String)">
+ <summary>
+ Creates the command set in memory and connects the DeviceCommService instance to the hardware device.
+ </summary>
+ <param name="hardwareConfigurationFile">The full path of the file providing the hardware configuration</param>
+ <param name="sectionName">The heading of the section of the file to use</param>
+ <param name="useWeb1">Value indicating whether the hardwareConfigurationFile is a local file path or URI</param>
+ <param name="commandSetFile">The full path of the command set file</param>
+ <param name="useWeb2">value indicating whether the commandSetFile is a local file path or URI</param>
+ <param name="chimeraIP">Allows for an override of the default chimera IP address in the hardware configuration file</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.CreateAndInitialize(System.String,System.Boolean,System.String,System.Boolean,System.String)">
+ <summary>
+ Creates the command set in memory and connects the DeviceCommService instance to the hardware device.
+ </summary>
+ <param name="hardwareConfigurationFile">The full path of the file providing the hardware configuration</param>
+ <param name="useWeb1">Value indicating whether the hardwareConfigurationFile is a local file path or URI</param>
+ <param name="commandSetFile">The full path of the command set file</param>
+ <param name="useWeb2">value indicating whether the commandSetFile is a local file path or URI</param>
+ <param name="chimeraIP">Allows for an override of the default chimera IP address in the hardware configuration file</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.CreateAndInitialize(System.String,System.String,System.Byte[],System.Boolean,System.String)">
+ <summary>
+ Creates the command set in memory and connects the DeviceCommService instance to the hardware device.
+ </summary>
+ <param name="hardwareConfigurationFile">The full path of the file providing the hardware configuration</param>
+ <param name="sectionName">The heading of the section of the file to use</param>
+ <param name="commandSet">The byte array representing the command set</param>
+ <param name="useWeb">value indicating whether hardwareConfigurationFile is a URI or local drive path</param>
+ <param name="chimeraIP">Allows for an override of the default chimera IP address in the hardware configuration file</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.CreateAndInitialize(System.String,System.Byte[],System.Boolean,System.String)">
+ <summary>
+ Creates the command set in memory and connects the DeviceCommService instance to the hardware device.
+ </summary>
+ <param name="hardwareConfigurationFile">The full path of the file providing the hardware configuration</param>
+ <param name="commandSet">The byte array representing the command set</param>
+ <param name="useWeb">value indicating whether hardwareConfigurationFile is a URI or local drive path</param>
+ <param name="chimeraIP">Allows for an override of the default chimera IP address in the hardware configuration file</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.CreateAndInitialize(System.String,System.String,System.Boolean,System.String)">
+ <summary>
+ Creates the command set in memory and connects the DeviceCommService instance to the hardware device.
+ </summary>
+ <param name="configurationFile">The full path of the file providing the commandset and hardware configuration</param>
+ <param name="sectionName">The heading of the section of the file to use</param>
+ <param name="useWeb">value indicating whether configurationFile is a URI or local drive path</param>
+ <param name="chimeraIP">Allows for an override of the default chimera IP address in the hardware configuration file</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.CreateAndInitialize(System.String,System.Boolean,System.String)">
+ <summary>
+ Creates the command set in memory and connects the DeviceCommService instance to the hardware device.
+ </summary>
+ <param name="configurationFile">The full path of the file providing the commandset and hardware configuration</param>
+ <param name="useWeb">value indicating whether configurationFile is a URI or local drive path</param>
+ <param name="chimeraIP">Allows for an override of the default chimera IP address in the hardware configuration file</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.RecreateAndInitialize">
+ <summary>
+ Use this function to destroy the existing instance and recreate and reinitialize it using the same commandset and hardware configuration.
+ </summary>
+ <remarks>Calling this prior to creating and initializing will throw exceptions</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.Create(System.String,System.Boolean)">
+ <summary>
+ Wrapper function for the DeviceCommServiceClient.Create call.  This loads 
+ the commandset specified by the <paramref name="commandSetFilePath"/>.
+ </summary>
+ <param name="commandSetFilePath">the path to the .xml or .commandSet file that represents a command set.</param>
+ <param name="useWeb">Indicates whether the commandset file is a local directory or a url</param>
+ <remarks>Used for Non-Opsmanager scenarios.</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.Create(System.Byte[])">
+ <summary>
+ Wrapper function for the DeviceCommServiceClient.CreateFromBuffer call.  This loads 
+ the commandset specified by the byte array <paramref name="commandSet"/>.
+ </summary>
+ <param name="commandSet">The commandset file in byte array form</param>
+ <remarks>Used when the commandset is generated by another system as a byte array</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.Create(System.Byte[],System.String)">
+ <summary>
+ Wrapper function for the DeviceCommServiceClient.CreateFromBuffer call.  This loads 
+ the commandset specified by the byte array <paramref name="commandSet"/>.
+ </summary>
+ <param name="commandSet">The commandset file in byte array form</param>
+ <param name="memoryMapPN">The memory map that provided the command set</param>
+ <remarks>Used when the commandset is generated by another system as a byte array</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.Initialize(System.String,System.Collections.Generic.List{System.String})">
+ <summary>
+ Initializes the DeviceCommService object to the desired HWType
+ using the provided HWSettings
+ </summary>
+ <param name="HWType">Desired Hardware Type</param>
+ <param name="HWSettings">Settings associated with HWType</param>
+ <remarks></remarks>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.Initialize(System.String,System.String,System.Boolean,System.String)">
+ <summary>
+ Initializes the DeviceCommService object to the desired HWType
+ using the settings retrieved from the specified filePath. 
+ </summary>
+ <param name="sectionName">The name of the section of settings to initialize with</param>
+ <param name="filePath">The file containing the devicecomm settings</param>
+ <param name="useWeb">value indicating whether the file path points to a local directory or the svn repository</param>
+ <param name="chimeraIP">Allows for an override of the default chimera IP address in the hardware configuration file</param>
+ <remarks></remarks>
+ <exception cref="T:System.InvalidOperationException"></exception>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.Initialize(System.String,System.Boolean,System.String)">
+ <summary>
+ Initializes the DeviceCommService Object using the hardware type
+ and settings in the provided file.
+ </summary>
+ <param name="filePath">path to the file containing settings for a specific hardware configuration</param>
+ <param name="useWeb">value indicating whether the file path points to a local directory or the svn repository</param>
+ <param name="chimeraIP">Allows for an override of the default chimera IP address in the hardware configuration file</param>
+ <exception cref="T:System.InvalidOperationException"></exception>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.Recreate">
+ <summary>
+ Wrapper function for the DeviceCommServiceClient.CreateFromBuffer call. This should only be used after a 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.Reinitialize">
+ <summary>
+ Initializes using the cached configuration. Use this instead of ReinitializeService() if ReCreate() was called.
+ </summary>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+ <exception cref="T:System.InvalidOperationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.ReInitializeService">
+ <summary>
+ Wrapper for DeviceCommServiceClient.ReInitialize. Resets
+ the hardware for the DeviceCommServiceClient that is currently
+ initialized.
+ </summary>
+ <remarks></remarks>"
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.ShutDown">
+ <summary>
+ Wrapper routine for DeviceCommServiceClient.ShutDown.
+ Closes the connection to the hardware that was established by initialize.
+ </summary>
+ <remarks>The DeviceCommServiceClient Object is still in memory after
+ ShutDown is completed.</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.Destroy">
+ <summary>
+ Wrapper for .DeviceCommServiceClient.Destroy call. This removes the
+ DeviceCommServiceClient from memory and invalidates the associated index.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.IsDoable(System.String)">
+ <summary>
+ Determine if the provided command is of type 'Do'.
+ </summary>
+ <param name="commandName">Command to investigate</param>
+ <returns></returns>
+ <remarks></remarks>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.IsReadable(System.String)">
+ <summary>
+ Determine if the provided command is of type 'Read'.
+ </summary>
+ <param name="commandName">Command to investigate</param>
+ <returns></returns>
+ <remarks></remarks>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.IsWriteable(System.String)">
+ <summary>
+ Determines if the provided command is writeable.
+ </summary>
+ <param name="commandName">Command to investigate</param>
+ <returns>True if writeable, false otherwise</returns>
+ <remarks></remarks>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.DoCmd(System.String,System.Collections.Generic.List{System.String})">
+ <summary>
+ Perform a do operation for the specified command
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <param name="inParams">The input parameters of the command in the format [name,value,name,value,...]</param>    
+ <returns>A dictionary containing the values retrieved for each parameter</returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.DoCmd(System.String,System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
+ <summary>
+ Perform a do operation for the specified command
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <param name="inParams">The input parameters of the command in the format [name,value,name,value,...]</param>    
+ <param name="retries">The maximum number of retries to perform if the operation fails</param>
+ <param name="retryDelay">The delay (milliseconds) between write attempts</param>
+ <returns>A dictionary containing the values retrieved for each parameter</returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.DoCmd(System.String,System.Int32,System.Int32)">
+ <summary>
+ Perform a do operation for the specified command
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <param name="retries">The maximum number of retries to perform if the operation fails</param>
+ <param name="retryDelay">The delay (milliseconds) between write attempts</param>
+ <returns>A dictionary containing the values retrieved for each parameter</returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.DoCmd(System.String)">
+ <summary>
+ Perform a do operation for the specified command
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <returns>A dictionary containing the values retrieved for each parameter</returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.ReadCmd(System.String)">
+ <summary>
+ Perform a read operation for the specified command
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <returns>A dictionary containing the values retrieved for each parameter</returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.ReadCmd(System.String,System.Int32,System.Int32)">
+ <summary>
+ Perform a read operation for the specified command
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <param name="retries">The maximum number of retries to perform if the operation fails</param>
+ <param name="retryDelay">The delay (milliseconds) between attempts</param>
+ <returns>A dictionary containing the values retrieved for each parameter</returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.ReadOrDo(System.String,System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
+ <summary>
+ Perform a read operation if the command is readable, otherwise perform a do operation
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <param name="inParams">The input parameters of the command in the format [name,value,name,value,...]</param>    
+ <param name="retries">The maximum number of retries to perform if the operation fails</param>
+ <param name="retryDelay">The delay (milliseconds) between attempts</param>
+ <returns>A dictionary containing the values retrieved for each parameter</returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.ReadOrDo(System.String,System.Int32,System.Int32)">
+ <summary>
+ Perform a read operation if the command is readable, otherwise perform a do operation
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <param name="retries">The maximum number of retries to perform if the operation fails</param>
+ <param name="retryDelay">The delay (milliseconds) between attempts</param>
+ <returns>A dictionary containing the values retrieved for each parameter</returns>    
+ <remarks>This applies to a command that has no parameters</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.WriteCmd(System.String,System.Collections.Generic.List{System.String})">
+ <summary>
+ Perform a write operation for the specified command using the provided input parameters
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <param name="inParams">The input parameters of the command in the format [name,value,name,value,...]</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.WriteCmd(System.String,System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
+ <summary>
+ Perform a write operation for the specified command using the provided input parameters
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <param name="inParams">The input parameters of the command in the format [name,value,name,value,...]</param>
+ <param name="retries">The maximum number of retries to perform if the operation fails</param>
+ <param name="retryDelay">The delay (milliseconds) between attempts</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.WriteOrDo(System.String,System.Collections.Generic.List{System.String},System.Int32,System.Int32)">
+ <summary>
+ Perform a write operation if the command is writeable, otherwise perform a do operation
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <param name="InParams">The input parameters of the command in the format [name,value,name,value,...]</param>
+ <param name="retries">The maximum number of retries to perform if the operation fails</param>
+ <param name="retryDelay">The delay (milliseconds) between attempts</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.WriteOrDo(System.String,System.Int32,System.Int32)">
+ <summary>
+ Perform a write operation if the command is writeable, otherwise perform a do operation
+ </summary>
+ <param name="commandName">The name of the commandset command</param>
+ <param name="retries">The maximum number of retries to perform if the operation fails</param>
+ <param name="retryDelay">The delay (milliseconds) between attempts</param>
+ <remarks>This applies to a command that has no parameters</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.PointerIsNULL">
+ <summary>
+ Throws an <see cref="T:System.InvalidOperationException"/> if the index (pointer) is null or 0.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.PointerIsNULL(System.String)">
+ <summary>
+ Throws an <see cref="T:System.InvalidOperationException"/> if the index (pointer) is null or 0.
+ </summary>
+ <param name="methodName">The method performing a devicecomm operation</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.DeviceCommService.IsPointerNULL">
+ <summary>
+ Returns whether the index (pointer) has been set to a non zero (null) value
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.CalibrationEventArgs.Success">
+ <summary>
+ Set to true upon the conclusion of a calibrate to alert the <see cref="T:Gentex.Tester.DeviceComm.OpsManager">class that the operation was a success.</see>
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.HardwareBase.Name">
+ <summary>
+ The unique name of this implementation of HardwareBase. 
+ </summary>
+ <remarks>Typically this name includes the hardware type along with something that distinguishes it from other implementations using the same hardware type.</remarks>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.HardwareBase.HardwareSettingsFlattenedList">
+ <summary>
+ Returns a list in the format (setting name, setting value, ...) 
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.IDeviceCommClient.CommandSet">
+ <summary>
+ Gets or sets the command set instance linked to this devicecomm client
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.IDeviceCommClient.CommandSetLoaded">
+ <summary>
+ Value indicating whether the linked commandset has been created and loaded into memory
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.IDeviceCommClient.ErrorCount">
+ <summary>
+ The number of DeviceComm errors that have occurred since the error counter was last cleared.
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.IDeviceCommClient.Hardware">
+ <summary>
+ The hardware that will connected to while performing device communication
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.IDeviceCommClient.Connected">
+ <summary>
+ Value indicating whether the DeviceCommClient has successfully connected to the hardware
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.IDeviceCommClient.LastError">
+ <summary>
+ String representing the last error from the underlying device client.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.CreateCommandSet(System.Byte[],Gentex.Tester.DeviceComm.Data.MemoryMapIdentity)">
+ <summary>
+ Creates the underlying client from a byte array that represents the command set.
+ </summary>
+ <param name="commandSetByteArray">command set in byte array form</param>
+ <param name="memoryMap">optional <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapIdentity"/> of the associated memory map.</param>
+ <remarks>The array is typically provided by a memory map</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.CreateCommandSet(System.String)">
+ <summary>
+ Creates the underlying client from a command set file
+ </summary>
+ <param name="commandSetFilePath">the path of the command set file</param>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.Destroy">
+ <summary>
+ Destroys the underlying DeviceComm instance, clearing it from memory
+ </summary>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.Connect(Gentex.Tester.DeviceComm.HardwareBase)">
+ <summary>
+ Attempts to connect to the hardware type specified in <paramref name="hardware"/>
+ </summary>
+ <param name="hardware"></param>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.Close">
+ <summary>
+ Closes the connection to the hardware.
+ </summary>
+ <remarks>The underlying DeviceComm client Object is still in memory after
+ ShutDown is completed. Run the destroy method to remove it</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.GetCommandParameters(System.String)">
+ <summary>
+ Retrieves the parameter names of the <paramref name="commandName"/> command.
+ </summary>
+ <param name="commandName">Command to retrieve parameters for.</param>
+ <returns>a list of parameter names</returns>
+ <remarks></remarks>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.GetCommandParametersWithValues(System.String)">
+ <summary>
+ Retrieves the parameters and parameter values for the provided command. 
+ </summary>
+ <param name="commandName">the name of the command</param>
+ <returns>a dictionary of parameter, parameter value pairs</returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.GetCommandInputParameters(System.String)">
+ <summary>
+ Retrieves the input parameters for the command.
+ </summary>
+ <param name="commandName">The name of the command</param>
+ <returns>A list of input parameters</returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.GetCommandOutputParameters(System.String)">
+ <summary>
+ Retrieves the output parameters for the command
+ </summary>
+ <param name="commandName">The name of the command</param>
+ <returns>A list of output parameters</returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.GetName">
+ <summary>
+ Retrieves the name of the command set
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.GetVersion">
+ <summary>
+ Retrieves the version of the command set
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.GetParameterLimits(System.String,System.String)">
+ <summary>
+ Retrieves the limits for the parameter
+ </summary>
+ <param name="commandName">The name of the command</param>
+ <param name="parameterName">The name of the parameter</param>
+ <returns></returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.GetParameterValue(System.String,System.String)">
+ <summary>
+ Retrieves the value of the specified parameter of the specified command. 
+ </summary>
+ <param name="commandName">The name of the command</param>
+ <param name="parameterName">The name of the parameter</param>
+ <returns>The value of the parameter</returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.SetParameterValue(System.String,System.String,System.String)">
+ <summary>
+ Updates the in-memory value of a command's parameter 
+ </summary>
+ <param name="commandName">The name of the command</param>
+ <param name="parameterName">The name of the command parameter</param>
+ <param name="parameterValue">The value to set the parameter to</param>
+ <remarks>This provides the ability to prepare a command before sending it</remarks>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.CommandIsDoable(System.String)">
+ <summary>
+ Determine if the provided command is of type 'Do'.
+ </summary>
+ <param name="commandName">Command to investigate</param>
+ <returns></returns>
+ <remarks></remarks>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.CommandIsReadable(System.String)">
+ <summary>
+ Determine if the provided command is of type 'Read'.
+ </summary>
+ <param name="commandName">Command to investigate</param>
+ <returns></returns>
+ <remarks></remarks>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.CommandIsWriteable(System.String)">
+ <summary>
+ Determines if the provided command is writeable.
+ </summary>
+ <param name="commandName">Command to investigate</param>
+ <returns>True if writeable, false otherwise</returns>
+ <remarks></remarks>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.PerformDo(System.String,System.Collections.Generic.List{System.String})">
+ <summary>
+ Sends a command of type 'Do'
+ </summary>
+ <param name="commandName">The name of the command to send</param>
+ <param name="inputParameterValues">A list of the required input parameter values</param>
+ <returns>dictionary of parameter, parameter value pairs</returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.PerformRead(System.String)">
+ <summary>
+ Sends a command of type 'Read'
+ </summary>
+ <param name="commandName">The name of the command to send</param>
+ <returns>Dictionary of parameter, parameter value pairs</returns>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.IDeviceCommClient.PerformWrite(System.String,System.Collections.Generic.List{System.String})">
+ <summary>
+ Sends a command of type 'Write'
+ </summary>
+ <param name="commandName">The name of the command to send</param>
+ <param name="inputParameterValues">A list of the required input parameter values</param>
+ <exception cref="T:Gentex.Tester.DeviceComm.DeviceCommunicationException"></exception>
+</member>
+<member name="T:Gentex.Tester.DeviceComm.OpsManager">
+ <summary>
+ 
+ </summary>
+ <remarks>OpsManager requires that OpsManager.dsn reside in C:\Program Files (x86)\Common Files\ODBC\Data Sources
+ in order to make a connection to the database. This file can be obtained by installing OpsManager v 1.3.
+ Without this .dsn file, a "Could not connect to the operations manager database" error will result.</remarks>
+</member>
+<member name="E:Gentex.Tester.DeviceComm.OpsManager.PreOperationsAction">
+ <summary>
+ Allows for product-specific actions to take place prior to beginning
+ a set of opsmanager operations.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:Gentex.Tester.DeviceComm.OpsManager.PostOperationsAction">
+ <summary>
+ Allows for product specific actions to take place after completing
+ a set of opsmanager operations.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:Gentex.Tester.DeviceComm.OpsManager.PreOperationAction">
+ <summary>
+ Allows for product specific actions to take place prior to beginning
+ a specific opsmanager operation
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="E:Gentex.Tester.DeviceComm.OpsManager.PostOperationAction">
+ <summary>
+ Allows for product specific actions to take place after completing
+ a specific opsmanager operation
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.OpsManager._TestDescribers">
+ <summary>
+ Stores a list of OpsManager test descriptions
+ </summary>
+ <remarks>This private field is static so that loading this data only needs to occur once, and can be used for any instance of the OpsManager class.</remarks>
+</member>
+<member name="F:Gentex.Tester.DeviceComm.OpsManager._CalibratesData">
+ <summary>
+ Stores the calibration data prior to calibrates power cycle for post-power cycle comparision
+ </summary>
+ <remarks>key: command name; value: (key) command name, (value) command value</remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.DeviceCommSettings">
+ <summary>
+ Injects an instance of DeviceCommSettings for all DeviceCommService objects to reference
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.AllowedMemoryMapRevisions">
+ <summary>
+ Gets the list of acceptable revisions that the product
+ being tested is allowed to have.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.WritesCompletedCount">
+ <summary>
+ Gets the number of write operations that have been completed
+ this test cycle.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.VerifyWritesCompletedCount">
+ <summary>
+ Gets the number of write operations that have been verified
+ during this test cycle.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.LimitChecksCompletedCount">
+ <summary>
+ Gets the number of limit check operations that have been
+ completed this test cycle.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.VerifiesCompletedCount">
+ <summary>
+ Gets the number of verify operations that have been
+ completed this test cycle.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.CalibratesCompletedCount">
+ <summary>
+ Gets the number of calibrate operations that have been
+ completed this test cycle.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.VerifyCalibratesCompletedCount">
+ <summary>
+ Gets the number of calibrate operations that have been
+ verified this test cycle. 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.WriteOperationsCount">
+ <summary>
+ Gets the number of write operations called for in
+ the loaded memory map.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.VerifyOperationsCount">
+ <summary>
+ Gets the number of verify operations called for in
+ the loaded memory map.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.LimitCheckOperationsCount">
+ <summary>
+ Gets the number of limit check operations called for in
+ the loaded memory map.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.CalibrateOperationsCount">
+ <summary>
+ Gets the number of calibrate operations called for in 
+ the loaded memory map.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.TotalOperationsCount">
+ <summary>
+ Gets the total number of operations called for in the loaded memory map
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.WriteOperations">
+ <summary>
+ Gets the list of write operations specified for the
+ loaded memory map.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.VerifyOperations">
+ <summary>
+ Gets the list of verify operations specified for the
+ loaded memory map.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.LimitCheckOperations">
+ <summary>
+ Gets the list of limit check operations specified for the
+ loaded memory map.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.CalibrateOperations">
+ <summary>
+ Gets the list of calibrate operations specified for the
+ loaded memory map.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.ErrorDescription">
+ <summary>
+ Gets the description of the last error code.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.FailMessages">
+ <summary>
+ Gets the fail messages from the memory map tests
+ that failed, if applicable.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.OperationDelay">
+ <summary>
+ Gets or sets the delay that occurs between each 
+ OpsManager operation
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.CommandSetLoaded">
+ <summary>
+ Gets a value indicating whether the command set of this OpsManager
+ instance has been successfully created
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.ActiveCommandSetService">
+ <summary>
+ Gets the <see cref="T:Gentex.Tester.DeviceComm.DeviceCommService"/> command set object
+ that is used for communicating to the DUT.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.MemoryMapPartNumber">
+ <summary>
+ Gets the part number of the loaded memory map. 
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.MemoryMapRevision">
+ <summary>
+ Gets the revision of the loaded memory map
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.MemoryMapVersion">
+ <summary>
+ Gets the version of the loaded memory map
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.CommandSetByteArray">
+ <summary>
+ Gets the cached byte array representing the loaded command set
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.OperationsCached">
+ <summary>
+ Gets a value indicating whether the OpsManager operations
+ have been cached.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.AssemblyPartNumber">
+ <summary>
+ Gets the part number of the product to be tested.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.AssemblyBomRev">
+ <summary>
+ Gets the BOM revision of the part number to be tested.
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.StationType">
+ <summary>
+ Gets or sets the type of test station being ran.
+ </summary>
+ <value></value>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.StationTypeName">
+ <summary>
+ Gets the string representation of the <see cref="T:Gentex.Tester.DeviceComm.TestStations"/>
+ ID set for this station.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.LoggedActivity">
+ <summary>
+ Gets all of the logged message activity
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.OperationRetryMax">
+ <summary>
+ Gets or sets the number of retries allowed for each memory map operation
+ </summary>
+</member>
+<member name="P:Gentex.Tester.DeviceComm.OpsManager.MemoryMapTests">
+ <summary>
+ Gets the dictionary of memory map tests for
+ the loaded memory map.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.#ctor(System.String,System.String,Gentex.Tester.DeviceComm.TestStations,System.Int32)">
+ <summary>
+ Initializes a new instance of the OpsManager class.  Looks up the memory map based on the
+ <paramref name="assemblyPartNumber"/> and <paramref name="assemblyBomRev"/>, Loads the memory map,
+ Loads/Creates the command set, and initializes the testing features.
+ </summary>
+ <param name="assemblyPartNumber">The part number of the product</param>
+ <param name="assemblyBomRev">The revision of the <paramref name="assemblyPartNumber"/></param>
+ <param name="station">The type of test equipment to set OpsManager up for</param>
+ <param name="operationDelay">How long to delay between each opsmanager operation</param>
+ <remarks>Constructor defaults to using Rev AAA and version 1 with a 0-second operation delay.</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.#ctor(System.String,System.String,System.String,System.Int32,Gentex.Tester.DeviceComm.TestStations)">
+ <summary>
+ Initializes a new instance of the OpsManager class. 
+ </summary>
+ <param name="assemblyPartNumber">The part number of the product.</param>
+ <param name="memoryMapPartNumber">The part number of the memory map to be loaded.</param>
+ <param name="memoryMapRevision">The revision, or revisions, of the memory map.</param>
+ <param name="memoryMapVersion">The version of the memory map.</param>
+ <param name="station">The type of test equipment to set OpsManager up for</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.#ctor(System.String,System.String,System.String,System.Int32,Gentex.Tester.DeviceComm.TestStations,System.Int32)">
+ <summary>
+ Initializes a new instance of the OpsManager class. 
+ </summary>
+ <param name="assemblyPartNumber">The part number of the product.</param>
+ <param name="memoryMapPartNumber">The part number of the memory map to be loaded.</param>
+ <param name="memoryMapRevision">The revision, or revisions, of the memory map.</param>
+ <param name="memoryMapVersion">The version of the memory map.</param>
+ <param name="station">The type of test equipment to set OpsManager up for</param>
+ <param name="operationDelay">How long to delay between each opsmanager operation</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.ClearMemoryMapTests">
+ <summary>
+ clears the collection holding the test items.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.ResetMemoryMapTests">
+ <summary>
+ Loop through the <see cref="T:Gentex.Tester.DeviceComm.Collections.MemoryMapTestsDictionary"/> and reset
+ each <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapTest"/> status.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.GenerateMemoryMapTests(System.Collections.Generic.List{System.String},Gentex.Tester.DeviceComm.OperationTypes)">
+ <summary>
+ Create a new <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapTest"/> for each
+ output parameter of each memory map operation in the <paramref name="operationList"/>.
+ </summary>
+ <param name="operationList">List of commandset commands belonging to a specific memory map operation type.</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.GenerateMemoryMapTests">
+ <summary>
+ Create a new <see cref="T:Gentex.Tester.DeviceComm.Data.MemoryMapTest"/> for each 
+ output parameter of each memory map operation specified by the loaded memory map.
+ </summary>
+ <remarks>A commandset must be Initialized and loaded prior to calling this.</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.LoadAndParseTestOperations(System.Boolean,System.String,System.String,System.String,System.String,System.Boolean)">
+ <summary>
+ </summary>    
+ <param name="useIP">Indicates whether to use the IP address rather than the server name when building the URL.</param>
+ <param name="svnServerName">The name of the server.</param>
+ <param name="svnServerIPAddress">The IP address</param>
+ <param name="fileURL">The rest of the URL (excluding the file name).</param>
+ <param name="localPath">The local file to retrieve</param>
+ <param name="saveLocal">Indicates whether to save a local copy of the file retrieved by HTTP.</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.LoadTestOperations(System.String,System.String,System.Boolean)">
+ <summary>
+ Loads a file that enumerates the complete list of memory map operations and
+ maps them to a test key and test description.
+ </summary>
+ <param name="url">The URL to retrieve the file by HTTP.</param>
+ <param name="localPath">The local location that the file would reside.</param>
+ <param name="saveLocal">Indicates whether to save a local copy of the file retrieved by HTTP.</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.ParseTestDescriberFileContents(System.String,System.String@)">
+ <summary>
+ Parses <paramref name="FileContents"/> to extract the custom keys and descriptions associated with each 
+ memory map operation.
+ </summary>
+ <param name="FileContents">the contents of the tests file.</param>
+ <remarks>the stringdictionary that holds the data is formatted as follows:
+ Key=CommandName,ParameterName
+ Item=TestKey,TestDescription
+ </remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.LookUpAndLoadMemoryMap(System.String,System.String,System.Int32)">
+ <summary>
+ This function is used to look up the memory map called out in the BOM of the
+ <paramref name="ParentPN"/> and then load a memory map and command set using the retrieved information.
+ </summary>
+ <param name="ParentPN">Gentex Part Assembly</param>
+ <param name="BOMRev">Revision of Gentex Part Assembly to look up</param>
+ <param name="memoryMapVersion">Version of the memory map to load</param>
+ <remarks>If the Memory Map Part Number, Revision, and Version are provided, along with
+ the product part number, a call to this function is not necessary.</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.LoadMemoryMap">
+ <summary>
+ Loads the memory map based on the information provided during initialization.
+ </summary>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.LoadMemoryMap(System.String,System.String,System.Int32,System.String,Gentex.Tester.DeviceComm.TestStations)">
+ <summary>
+ Loads the memory map specified by the input parameters.
+ </summary>
+ <param name="memoryMappartnumber">Memory Map Part Number, ie. 305-XXXX-XXX</param>
+ <param name="memoryMapBOMRev">Memory Map Revision, ie. AAA</param>
+ <param name="memoryMapVersion">Memory Map Version, ie. 1</param>
+ <param name="assemblyPartNumber">Product Part Number, ie. 905-XXXX-XXX</param>
+ <remarks>Non-Automated, but much quicker method of loading/initializing a memory map.</remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.CreateDeviceCommFromBuffer(System.Int32)">
+ <summary>
+ Opsmanager wrapper to create a new devicecomm object using the <see cref="F:Gentex.Tester.DeviceComm.OpsManager._commandSetByteArray"/>
+ loaded from the memory map.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.CreateAndInitializeDeviceCommFromBuffer(System.String,System.Int32,System.Boolean,System.String)">
+ <summary>
+ Opsmanager wrapper to create the devicecomm object using the <see cref="F:Gentex.Tester.DeviceComm.OpsManager._commandSetByteArray"/>
+ loaded from the memory map.
+ </summary>
+ <param name="chimeraIP">Allows for an override of the default chimera IP address in the hardware configuration file</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.GetOperations(Gentex.Tester.DeviceComm.TestStations,Gentex.Tester.DeviceComm.OperationTypes)">
+ <summary>
+ Retrieve a list of the <paramref name="OperationType"/> Operations for the specified 
+ <paramref name="TestStation"/>.
+ </summary>
+ <param name="TestStation"></param>
+ <param name="OperationType"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.CacheMemoryMapOperations">
+ <summary>
+ Retrieve lists of operations for each <see cref="T:Gentex.Tester.DeviceComm.OperationTypes"/> type.
+ and operation type. 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.GetCalibrateOperations">
+ <summary>
+ Loads the <see cref="F:Gentex.Tester.DeviceComm.OpsManager._calibrateOperations"/> list.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.GetOperationParameters(System.String)">
+ <summary>
+ Retrieves a list of parameters for the <paramref name="command"/>.
+ </summary>
+ <param name="command">The name of the command to get the parameters of</param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.ClearOperationsCache">
+ <summary>
+ Clear all Opsmanager operation lists.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.ClearOperationCache(Gentex.Tester.DeviceComm.OperationTypes)">
+ <summary>
+ Clear a specific OpsManager operation list.
+ </summary>
+ <param name="operation"></param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.GetErrorString(System.Int32)">
+ <summary>
+ Retrieves the error string corresponding to the <paramref name="ErrorCode"/>
+ </summary>
+ <param name="ErrorCode">The code of the error that was thrown.</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.PerformWritesOperations(System.Boolean)">
+ <summary>
+ Iterates through the write operations specified by the loaded memory map, overwriting the mirror's
+ NVM values to the values specified by the memory map.
+ </summary>
+ <returns>True if all of the write operations succeeded, false otherwise</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.PerformWritesVerification(System.Boolean)">
+ <summary>
+ Iterates through the memory maps's write operations, reading the mirrors NVM data and
+ testing it's validity.
+ </summary>
+ <returns>True if every write operation is verified, False otherwise.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.PerformVerifyOperations(System.Boolean)">
+ <summary>
+ Iterates through the memory maps's verify operations, reading the mirrors NVM data and
+ testing it's validity.
+ </summary>
+ <returns>True if every verify operation is verified, False otherwise.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.PerformLimitCheckOperations(System.Boolean)">
+ <summary>
+ Iterates through the memory maps's limit operations, reading the mirrors NVM data and
+ testing it against the specified limits.
+ </summary>
+ <returns>True if each value falls within their limits, False otherwise.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.PerformCalibrateOperations(System.Boolean)">
+ <summary>
+ Loops through all available calibrate operations, raising an event for each calibrate that needs to be performed
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.Tester.DeviceComm.OpsManager.MemoryMapRevisionCheck(System.String)">
+ <summary>
+ Specialized function to handle products that specify allowance of
+ multiple revisions of a memory map. Iterates through the list
+ of allowed revisions, Updating the MMREV test's expected value and
+ checking it against the product's revision.
+ </summary>
+ <param name="productMemoryMapRevision"></param>
+ <returns>True if the product's memory map revision matches an allowed revision.</returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

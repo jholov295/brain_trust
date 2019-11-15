@@ -1,0 +1,541 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Gentex.MES.LegacyDataClient.Contracts
+</name>
+</assembly>
+<members>
+<member name="P:Gentex.MES.LegacyDataClient.GetUnitTestHistoryResponse.UnitTestHistoryRecords">
+ <summary>
+ Gets or sets the unit test history records. Keys are NOT forced to uppercase.
+ </summary>
+ <value>
+ The unit test history records.
+ </value>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.ChannelFactoryWrapper`1.SetCustomMessageHeadersDelegate(System.Func{System.Collections.Generic.List{System.ServiceModel.Channels.MessageHeader}})">
+ <summary>
+ Set Custom Message Headers for the lifetime of channel
+ </summary>
+ <param name="CustomMessageHeadersDelegate"> Make sure Message Headers are in the ContractConstants.MessageHeaderNamespace</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.ChannelFactoryWrapper`1.Use(System.Action{`0},System.Collections.Generic.List{System.ServiceModel.Channels.MessageHeader})">
+ <summary>
+
+ </summary>
+ <param name="action"></param>
+ <param name="CustomMessageHeaders"> Make sure Message Headers are in the ContractConstants.MessageHeaderNamespace</param>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.StreamedResponseClient.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.StreamedResponseClient" /> class.
+ </summary>
+ <param name="binding">The binding.</param>
+ <param name="remoteAddress">The remote address.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.StreamedResponseClient.#ctor(System.String)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.StreamedResponseClient" /> class.
+ </summary>
+ <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.StreamedResponseClient.#ctor(System.String,System.String)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.StreamedResponseClient" /> class.
+ </summary>
+ <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+ <param name="configurationFilePath">The configuration file path.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.StreamedResponseClient.ExportBy_Datasource_PartNumber_IdentifierCode(Gentex.MES.LegacyDataClient.ExportBy_Datasource_PartNumber_IdentifierCode_Request)">
+ <summary> ExportBy_Datasource_PartNumber_IdentifierCode </summary>
+ <param name="request"></param>
+ <returns></returns>
+ <remarks>
+ 	The operation requires that you specify at least 1 item for either Datasource, PartNumber, IdentifierCode. If specifying more than 1 it will be treated as an AND condition.
+You have the option to specify a Start and\or End Date, if Start Date is not supplied the time span will default to -24hrs from the time of the request or from the End Date if it was specified.
+You also have the option to specify how many records you want, if not supplied the default is 1000.
+You can optionally specify Metadata key names and\or Measurement names independently. 
+The fluent interface provides the following options for specifying Metadata Key name(s):
+1.	IncludeAllMetaDataKeyNames
+2.	IncludeMetaDataKeyNames – You have the option to specify one or more names
+	The fluent interface provides the following options for specifying Measurement name(s):
+1.	IncludeAllMeasurements 
+IncludeMeasurementNames – You have the option to specify one or more names
+You can optionally specify if you only want tests that failed. The default is to include all tests that meet the specification.
+You can optionally specify if you only want measurements that passed or failed. The default is to include both if not specified.
+Also note that the export will only return Metadata key name items unless you’ve included measurement(s).
+Three functions have been provided on the response object that can normalize (each record will have the same key names and number of keys) the results. The default sort order of the keys is Ascending. A Descending order function and a custom sort order function have also been provided.
+ </remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.GetMostRecentUnitTestByOperationRequest.MaterialSerialNumber">
+ <summary>
+ The Serial Number of the material to locate
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>A.K.A. SerialNumber</remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.GetMostRecentUnitTestByOperationRequest.OperationId">
+ <summary>
+ Gets or sets the type of the operation type.
+ </summary>
+ <value>
+ The type of the operation.
+ </value>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.GetMostRecentUnitTestByOperationRequest.MaterialPartNumber">
+ <summary>
+ Materials Part Number
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>Not Required this is an optional field</remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.GetMostRecentUnitTestByAssetRequest.MaterialSerialNumber">
+ <summary>
+ The Serial Number of the material to locate
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>A.K.A. SerialNumber</remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.GetMostRecentUnitTestByAssetRequest.AssetSerialNumbers">
+ <summary>
+ List of Asset Serial Numbers
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>A.K.A. AssetId, PC Name, </remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.GetMostRecentUnitTestByAssetRequest.MaterialPartNumber">
+ <summary>
+ Materials Part Number
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>Not Required this is an optional field</remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.HasUnitTestPassedOperationRequest.MaterialSerialNumber">
+ <summary>
+ The Serial Number of the material to locate
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>A.K.A. DataSource, SerialNumber</remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.HasUnitTestPassedOperationRequest.OperationId">
+ <summary>
+ Gets or sets the type of the operation type.
+ </summary>
+ <value>
+ The type of the operation.
+ </value>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.HasUnitTestPassedOperationRequest.MaterialPartNumber">
+ <summary>
+ Material PartNumber
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.LogKeyValuePairs.Publish">
+ <summary>
+ Gets or sets a value indicating whether or not to publish a 'PartTested' message to the publication service.
+ </summary>
+ <value>
+   <c>true</c> if publish; otherwise, <c>false</c>.
+ </value>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.HasUnitTestPassedAnyRequest.MaterialSerialNumber">
+ <summary>
+ The Serial Number of the material to locate
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>A.K.A. SerialNumber</remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.HasUnitTestPassedAnyRequest.AssetSerialNumbers">
+ <summary>
+ List of Asset Serial Numbers
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>A.K.A. AssetId, PC Name, </remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.HasUnitTestPassedAnyRequest.MaterialPartNumber">
+ <summary>
+ Material PartNumber
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.KeyValuePairsWithMeasurementsBuilder.Publish(System.Boolean)">
+ <summary>
+ Sets whether or not to publish a 'PartTested' message to the publication service.
+ </summary>
+ <param name="value">if set to <c>true</c> publish a message.</param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.KeyValuePairsBuilder.Publish(System.Boolean)">
+ <summary>
+ Sets whether or not to publish a 'PartTested' message to the publication service.
+ </summary>
+ <param name="value">if set to <c>true</c> publish a message.</param>
+ <returns></returns>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.GetDataExportRequest.NumberOfRecords">
+ <summary>
+ Number of records
+ </summary>
+ <value>How many records you want returned</value>
+ <remarks>Default is 1000</remarks>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestFactory.LogMeasurements(System.String)">
+ <summary>
+ Log Measurements which also has some meta data
+ </summary>
+ <param name="SourceName"> A.K.A Asset Serial Number, Asset Id, Equipment Serial Number...... </param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.DataServiceClient.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.DataServiceClient.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+ <param name="binding">The binding.</param>
+ <param name="remoteAddress">The remote address.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.DataServiceClient.#ctor(System.String)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+ <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.DataServiceClient.#ctor(System.String,System.String)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+ <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+ <param name="remoteAddress">The remote address.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.DataServiceClient.#ctor(System.String,System.ServiceModel.EndpointAddress)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+ <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+ <param name="remoteAddress">The remote address.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.DataServiceClient.#ctor(Gentex.MES.LegacyDataClient.ClientInitializationParameters)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient"/> class.
+ </summary>
+ <param name="parameters">The parameters.</param>
+</member>
+<member name="T:Gentex.MES.LegacyDataClient.ClientInitializationParameters">
+ <summary>
+ Initialization parameters for WCF client objects
+ </summary>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.ClientInitializationParameters.EndpointConfigurationName">
+ <summary>
+ Gets or sets the name of the endpoint configuration.
+ </summary>
+ <value>
+ The name of the endpoint configuration.
+ </value>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.ClientInitializationParameters.ConfigurationFilePath">
+ <summary>
+ Gets or sets the configuration file path.
+ </summary>
+ <value>
+ The configuration file path.
+ </value>
+</member>
+<member name="T:Gentex.MES.LegacyDataClient.ContractConstants">
+ <summary>
+ Contract Constants
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:Gentex.MES.LegacyDataClient.ContractConstants.ContractNamespace">
+ <summary>
+ A common contract namespace.
+ </summary>
+</member>
+<member name="T:Gentex.MES.LegacyDataClient.IDataService">
+ <summary>
+ Request reply contract for logging data.
+ </summary>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.IDataService.LogData(Gentex.MES.LegacyDataClient.TestHeader,System.Collections.Generic.IList{Gentex.MES.LegacyDataClient.TestMeasurement})">
+ <summary>
+ Use this method to log data 
+ </summary>
+ <param name="Header"></param>
+ <param name="testmeasurements"></param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.IDataService.LogDataSimple(System.String,System.String,System.Collections.Generic.IList{Gentex.MES.LegacyDataClient.TestMeasurement})">
+ <summary>
+ Logs the data simple.
+ </summary>
+ <param name="EquipmentSerialNumber">The equipment serial number.</param>
+ <param name="MaterialPartNumber">The material part number.</param>
+ <param name="testmeasurements">The testmeasurements.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.IDataService.Get_UnitTestData(System.String,Gentex.MES.LegacyDataClient.UnitTestDataSources)">
+ <summary>
+ Get Unit Test Data
+ </summary>
+ <param name="id"></param>
+ <param name="Source"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.IDataService.Get_UnitTestHistory(System.String,System.String,System.DateTime,Gentex.MES.LegacyDataClient.UnitTestDataSources)">
+ <summary>
+  Get Unit Test History
+ </summary>
+ <param name="id"></param>
+ <param name="PartNumber"></param>
+ <param name="StartDate"></param>
+ <param name="Source"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.LogDataRequest.Publish">
+ <summary>
+ Gets or sets a value indicating whether or not to publish a 'PartTested' message to the publication service.
+ </summary>
+ <value>
+   <c>true</c> if publish; otherwise, <c>false</c>.
+ </value>
+</member>
+<member name="T:Gentex.MES.LegacyDataClient.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.My.Resources.Resources.EndPointAddress">
+<summary>
+  Looks up a localized string similar to http://zvm-msgprod/MES/LegacyDataClient.
+</summary>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.MeasurementAttributes.TimeAttributes">
+ <summary>
+ If Start and End time is supplied, record test cycle time will be generated
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestHeader.TestTime">
+ <summary>
+ If Start and End time is supplied, overall test cycle time will be generated
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestHeader.EquipmentAttributes">
+ <summary>
+ Attributes about the test equipment
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestHeader.MaterialAttributes">
+ <summary>
+ Attributes about the tested material
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestHeader.TestResult">
+ <summary>
+ Overall Result of this test
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestHeader.TestNotes">
+ <summary>
+ User can mark test with free text for example. '300pc RR'
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestHeader.Barcode">
+ <summary>
+ Associate metadata with this unit
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestHeader.TestMetaData">
+ <summary>
+ Associate other info with this Test
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestMeasurement.Name">
+ <summary>
+ Name of the tag
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestMeasurement.MeasuredValue">
+ <summary>
+ Value of the tag
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestMeasurement.MeasurementSpecifications">
+ <summary>
+ Metadata  about the value, Optional
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:Gentex.MES.LegacyDataClient.TestMeasurement.MeasurementAttributes">
+ <summary>
+ Metadata about the record, Optional
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:Gentex.MES.LegacyDataClient.RequestReplyClient">
+ <summary>
+ Client implementation for request/reply messaging with legacy data service.
+ </summary>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+ <param name="binding">The binding.</param>
+ <param name="remoteAddress">The remote address.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.#ctor(System.String)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+ <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.#ctor(System.String,System.String)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+ <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+ <param name="remoteAddress">The remote address.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.#ctor(System.String,System.ServiceModel.EndpointAddress)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+ <param name="endpointConfigurationName">Name of the endpoint configuration.</param>
+ <param name="remoteAddress">The remote address.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.#ctor(Gentex.MES.LegacyDataClient.BindingEnum,Gentex.MES.LegacyDataClient.EndpointEnum)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient" /> class.
+ </summary>
+ <param name="Binding">Name of the binding configuration.</param>
+ <param name="Endpoint">Name of the endpoint.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.#ctor(Gentex.MES.LegacyDataClient.ClientInitializationParameters)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.MES.LegacyDataClient.RequestReplyClient"/> class.
+ </summary>
+ <param name="parameters">The parameters.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.LogData(Gentex.MES.LegacyDataClient.TestHeader,System.Collections.Generic.IList{Gentex.MES.LegacyDataClient.TestMeasurement})">
+ <summary>
+ Logs the data.
+ </summary>
+ <param name="Header">The header.</param>
+ <param name="testmeasurements">The testmeasurements.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.LogDataSimple(System.String,System.String,System.Collections.Generic.IList{Gentex.MES.LegacyDataClient.TestMeasurement})">
+ <summary>
+ Logs the data using a simplified parameter signature.
+ </summary>
+ <param name="EquipmentSerialNumber">The equipment serial number.</param>
+ <param name="MaterialPartNumber">The material part number.</param>
+ <param name="testmeasurements">The testmeasurements.</param>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.Get_UnitTestData(System.String,Gentex.MES.LegacyDataClient.UnitTestDataSources)">
+ <summary>
+ Get Unit Test Data
+ </summary>
+ <param name="id"></param>
+ <param name="Source"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.Get_UnitTestHistory(System.String,System.String,System.DateTime,Gentex.MES.LegacyDataClient.UnitTestDataSources)">
+ <summary>
+ Get Unit Test History
+ </summary>
+ <param name="id"></param>
+ <param name="PartNumber"></param>
+ <param name="StartDate"></param>
+ <param name="Source"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.GetUnitTestHistoryRequest(Gentex.MES.LegacyDataClient.GetUnitTestHistoryRequest)">
+ <summary>
+ Gets the unit test history.
+ </summary>
+ <param name="Request">The request.</param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.MES.LegacyDataClient.RequestReplyClient.GetUnitTestHistory(Gentex.MES.LegacyDataClient.GetUnitTestHistoryRequest)">
+ <summary>
+ Gets the unit test history as a nicer-to-use collection of dictionaries.
+ </summary>
+ <param name="request">The request.</param>
+ <returns></returns>
+</member>
+</members>
+</doc>

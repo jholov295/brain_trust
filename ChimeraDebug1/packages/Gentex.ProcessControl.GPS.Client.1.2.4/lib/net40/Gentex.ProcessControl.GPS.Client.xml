@@ -1,0 +1,726 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Gentex.ProcessControl.GPS.Client
+</name>
+</assembly>
+<members>
+<member name="T:Gentex.ProcessControl.GPS.GPSMembershipProvider">
+ <summary>
+ Provides user identity information queried through the GPS User_Manager remoting service.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.GPSMembershipProvider.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.ProcessControl.GPS.GPSMembershipProvider"/> class.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.GPSMembershipProvider.#ctor(Gentex.GPS.RemoteObjects.Company.User_Manager)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.ProcessControl.GPS.GPSMembershipProvider"/> class.
+ </summary>
+ <param name="userController">The user controller.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.GPSMembershipProvider.Authenticate(System.String,System.String)">
+ <summary>
+ Authenticates the specified username.
+ </summary>
+ <param name="username">The username.</param>
+ <param name="password">The password.</param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.GPSMembershipProvider.GetUserByEmployeeId(System.String)">
+ <summary>
+ Gets the user by employee identifier.
+ </summary>
+ <param name="employeeId">The employee identifier.</param>
+ <returns></returns>
+ <exception cref="T:System.ArgumentException">Employee id must be numeric.;employeeId</exception>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.GPSMembershipProvider.GetUserByUsername(System.String)">
+ <summary>
+ Gets the user by username.
+ </summary>
+ <param name="username">The username.</param>
+ <returns></returns>
+</member>
+<member name="T:Gentex.ProcessControl.GPS.GPSRoleProvider">
+ <summary>
+ Provides roles queried through the GPS User_Manager remoting service.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.GPSRoleProvider.#ctor">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.ProcessControl.GPS.GPSRoleProvider"/> class.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.GPSRoleProvider.#ctor(Gentex.GPS.RemoteObjects.Company.User_Manager)">
+ <summary>
+ Initializes a new instance of the <see cref="T:Gentex.ProcessControl.GPS.GPSRoleProvider"/> class.
+ </summary>
+ <param name="userController">The user controller.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.GPSRoleProvider.GetRolesByEmployeeId(System.String)">
+ <summary>
+ Gets the roles by employee identifier.
+ </summary>
+ <param name="employeeId">The employee identifier.</param>
+ <returns></returns>
+ <exception cref="T:System.ArgumentException">Employee id must be numeric.;employeeId</exception>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.GPSRoleProvider.GetRolesByUsername(System.String)">
+ <summary>
+ Gets the roles by username.
+ </summary>
+ <param name="username">The username.</param>
+ <returns></returns>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Company.LoginDialog.Principle">
+ <summary>
+ The IPrinciple security object containing the authentication status and roles for an Oracle identity.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Company.ShiftSelectDialog.SelectedShift">
+ <summary>
+ Gets the shift selected by the user.
+ </summary>
+ <returns>-1 if no shift is selected, else 1, 2, or 3 respectively.</returns>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Company.ToolStripUserInfo.DoubleClickEnabled">
+ <summary>
+ Returns whether the double click event will occur.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Company.ToolStripUserInfo.Text">
+ <summary>
+ Gets or sets the text that is to be displayed on the item.
+ </summary>
+ <returns>
+ A string representing the item's text. The default value is the empty string ("").
+ </returns>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Company.UserImageButton.BackgroundImage">
+ <summary>
+ Gets or sets the background image displayed in the control.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Company.UserImageButton.BackgroundImageLayout">
+ <summary>
+ Gets or sets the background image layout as defined in the <see cref="T:System.Windows.Forms.ImageLayout" /> enumeration.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Company.UserImageButton.Image">
+ <summary>
+ Gets or sets the image that is displayed on a button control.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Company.UserImageButton.UserImageDirectory">
+ <summary>
+ The directory containing employee images.
+ </summary>
+</member>
+<member name="T:Gentex.ProcessControl.GPS.Company.GPSClient">
+ <summary>
+ Provides a simple mechanism for checking the connection status to a GPS server.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Company.GPSClient.StatusCheckInterval">
+ <summary>
+ The interval to check the status of the GPS connection.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Company.GPSClient.ServerName">
+ <summary>
+ The GPS server name the application is connected to.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Company.GPSClient.Close">
+ <summary>
+ Stops the timer that checks for changes to the GPS connection.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Company.GPSClient.Connect">
+ <summary>
+ Starts the timer that checks for changes to the GPS connection.
+ </summary>
+</member>
+<member name="E:Gentex.ProcessControl.GPS.Company.GPSClient.ConnectionChanged">
+ <summary>
+ Occurs when the client connection changes.
+ </summary>
+</member>
+<member name="E:Gentex.ProcessControl.GPS.Company.GPSClient.ErrorRaised">
+ <summary>
+ Occurs when the client handles an exception.
+ </summary>
+ <remarks>Not used for this IClient implementation.</remarks>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Company.GPSClient.IsConnected">
+ <summary>
+ Determines whether this instance is connected.
+ </summary>
+ <returns>
+ <c>true</c> if this instance is connected; otherwise, <c>false</c>.
+ </returns>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Company.GPSClient.OnConnectionChanged(System.EventArgs)">
+ <summary>
+ Raises the <see cref="E:ConnectionChanged" /> event.
+ </summary>
+ <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.SecurityMigrationHelperExtensions.IsInRoles(Gentex.Security.UserPrincipal,System.String[])">
+ <summary>
+ Determines whether the specified principal has one of the specified roles.
+ </summary>
+ <param name="principal">The principal.</param>
+ <param name="roles">The roles.</param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.SecurityMigrationHelperExtensions.ToGpsUser(Gentex.Security.UserPrincipal)">
+ <summary>
+ Gets a GPS User object to be used with GPS server remoting methods. This does require a configured GPS server connection.
+ </summary>
+ <param name="principal">The user principal.</param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.DirtyProductValidationDialog.Show">
+ <summary>
+ Displays the control to the user.
+ </summary>
+ <PermissionSet>
+   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   </PermissionSet>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.DirtyProductValidationDialog.ShowDialog">
+ <summary>
+ Shows the form as a modal dialog box.
+ </summary>
+ <returns>
+ One of the <see cref="T:System.Windows.Forms.DialogResult" /> values.
+ </returns>
+ <PermissionSet>
+   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+   <IPermission class="System.Security.Permissions.UIPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   </PermissionSet>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.EquipmentParametersProvider.ApplicationName">
+ <summary>
+ The application name used for identifying a distinct key for settings persistence.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.EquipmentParametersProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+ <summary>
+ Initializes the settings provider.
+ </summary>
+</member>
+<member name="T:Gentex.ProcessControl.GPS.Equipment.IProductSettingsFactory">
+ <summary>
+ Provides a contract for creating instances of product settings.
+ An assigned instance must have a default constructor for activation in ProductManager.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.IProductSettingsFactory.Name">
+ <summary>
+ Gets a distinguishable name used for identification when selecting a factory.
+ </summary>
+ <value>
+ The name.
+ </value>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.IProductSettingsFactory.Description">
+ <summary>
+ Gets a description about the application and/or product settings.
+ </summary>
+ <value>
+ The description.
+ </value>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.IProductSettingsFactory.SettingsType">
+ <summary>
+ Gets the type of the settings.
+ </summary>
+ <value>
+ The type of the settings.
+ </value>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.IProductSettingsFactory.FormatSettingNames(System.Collections.Generic.IEnumerable{Gentex.ProcessControl.GPS.Equipment.ProductSettingInfo})">
+ <summary>
+ Formats the setting names.
+ The number of setting name elements returned must match the number of setting value elements.
+ </summary>
+ <param name="info">A list of resolved equipment parameters and the respective property names.</param>
+ <returns></returns>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.IProductSettingsFactory.FormatSettingValues(Gentex.ProcessControl.GPS.Equipment.Product)">
+ <summary>
+ Formats the setting values.
+ The number of setting value elements returned must match the number of setting name elements.
+ </summary>
+ <param name="product">The part number to format related settings for.</param>
+ <returns></returns>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Parameter.Category">
+ <summary>
+ The keyed name of the parameter.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Parameter.DefaultValue">
+ <summary>
+ The default parameter value if none exists.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Parameter.Description">
+ <summary>
+ The parameter's description.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Parameter.DisplayName">
+ <summary>
+ The display name of the parameter.  If left blank, then the name of the parameter is displayed instead.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Parameter.Enumerables">
+ <summary>
+ An ordered array of enumerable elements that are valid parameter values.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Parameter.Name">
+ <summary>
+ The parameter name.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Parameter.ParameterType">
+ <summary>
+ The parameter's value type.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ParameterCollection.Item(System.Int32)">
+ <summary>
+ A parameter from the collection by index.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ParameterCollection.Item(System.String)">
+ <summary>
+ A parameter from the collection by name.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ParameterCollection.Add(Gentex.ProcessControl.GPS.Equipment.Parameter)">
+ <summary>
+ Adds a Parameter object to the collection.
+ </summary>
+ <returns>The index of the Parameter object.</returns>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ParameterCollection.AddRange(Gentex.ProcessControl.GPS.Equipment.Parameter[])">
+ <summary>
+ Adds a range of parameters to the collection.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ParameterCollection.Contains(Gentex.ProcessControl.GPS.Equipment.Parameter)">
+ <summary>
+ Returns whether the collection contains the specified Parameter object.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ParameterCollection.Remove(Gentex.ProcessControl.GPS.Equipment.Parameter)">
+ <summary>
+ Removes a Parameter object from the collection.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Process.ParameterValues">
+ <summary>
+ A collection of parameter values keyed by their respective parameter names.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Process.State">
+ <summary>
+ The current state of the process.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Process.Type">
+ <summary>
+ The process type this process is contractually bound to.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.Process.UserResult">
+ <summary>
+ A user defined object for associating values with the process.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.Process.#ctor(Gentex.ProcessControl.GPS.Equipment.ProcessType)">
+ <summary>
+ Initializes the process.
+ </summary>
+ <param name="type">The process type definition.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.Process.#ctor(Gentex.ProcessControl.GPS.Equipment.ProcessType,System.String)">
+ <summary>
+ Initializes the proces.
+ </summary>
+ <param name="type">The process type definition.</param>
+ <param name="parameters">The parameter value string parsed from the data source.</param>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ProcessSequence.Processes">
+ <summary>
+ A collection of processes ordered for this sequence.
+ </summary>
+</member>
+<member name="E:Gentex.ProcessControl.GPS.Equipment.ProcessSequence.ProcessStateChanged">
+ <summary>
+ Raised when a process' state changes.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessSequence.#ctor(Gentex.ProcessControl.GPS.Equipment.ProcessTypeCollection,System.String)">
+ <summary>
+ Initializes a new process sequence with a serialized process string from the data store.
+ </summary>
+ <param name="value">The serialized process values.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessSequence.#ctor(Gentex.ProcessControl.GPS.Equipment.ProcessCollection)">
+ <summary>
+ Initializes a new process sequence.
+ </summary>
+ <param name="processes">The a collection of processes.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessSequence.GetNextPending">
+ <summary>
+ Returns the next process in the sequence that is pending.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessSequence.IsComplete">
+ <summary>
+ Returns whether the sequence is complete.
+ </summary>
+ <returns>False if any process is in a pending or in-process state, otherwise True.</returns>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessSequence.IsPassed">
+ <summary>
+ Returns whether the sequence passed.
+ </summary>
+ <returns>False if any process is not in a passed or bypassed state, otherwise True.</returns>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessSequence.Reset">
+ <summary>
+ Suspends notification and resets all processes to a pending state.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessSequenceEditorDialog.Show">
+ <summary>
+ Displays the control to the user.
+ </summary>
+ <PermissionSet>
+   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   </PermissionSet>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessSequenceEditorDialog.ShowDialog">
+ <summary>
+ Shows the form as a modal dialog box.
+ </summary>
+ <returns>
+ One of the <see cref="T:System.Windows.Forms.DialogResult" /> values.
+ </returns>
+ <PermissionSet>
+   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+   <IPermission class="System.Security.Permissions.UIPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+   </PermissionSet>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ProcessStateChangeEventArgs.Process">
+ <summary>
+ Gets the process associated with this change event.
+ </summary>
+ <value>The process.</value>
+</member>
+<member name="T:Gentex.ProcessControl.GPS.Equipment.ProductSetting">
+ <summary>
+ Represents an equipment parameter value.
+ </summary>
+</member>
+<member name="T:Gentex.ProcessControl.GPS.Equipment.ProductSettingInfo">
+ <summary>
+ Represents an equipment parameter.
+ </summary>
+</member>
+<member name="T:Gentex.ProcessControl.GPS.Equipment.Product">
+ <summary>
+ Represents a set of product settings for a part number.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ProcessType.DisplayName">
+ <summary>
+ The display name of the process type.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ProcessType.Name">
+ <summary>
+ The name of the process type.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ProcessType.Parameters">
+ <summary>
+ The collection of ordered parameters associated with this process type.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ProcessType.Prefix">
+ <summary>
+ The prefix used to identify the process type in the stored data.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ProcessTypeCollection.Item(System.Int32)">
+ <summary>
+ A process type from the collection by index.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ProcessTypeCollection.Item(System.String)">
+ <summary>
+ A process type from the collection by name.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessTypeCollection.Add(Gentex.ProcessControl.GPS.Equipment.ProcessType)">
+ <summary>
+ Adds a process type to the collection.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessTypeCollection.AddRange(Gentex.ProcessControl.GPS.Equipment.ProcessType[])">
+ <summary>
+ Adds an array of process types to the collection.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessTypeCollection.Contains(Gentex.ProcessControl.GPS.Equipment.ProcessType)">
+ <summary>
+ Returns whether the collection contains the specified process type.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Equipment.ProcessTypeCollection.Remove(Gentex.ProcessControl.GPS.Equipment.ProcessType)">
+ <summary>
+ Removes the process type from the collection.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Equipment.ProcessTypesProvider.ProcessTypes">
+ <summary>
+ A collection of process types.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.GentexSecurityMembershipProvider.Authenticate(System.String,System.String)">
+ <summary>
+ Authenticates the specified user with password. The password will be sent in an encrypted format to the Gentex.Security service.
+ </summary>
+ <param name="username">The username.</param>
+ <param name="password">The password.</param>
+ <returns></returns>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Inventory.BomViewer.CurrentPart">
+ <summary>
+ The current part viewed.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Inventory.BomViewer.InventoryController">
+ <summary>
+ The GPS remote object used for retrieving part information.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Inventory.BomViewer.Separator">
+ <summary>
+ The separator to place between part number information elements.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Inventory.BomViewer.ShowDescription">
+ <summary>
+ Returns whether to display the part number description.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Inventory.BomViewer.ShowQuantity">
+ <summary>
+ Returns whether to display the part number's quantity per assembly.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Inventory.BomViewer.ShowRevision">
+ <summary>
+ Returns whether to display the part number's approved revision.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Inventory.BomViewer.ClearBom">
+ <summary>
+ Clears the current BOM from the viewer.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Inventory.BomViewer.ViewBom(Gentex.GPS.RemoteObjects.Inventory.Gentex_Part)">
+ <summary>
+ Loads the viewer with the BOM of the specified part.
+ </summary>
+ <param name="part">The part's BOM to view.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Inventory.BomViewer.ViewBom(System.String)">
+ <summary>
+ Loads the viewer with the BOM of the specified part number.
+ </summary>
+ <param name="partNumber">The part number's BOM to view.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Inventory.BomViewer.ViewBom(System.String,System.String)">
+ <summary>
+ Loads the viewer with the BOM of the specified part number.
+ </summary>
+ <param name="partNumber">The part number's BOM to view.</param>
+ <param name="orgCode">The organization code that the part number is valid in.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Inventory.BomViewer.UpdateBom(System.Windows.Forms.TreeNodeCollection,Gentex.GPS.RemoteObjects.Inventory.Gentex_Part)">
+ <summary>
+ Recursively adds parts to the TreeView.
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Inventory.BomViewer.UpdateLegend">
+ <summary>
+ Updates the legend based on the visible elements of the part.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.CurrentBuildCard">
+ <summary>
+ The current build card viewed.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.Separator">
+ <summary>
+ The separator to place between part number information elements.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.ShowDescription">
+ <summary>
+ Returns whether to display the part number description.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.ShowQuantity">
+ <summary>
+ Returns whether to display the part number's quantity per assembly.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.ShowRevision">
+ <summary>
+ Returns whether to display the part number's approved revision.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.Style">
+ <summary>
+ The style applied to the build schedule info label
+ </summary>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.ClearBuildCard">
+ <summary>
+ Clears the build card information from the viewer.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.ViewBuildCard(Gentex.GPS.RemoteObjects.Kanban.Kanban_Card)">
+ <summary>
+ Updates the viewer with information from the specified build card.
+ </summary>
+ <param name="kanbanCard">The build card information to view.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.ViewBuildCard(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Updates the viewer with information.
+ </summary>
+ <param name="containerNumber">The container number.</param>
+ <param name="partNumber">The part number.</param>
+ <param name="customerNumber">The customer number.</param>
+ <param name="approvedRev">The approved rev.</param>
+ <param name="containerCapacity">The container capacity.</param>
+ <param name="partsRemaining">The parts remaining.</param>
+ <param name="orgCode">The org code.</param>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.UpdatePartsRemaining">
+ <summary>
+ Updates the parts remaining from the currently viewed build card.
+ </summary>
+ <remarks>Clears the build card information if the current build card is nothing.</remarks>
+</member>
+<member name="M:Gentex.ProcessControl.GPS.Kanban.BuildCardViewer.UpdatePartsRemaining(System.Int32)">
+ <summary>
+ Updates the parts remaining.
+ </summary>
+ <param name="value">The value.</param>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Kanban.BuildScheduleViewer.KanbanController">
+ <summary>
+ The kanban controller to retrieve data from GPS.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Kanban.BuildScheduleViewer.ProductionLine">
+ <summary>
+ The production line to retrieve a build schedule for.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Kanban.BuildScheduleViewer.Shift">
+ <summary>
+ The shift to retrieve a build schedule for.
+ </summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.Kanban.BuildScheduleViewer.Style">
+ <summary>
+ The style applied to the build schedule info label
+ </summary>
+</member>
+<member name="T:Gentex.ProcessControl.GPS.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.My.Resources.Resources.add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.My.Resources.Resources.CogEdit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.My.Resources.Resources.delete">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.My.Resources.Resources.NoUser">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.My.Resources.Resources.page_copy">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.My.Resources.Resources.ProcessSequenceExpression">
+<summary>
+  Looks up a localized string similar to (?&lt;=^|;)(?&lt;Prefix&gt;\w+?)\((?&lt;=\(|,)(?&lt;Parameters&gt;.*?)(?=,|\))\)(?=;|$).
+</summary>
+</member>
+<member name="P:Gentex.ProcessControl.GPS.My.Resources.Resources.user">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>

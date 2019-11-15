@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+<h1>Modules</h1>
+<ul>
+
+	<li>
+		<a href="../modules/Chronos.html">Chronos</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Action.html">Chronos.Action</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.html">Chronos.Actions</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Checks.html">Chronos.Actions.Checks</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Interactive.html">Chronos.Actions.Interactive</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.MakeCheck.html">Chronos.Actions.MakeCheck</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Traceability.html">Chronos.Actions.Traceability</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Actions.Utilities.html">Chronos.Actions.Utilities</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Auto.html">Chronos.Auto</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Config.html">Chronos.Config</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Csv.html">Chronos.Csv</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DSL.html">Chronos.DSL</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DebugInfoPrinter.html">Chronos.DebugInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.DeviceComm.html">Chronos.DeviceComm</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Failure.html">Chronos.Failure</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Hex.html">Chronos.Hex</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Html.html">Chronos.Html</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.InfoPrinter.html">Chronos.InfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Runner.html">Chronos.Runner</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TeamCityInfoPrinter.html">Chronos.TeamCityInfoPrinter</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestAccumulator.html">Chronos.TestAccumulator</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCase.html">Chronos.TestCase</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseRecorder.html">Chronos.TestCaseRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestCaseResults.html">Chronos.TestCaseResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunRecorder.html">Chronos.TestRunRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestRunResults.html">Chronos.TestRunResults</a>
+	</li>
+
+	<li><strong>Chronos.TestSuite</strong></li>
+	
+	<li>
+		<a href="../modules/Chronos.TestSuiteRecorder.html">Chronos.TestSuiteRecorder</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.TestSuiteResults.html">Chronos.TestSuiteResults</a>
+	</li>
+
+	<li>
+		<a href="../modules/Chronos.Time.html">Chronos.Time</a>
+	</li>
+
+	<li>
+		<a href="../modules/LuaPP.html">LuaPP</a>
+	</li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>Chronos.TestSuite</code></h1>
+
+<p>Represents a test suite. Test suites are the top-level component of your test definitions. They can have a name and several test cases. <pre class="example"> testSuite = Chronos.TestSuite.new( "My Test Suite" )<br/> testSuite:AddTestCase( someTestCase )<br/> myTestCase = testSuite.TestCases[ "My Test Case" ] -- Find test case by name.<br/> testSuite.Setup = function() end<br/> testSuite.Teardown = function() end<br/> testSuite.EachSetup = function() end<br/> testSuite.EachTeardown = function() end<br/> </pre> <b>Notes</b>: <ul> <li>Gets a specific test case by name using the '[ ]' operator on the <code>TestCases</code>.<br/> <pre class="example">myTestCase = testSuite.TestCases[ "My Test Case" ]</pre></li> </ul></p>
+
+
+
+
+
+
+
+
+<h2>Tables</h2>
+<table class="table_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#TestSuite">TestSuite</a></td>
+	<td class="summary">Contains the details of the test suite.</td>
+	</tr>
+
+</table>
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuite:AddTestCase">Chronos.TestSuite:AddTestCase</a>&nbsp;(testCase)</td>
+	<td class="summary">Adds a test case to the suite.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuite:GetName">Chronos.TestSuite:GetName</a>&nbsp;()</td>
+	<td class="summary">Gets the name of the test suite.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuite:GetVersion">Chronos.TestSuite:GetVersion</a>&nbsp;()</td>
+	<td class="summary">Gets the version of the test suite.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuite:Run">Chronos.TestSuite:Run</a>&nbsp;(testSuiteRecorder)</td>
+	<td class="summary">Runs all steps of test suite execution using a specified Chronos.TestSuiteRecorder.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuite:RunCase">Chronos.TestSuite:RunCase</a>&nbsp;(testSuiteRecorder, testCase)</td>
+	<td class="summary">Runs all steps of test suite execution with a single test case, using a specified Chronos.TestSuiteRecorder.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#Chronos.TestSuite:TryFunction">Chronos.TestSuite:TryFunction</a>&nbsp;(functionName, testSuiteRecorder)</td>
+	<td class="summary">Wraps test step execution so that failures are caught and recorded.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#new">new</a>&nbsp;(name)</td>
+	<td class="summary">Creates a new test suite.</td>
+	</tr>
+
+</table>
+
+
+<br/>
+<br/>
+
+
+<h2><a name="tables"></a>Tables</h2>
+<dl class="table">
+
+<dt><a name="TestSuite"></a><strong>TestSuite</strong></dt>
+<dd>Contains the details of the test suite. The test suite contains the actuals tests, TestCases.<br /><br />
+
+
+<h3>Fields:</h3>
+<ul>
+	
+	<li>
+	  <code><em>Anonymous</em></code>: True if the test suite is anonymous.
+	</li>
+	
+	<li>
+	  <code><em>Name</em></code>: The name of the test suite.
+	</li>
+	
+	<li>
+	  <code><em>Version</em></code>: The version of the test suite.
+	</li>
+	
+	<li>
+	  <code><em>TestCases</em></code>: An array of <code>Chronos.TestCases</code>.
+	</li>
+	
+	<li>
+	  <code><em>Setup</em></code>: The setup function. Called before any <code>Chronos.TestCases</code>.
+	</li>
+	
+	<li>
+	  <code><em>Teardown</em></code>: The teardown function. Called after the all the <code>Chronos.TestCases</code> are finished. This is called even if there are any failures in the <code>Chronos.TestCases</code>.
+	</li>
+	
+	<li>
+	  <code><em>EachSetup</em></code>: The each setup function. Called before each <code>Chronos.TestCase</code>.
+	</li>
+	
+	<li>
+	  <code><em>EachTeardown</em></code>: The each teardown function. Called after each <code>Chronos.TestCase</code>. This is called even if there are any failures in the <code>Chronos.TestCase</code>.
+	</li>
+	
+</ul>
+
+
+</dd>
+
+
+</dl>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="Chronos.TestSuite:AddTestCase"></a><strong>Chronos.TestSuite:AddTestCase</strong>&nbsp;(testCase)</dt>
+<dd>
+Adds a test case to the suite.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>testCase</em></code>: The test case to add.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuite:GetName"></a><strong>Chronos.TestSuite:GetName</strong>&nbsp;()</dt>
+<dd>
+Gets the name of the test suite. Prefer this function rather than direct access, in case it is anonymous.
+
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The name of the test suite.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuite:GetVersion"></a><strong>Chronos.TestSuite:GetVersion</strong>&nbsp;()</dt>
+<dd>
+Gets the version of the test suite.
+
+
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The version of the test suite.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuite:Run"></a><strong>Chronos.TestSuite:Run</strong>&nbsp;(testSuiteRecorder)</dt>
+<dd>
+Runs all steps of test suite execution using a specified Chronos.TestSuiteRecorder.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>testSuiteRecorder</em></code>: A Chronos.TestSuiteRecorder to use for recording the test suite's execution.
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The Chronos.TestSuiteRecorder that was passed in.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuite:RunCase"></a><strong>Chronos.TestSuite:RunCase</strong>&nbsp;(testSuiteRecorder, testCase)</dt>
+<dd>
+Runs all steps of test suite execution with a single test case, using a specified Chronos.TestSuiteRecorder.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>testSuiteRecorder</em></code>: A Chronos.TestSuiteRecorder to use for recording the test suite's execution.
+	</li>
+	
+	<li>
+	  <code><em>testCase</em></code>: The test case to run in the context of the test suite.
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>The Chronos.TestSuiteRecorder that was passed in.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="Chronos.TestSuite:TryFunction"></a><strong>Chronos.TestSuite:TryFunction</strong>&nbsp;(functionName, testSuiteRecorder)</dt>
+<dd>
+Wraps test step execution so that failures are caught and recorded.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>functionName</em></code>: The name of the function to execute, as a string.
+	</li>
+	
+	<li>
+	  <code><em>testSuiteRecorder</em></code>: A Chronos.TestSuiteRecorder to use for recording the test suite's execution.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="new"></a><strong>new</strong>&nbsp;(name)</dt>
+<dd>
+Creates a new test suite. Test suites are automatically added to the run queue when created.
+
+
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>name</em></code>: The name of the test suite. (Optional)
+	</li>
+	
+</ul>
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>A new test suite.</ul>
+
+
+
+</dd>
+
+
+</dl>
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

@@ -1,0 +1,88 @@
+Michael Harrington, initial Chronos developer
+5/27/2010
+
+
+What went right?
+================
+
+
+The DSL looks great and is easy to use.
+
+Report generation is seamless, fast, and easy.
+
+The application is well-tested, and separated into small, well-defined modules.
+
+StartHex() ... EndHex() is great in the right scenarios.
+
+MakeCheck greatly simplifies things.
+
+The foresight of isolating console output into its own module allowed easy addition of TeamCity output.
+
+FileTable is pretty sweet, in theory.
+
+Many tests are now state-based, which is great.
+
+The TestHelper macros for mocking things on a per-module basis are great, when they work.
+
+
+What went wrong?
+================
+
+
+For a while, Chronos was only tested informally through example test suites.
+
+The examples still suck.
+
+Time wasted on initial template system.
+
+Time spent setting up a project structure, still isn't what it should be. (Inconsistency, lack of separation between unit/functional/integration tests.)
+
+No real project management workflow.
+
+20 hours a week isn't enough to understand user needs, plan the project, do the actual work, and remain responsive enough to keep all of the stakeholders on board.
+
+Another person on the project would've helped.
+
+Auto was neglected for a long time, mainly due to lack of user input.
+
+I don't like having a configuration file in order to tickle report generation.
+
+For a long time, there was an informal convention for Checks.
+- More work to implement common functionality
+- Duplication of tests
+
+Numerous Lua headaches
+- Behavior of variable return values in expression lists
+- Metamethod limitations
+- Limited standard library
+- "require" case-sensitivity (see below)
+- Module system can lead to confusing relationships, test scenarios, and differences between production and test behavior
+-- e.g. testCaseResults.Pending ends up returning Chronos.Actions.Pending (a function) because of metatable linkage: results -> Chronos.TestCaseResults -> Chronos -> _G -> _G.Pending -> Chronos.Actions.Pending
+
+SciTE complications
+- Lack of macros introduced a requirement that scripts be runnable from Lua.exe, which resulted in hacks and separated Chronos into two modes of operation
+- Poorly-specified debugger module, required more hacks
+
+Very limited ecosystem for Lua libraries. There are very few that are...
+- Pure Lua or easily cross-platform
+- Well-tested
+- Complete/stable
+- Documented (at all/completely/correctly)
+
+Naming convention that is inconsistent with language and libraries
+- Causes confusion among users
+- Introduces new class of errors
+- Exposes quirks in Lua's "require" mechanism on case-insensitive systems
+
+
+What would you change?
+======================
+
+
+Having another person on the project would be a must. That would've freed up a lot of time for doing the important big-picture stuff, and making sure the application was really fitting exactly what the users need. Whether this extra person would be an AO or Gentex employee is an open question; the size and scope of Gentex's development team makes it difficult to understand the entire ecosystem, and to understand how Chronos impacts it. Having a Gentex person actively on the project (Ryan Pusztai oversaw much of the development, and was an invaluable resource, but he filled more of an informal non-ownership kind of role) might have helped by providing an inside perspective.
+
+Knowing the need to account for SciTE users would've driven a different architecture in which report generation is a separate facility entirely, preferably pure Lua, which globs on to the test runner part. That would be a more elegant solution regardless.
+
+I don't know what can really be done about the Lua-centric issues. There's just not enough investment in Lua by other entities (either commercial or open source) and I don't think Gentex has a need or desire to invest that heavily by itself in something other people aren't buying into just to support a small part of its code base. So the conclusion I come to is that we just have to live with that, even if we did the project over again.
+
+On the other hand, if we were in a carte blanche world, I would opt for using IronPython on .NET/Mono, integrating with an existing testing library and a C#/C++ CLI/whatever interface for DeviceComm. The project itself would be a lot lighter, built on a well-established code base, and usable through a variety of scripted and compiled interfaces.
